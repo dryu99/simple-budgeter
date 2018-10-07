@@ -1,12 +1,27 @@
 package model;
 
-public interface Transaction {
+public abstract class Transaction {
+    protected double value;
+    protected String description;
 
-    // EFFECTS: returns value of transaction
-    double getValue();
+    public Transaction(double value, String desc) {
+        this.value = value;
+        this.description = desc;
+    }
 
-    // MODIFIES: this
-    // EFFECTS: sets value of transaction to amount
-    void setValue(double amount);
+    public Transaction() {
+        value = 0;
+        description = null;
+    }
+
+    // Getters:
+    public double getValue() { return value; }
+    public String getDesc() { return description; }
+
+    // Setters:
+    public void setValue(double amount) {
+        this.value = amount;
+    }
+    public void setDescription(String newDesc) { description = newDesc; }
 
 }

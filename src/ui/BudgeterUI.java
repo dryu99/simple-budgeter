@@ -6,9 +6,7 @@ import java.io.IOException;
 
 public class BudgeterUI {
     public static void main(String[] args) throws IOException {
-        Budgeter budgeter = new Budgeter();
-
-        budgeter.start();
+        new Budgeter();
 
     }
 }

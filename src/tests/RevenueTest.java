@@ -1,6 +1,6 @@
 package tests;
 
-import model.RevGenre;
+import model.enums.RevGenre;
 import model.Revenue;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,12 +12,13 @@ public class RevenueTest {
 
     @Before
     public void setup() {
-        testRevenue = new Revenue(20.0, RevGenre.WORK);
+        testRevenue = new Revenue(20.0, "Save-Ons Payroll", RevGenre.WORK);
     }
 
     @Test
     public void testConstructor() {
         assertEquals(20.0, testRevenue.getValue(), 0.000001);
+        assertEquals("Save-Ons Payroll", testRevenue.getDesc());
         assertEquals(RevGenre.WORK, testRevenue.getGenre());
     }
 }

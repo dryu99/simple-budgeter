@@ -1,1 +1,3 @@
-Revenue 300.0
+Revenue 20.0
+Expense 20.0
+Expense 50.0

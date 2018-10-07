@@ -1,27 +1,31 @@
 package model;
 
-public class Expense implements Transaction {
-    private ExpGenre genre;
-    private double value;
+import model.enums.ExpGenre;
 
-    public Expense(double value, ExpGenre genre) {
-        this.value = value;
+public class Expense extends Transaction {
+    private ExpGenre genre;
+
+    public Expense(double value, String desc, ExpGenre genre) {
+        super(value, desc);
         this.genre = genre;
     }
 
-    // Getters:
-    @Override
-    public double getValue() { return value; }
-
-    @Override
-    public void setValue(double amount) {
-        this.value = amount;
+    public Expense() {
+        super();
+        genre = null;
     }
 
+    // Getters:
     public ExpGenre getGenre() { return genre; }
 
+    // Setters:
+    public void setGenre(ExpGenre genre) {
+        this.genre = genre;
+    }
+
+    // EFFECTS: returns expense object in string form "Expense: $<value>"
     @Override
     public String toString() {
-        return "Expense " + value;
+        return "Expense: $" + value + " - " + description + " (" + genre + ")";
     }
 }

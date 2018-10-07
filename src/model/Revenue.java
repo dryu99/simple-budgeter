@@ -5,30 +5,33 @@ package model;
 // TODO: have transaction be an interface with revenue and expense classes that implement it?
 // TODO: I want to have two separate genre enum classes, one for rev and exp.
 
-public class Revenue implements Transaction {
-    private RevGenre genre;
-    private double value;
+import model.enums.RevGenre;
 
-    public Revenue(double value, RevGenre genre) {
-        this.value = value;
+public class Revenue extends Transaction {
+    private RevGenre genre;
+
+    public Revenue(double value, String desc, RevGenre genre) {
+        super(value, desc);
         this.genre = genre;
     }
 
-    // Getters:
-    @Override
-    public double getValue() { return value; }
-
-    // Setters:
-    @Override
-    public void setValue(double amount) {
-        this.value = amount;
+    public Revenue() {
+        super();
+        genre = null;
     }
 
+    // Getters:
     public RevGenre getGenre() { return genre; }
 
+    // Setters:
+    public void setGenre(RevGenre genre) {
+        this.genre = genre;
+    }
+
+    // EFFECTS: returns revenue object in string form "Revenue: $<value>"
     @Override
     public String toString() {
-        return "Revenue " + value;
+        return "Revenue: $" + value + " - " + description + " (" + genre + ")";
     }
 
 

@@ -1,6 +1,8 @@
 package tests;
 
 import model.*;
+import model.enums.ExpGenre;
+import model.enums.RevGenre;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,9 +15,9 @@ public class EntryTest {
 
     @Before
     public void setup() {
-        testEntry = new Entry(0);
-        testRevenue = new Revenue(30, RevGenre.WORK);
-        testExpense = new Expense(20, ExpGenre.FOOD);
+        testEntry = new Entry();
+        testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.WORK);
+        testExpense = new Expense(20, "McDonalds", ExpGenre.FOOD);
     }
 
     @Test

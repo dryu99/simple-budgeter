@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Entry {
-    // TODO: implement date functionality later
-    //private Date date;
-    private int entryNum;
+    // Date ...
     private List<Revenue> revenueList;
     private List<Expense> expenseList;
 
-    public Entry(int entryNum) {
+    public Entry() {
         //this.date = date;
-        this.entryNum = entryNum;
         revenueList = new ArrayList<>();
         expenseList = new ArrayList<>();
     }
@@ -90,21 +87,6 @@ public class Entry {
         return expenseList.size();
     }
 
-
-    // Helpers:
-
-    // TODO: How to do this lol
-    // REQUIRES: given list contains double type
-    // EFFECTS: returns sum of given list
-    private double sumOfListOfTransaction(List<Transaction> lot) {
-        double sum = 0;
-
-        for (int i = 0, n = lot.size(); i < n; i++) {
-            sum += lot.get(i).getValue();
-        }
-
-        return sum;
-    }
 
 
 
