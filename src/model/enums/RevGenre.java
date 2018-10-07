@@ -2,7 +2,8 @@ package model.enums;
 
 // TODO: make one enum where each case has a string form AND a boolean. true = revenue, false = expense??
 public enum RevGenre {
-    WORK("Work"),
+    PAYCHEQUE("Paycheque"),
+    REIMBURSEMENT("Reimbursement"),
     IOU("IOU");
 
     private final String lowerCaseForm;

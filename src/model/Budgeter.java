@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// TODO: do we want to have sout() at low level or high level
 // TODO: how to make only one prompter (i.e. one scanner) for all classes to use
 // TODO: feel like there has to be a difference between adding stuff and prompting stuff (i.e. entry.addTransaction)
 public class Budgeter {
@@ -32,6 +33,7 @@ public class Budgeter {
             printOptions();
 
             String command = prompter.returnUserCommand("User Command: ");
+            System.out.println();
 
             if (command.equals("exit")) {
                 System.out.println("See you later!");
@@ -71,8 +73,10 @@ public class Budgeter {
         System.out.println("--ADDING ENTRY--");
 
         SimpleDate date = prompter.returnUserDate();
+        newEntry.setDate(date);
         System.out.println();
 
+    // TODO: make a method for yes/no qs since theres a similar one in entry? (maybe a command handler that handles yes/no questions, and takes the needed object as an add param)
         while (true) {
             String answer = prompter.returnUserCommand("Would you like to add a transaction to the new entry? ");
 
@@ -83,12 +87,15 @@ public class Budgeter {
                 break;
             } else {
                 System.out.println("Please type 'yes' or 'no'.");
+                System.out.println();
             }
         }
 
+        newEntry.promptMoreTransactions();
+
         // TODO: make sure it prints out the entry list size too
-        System.out.println();
         System.out.println("**New Entry (" + date + ") successfully added**");
+        System.out.println();
 
         entryList.add(newEntry);
     }
@@ -101,10 +108,12 @@ public class Budgeter {
         }
 
         System.out.println("--RECORDED ENTRIES--");
+        System.out.println();
 
         for (int i = 0, n = entryList.size(); i < n; i++) {
             System.out.print((i + 1) + ": ");
             entryList.get(i).print();
+            System.out.println();
         }
     }
 

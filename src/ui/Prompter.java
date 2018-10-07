@@ -18,7 +18,6 @@ public class Prompter {
     public String returnUserCommand(String prompt) {
         System.out.print(prompt);
         String command = reader.nextLine();
-        System.out.println();
 
         command = command.trim().toLowerCase();
 
@@ -29,7 +28,7 @@ public class Prompter {
     public String returnUserString(String prompt) {
         System.out.print(prompt + " ");
 
-        return reader.nextLine();
+        return reader.nextLine().trim();
     }
 
     // TODO: make the returned double be in form 0.00
@@ -63,7 +62,7 @@ public class Prompter {
             System.out.print("Choose one of the above: ");
 
             genre = reader.nextLine();
-            genre = genre.toUpperCase();
+            genre = genre.toUpperCase().trim();
 
             for (RevGenre rg : RevGenre.values()) {
                 if (rg.toString().equals(genre)) {
@@ -87,7 +86,7 @@ public class Prompter {
             System.out.print("Choose one of the above: ");
 
             genre = reader.nextLine();
-            genre = genre.toUpperCase();
+            genre = genre.toUpperCase().trim();
 
             for (ExpGenre eg : ExpGenre.values()) {
                 if (eg.toString().equals(genre)) {

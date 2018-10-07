@@ -25,7 +25,7 @@ public class Revenue extends Transaction {
     // EFFECTS: returns revenue object in string form "Revenue: $<value>"
     @Override
     public String toString() {
-        return "Revenue: $" + value + " - " + description + " (" + genre + ")";
+        return "$" + value + " - " + description + " (" + genre + ")";
     }
 
 

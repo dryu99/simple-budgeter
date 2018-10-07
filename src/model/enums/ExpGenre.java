@@ -1,9 +1,13 @@
 package model.enums;
 
+// TODO: maybe make one FOOD_AND_DRINK case, but have to figure out the toString form of it
 public enum ExpGenre {
     FOOD("Food"),
-    CLOTHES("Clothes"),
-    GAMES("Games");
+    DRINK("Drink"),
+    SHOPPING("Shopping"),
+    ACTIVITIES("Activities"),
+    ENTERTAINMENT("Entertainment"),
+    PERSONAL_CARE("Personal Care");
 
     private final String lowerCaseForm;
 

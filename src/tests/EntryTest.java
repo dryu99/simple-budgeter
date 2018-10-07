@@ -16,7 +16,7 @@ public class EntryTest {
     @Before
     public void setup() {
         testEntry = new Entry();
-        testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.WORK);
+        testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
         testExpense = new Expense(20, "McDonalds", ExpGenre.FOOD);
     }
 

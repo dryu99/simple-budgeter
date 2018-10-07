@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO: give entry a id field?
+// TODO: how to avoid duplication of add/prompt revenue/transaction methods
 
 public class Entry {
     private SimpleDate date;
@@ -23,8 +24,9 @@ public class Entry {
     }
 
     // TODO: here and also in the yes/no part of addEntry, I'm not sure how to use a handleCommand method here as I need to break and I can't break from a loop in a diff method. I don't want to use if statements
+    // TODO: make this method shorter
     // MODIFIES: this
-    // EFFECTS: adds transaction to respective list
+    // EFFECTS: prompts user for transaction type and prompts respective transaction demands
     public void addTransaction() {
         while (true) {
             System.out.println("What kind of transaction do you want to add?");
@@ -33,6 +35,7 @@ public class Entry {
             System.out.println();
 
             String command = prompter.returnUserCommand("User Command: ");
+            System.out.println();
 
             if (command.equals("0")) {
                 this.promptRevenue();
@@ -42,10 +45,10 @@ public class Entry {
                 break;
             } else {
                 System.out.println("That's not a real command! Try again.");
+                System.out.println();
             }
         }
-
-        // TODO: implement "do u want to do more" method (you'll probably have to remove the break; in the if statements above)
+        System.out.println();
     }
 
     // TODO: change expense/revenue attribute "description" to sth else, and change the prompt here
@@ -65,7 +68,7 @@ public class Entry {
         newRevenue.setDescription(desc);
         newRevenue.setGenre(genre);
 
-        System.out.println("**" + newRevenue + " added to Entry (" + date + ")**");
+        System.out.println("**Revenue: " + newRevenue + " added to Entry (" + date + ")**");
         this.addRevenue(newRevenue);
     }
 
@@ -86,9 +89,29 @@ public class Entry {
         newExpense.setDescription(desc);
         newExpense.setGenre(genre);
 
-        System.out.println("**" + newExpense + " added to Entry (" + date + ")**");
+        System.out.println("**Expense: " + newExpense + " added to Entry (" + date + ")**");
         this.addExpense(newExpense);
     }
+
+    // TODO: does this needs modifies?
+    // EFFECTS: prompts user whether they want to add another transaction.
+    public void promptMoreTransactions() {
+        while (true) {
+            String answer = prompter.returnUserCommand("Would you like to add another transaction? ");
+
+            if (answer.equals("no")) {
+                break;
+            } else if (answer.equals("yes")) {
+                this.addTransaction();
+            } else {
+                System.out.println("Please type 'yes' or 'no'.");
+                System.out.println();
+            }
+        }
+    }
+
+    // Setters:
+    public void setDate(SimpleDate date) { this.date = date; }
 
     // TODO: want to make this method private but can't because of tests
     // REQUIRES: r != null
@@ -170,32 +193,60 @@ public class Entry {
     // EFFECTS: print entry out, showing accumulated revenues and expenses
     public void print() {
         System.out.println("ENTRY " + "(" + date + ")");
-        System.out.println("==========");
+        printLine("ENTRY " + "(" + date + ")", "=");
 
-        System.out.println("Revenues:");
-        System.out.println("----------");
         printRevenues();
         System.out.println();
 
-        System.out.println("Expenses:");
-        System.out.println("----------");
         printExpenses();
-        System.out.println();
     }
 
-    // EFFECTS: print vertical list of revenues from this revenueList
+    // EFFECTS: print vertical list of revenues from this revenueList.
+    //          if revenueList is empty, print out "(no revenues for this entry)"
     private void printRevenues() {
-        for (Revenue r : revenueList) {
-            System.out.println(r);
+        System.out.println("Revenues:");
+        printLine("Revenues:", "-");
+
+        if (!revenueList.isEmpty()) {
+            for (Revenue r : revenueList) {
+                System.out.println(r);
+            }
+        } else {
+            System.out.println("(no revenues for this entry)");
         }
     }
 
     // EFFECTS: print vertical list of revenues from this revenueList
+    //          if expense is empty, print out "(no expenses for this entry)"
     private void printExpenses() {
-        for (Expense e : expenseList) {
-            System.out.println(e);
+        System.out.println("Expenses:");
+        printLine("Expenses:", "-");
+
+        if (!expenseList.isEmpty()) {
+            for (Expense e : expenseList) {
+                System.out.println(e);
+            }
+        } else {
+            System.out.println("(no expenses for this entry)");
         }
     }
+
+    // TODO: after giving each entry a unique id field, take out the if statement here
+    // EFFECTS: prints out line of a given type with length of given string (if type = "=", make length + 3)
+    private void printLine(String str, String lineType) {
+        String line = "";
+
+        if (lineType.equals("=")) {
+            line += "===";
+        }
+
+        for (int i = 0, n = str.length(); i < n; i++) {
+            line += lineType;
+        }
+        System.out.println(line);
+    }
+
+
 
 
 

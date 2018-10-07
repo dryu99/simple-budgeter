@@ -24,6 +24,6 @@ public class Expense extends Transaction {
     // EFFECTS: returns expense object in string form "Expense: $<value>"
     @Override
     public String toString() {
-        return "Expense: $" + value + " - " + description + " (" + genre + ")";
+        return "$" + value + " - " + description + " (" + genre + ")";
     }
 }

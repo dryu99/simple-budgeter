@@ -12,13 +12,13 @@ public class RevenueTest {
 
     @Before
     public void setup() {
-        testRevenue = new Revenue(20.0, "Save-Ons Payroll", RevGenre.WORK);
+        testRevenue = new Revenue(20.0, "Save-Ons Payroll", RevGenre.PAYCHEQUE);
     }
 
     @Test
     public void testConstructor() {
         assertEquals(20.0, testRevenue.getValue(), 0.000001);
         assertEquals("Save-Ons Payroll", testRevenue.getDesc());
-        assertEquals(RevGenre.WORK, testRevenue.getGenre());
+        assertEquals(RevGenre.PAYCHEQUE, testRevenue.getGenre());
     }
 }
