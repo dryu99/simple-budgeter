@@ -19,9 +19,7 @@ public class Expense extends Transaction {
     public ExpGenre getGenre() { return genre; }
 
     // Setters:
-    public void setGenre(ExpGenre genre) {
-        this.genre = genre;
-    }
+    public void setGenre(ExpGenre genre) { this.genre = genre; }
 
     // EFFECTS: returns expense object in string form "Expense: $<value>"
     @Override

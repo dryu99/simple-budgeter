@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+// TODO: test setters?
 public class ExpenseTest {
     private Expense testExpense;
 

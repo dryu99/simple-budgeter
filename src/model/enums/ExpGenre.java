@@ -15,11 +15,12 @@ public enum ExpGenre {
         int i = 0;
 
         System.out.println("-----");
-        // TODO: I can't get the size of values? I want to make a for loop not for-each
+        // TODO: Are there no get methods for ExpGenre.values()... I want to retrieve sth in the array
         for (ExpGenre eg : ExpGenre.values()) {
             System.out.println(eg.lowerCaseForm);
             i++;
         }
         System.out.println("-----");
     }
+
 }

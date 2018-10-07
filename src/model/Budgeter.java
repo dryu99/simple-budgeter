@@ -1,28 +1,27 @@
 package model;
 
-import model.enums.ExpGenre;
-import model.enums.RevGenre;
 import ui.Prompter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// TODO: how to make only one prompter (i.e. one scanner) for all classes to use
+// TODO: feel like there has to be a difference between adding stuff and prompting stuff (i.e. entry.addTransaction)
 public class Budgeter {
     private Scanner reader;
     private Prompter prompter;
-    private List<Transaction> transactionList;
+    private List<Entry> entryList;
 
     // Constructor
     public Budgeter() {
         reader = new Scanner(System.in);
         prompter = new Prompter();
-        transactionList = new ArrayList<>();
+        entryList = new ArrayList<>();
 
         start();
     }
 
-    // TODO: implement a user input class
     // EFFECTS: starts Budgeter application
     private void start() {
         System.out.println("BUDGETING APPLICATION");
@@ -32,30 +31,29 @@ public class Budgeter {
             System.out.println("What would you like to do?");
             printOptions();
 
-            String command = prompter.returnUserCommand();
+            String command = prompter.returnUserCommand("User Command: ");
 
             if (command.equals("exit")) {
                 System.out.println("See you later!");
                 break;
             }
-            handleCommand(command);
+            handleBudgeterCommand(command);
         }
     }
 
     // TODO: implement executions for each respective case
-    // TODO: implement adding entry (addEntry, creates new entry and prompts user for revnue/expense then value,desc,type)
     // EFFECTS: if valid command is given execute it, ow print "That's not a real command!"
-    private void handleCommand(String command) {
+    private void handleBudgeterCommand(String command) {
         switch (command) {
             case "0":
-                this.addRevenue();
+                this.addEntry();
                 break;
             case "1":
-                this.addExpense();
+                this.viewAllEntries();
                 break;
-            case "2":
-                this.showTransactions();
-                break;
+//            case "2":
+//                this.viewAllEntries();
+//                break;
                 default:
                     System.out.println("That's not a real command! Try again.");
                     break;
@@ -63,62 +61,59 @@ public class Budgeter {
         System.out.println();
     }
 
+    // TODO: make a separate add entry method? (for testing)
+    // TODO: I'm not sure how to use a handleCommand method here as I need to break and I can't break from a loop in a diff method. I don't want to use if statements
+    // TODO: have to implement set date method to Entry
     // MODIFIES: this
-    // EFFECTS: prompts user for revenue amount and adds it to transaction list
-    private void addRevenue() {
-        Revenue newRevenue = new Revenue();
-        System.out.println("--ADDING REVENUE--");
+    // EFFECTS: pr
+    private void addEntry() {
+        Entry newEntry = new Entry();
+        System.out.println("--ADDING ENTRY--");
 
-        double amount = prompter.returnUserDouble("How much did you receive?");
-        String desc = prompter.returnUserString("Description:");
-        RevGenre genre = prompter.returnUserRevGenre();
+        SimpleDate date = prompter.returnUserDate();
+        System.out.println();
 
-        newRevenue.setValue(amount);
-        newRevenue.setDescription(desc);
-        newRevenue.setGenre(genre);
+        while (true) {
+            String answer = prompter.returnUserCommand("Would you like to add a transaction to the new entry? ");
 
-        System.out.println("Adding revenue of $" + amount + " - " + desc + " (" + genre + ") to transaction list");
-        transactionList.add(newRevenue);
-    }
+            if (answer.equals("no")) {
+                break;
+            } else if (answer.equals("yes")) {
+                newEntry.addTransaction();
+                break;
+            } else {
+                System.out.println("Please type 'yes' or 'no'.");
+            }
+        }
 
-    // MODIFIES: this
-    // EFFECTS: prompts user for expense amount and adds it to transaction list
-    private void addExpense() {
-        Expense newExpense = new Expense();
-        System.out.println("--ADDING EXPENSE--");
+        // TODO: make sure it prints out the entry list size too
+        System.out.println();
+        System.out.println("**New Entry (" + date + ") successfully added**");
 
-        double amount = prompter.returnUserDouble("How much did you spend?");
-        String desc = prompter.returnUserString("Description:");
-        ExpGenre genre = prompter.returnUserExpGenre();
-
-        newExpense.setValue(amount);
-        newExpense.setDescription(desc);
-        newExpense.setGenre(genre);
-
-        System.out.println("Adding expense of $" + amount + " - " + desc + " (" + genre + ") to transaction list");
-        transactionList.add(newExpense);
+        entryList.add(newEntry);
     }
 
     // EFFECTS: prints out transactions
-    private void showTransactions() {
-        if (transactionList.isEmpty()) {
-            System.out.println("No transactions have been entered!");
+    private void viewAllEntries() {
+        if (entryList.isEmpty()) {
+            System.out.println("No entries have been written yet!");
             return;
         }
 
-        System.out.println("--RECORDED TRANSACTIONS--");
+        System.out.println("--RECORDED ENTRIES--");
 
-        for (int i = 0, n = transactionList.size(); i < n; i++) {
+        for (int i = 0, n = entryList.size(); i < n; i++) {
             System.out.print((i + 1) + ": ");
-            System.out.println(transactionList.get(i));
+            entryList.get(i).print();
         }
     }
 
     // EFFECTS: prints out budget application options
     private void printOptions() {
-        System.out.println("[0] Add a Revenue");
-        System.out.println("[1] Add an Expense");
-        System.out.println("[2] Show all transactions");
+        System.out.println("[0] Add a new Entry");
+        System.out.println("[1] View all Entries");
+//        System.out.println("[1] Add an Expense");
+//        System.out.println("[2] Show all transactions");
         System.out.println("[exit] Exit application");
         System.out.println();
     }
