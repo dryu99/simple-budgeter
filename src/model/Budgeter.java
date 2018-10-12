@@ -4,19 +4,16 @@ import ui.Prompter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-// TODO: do we want to have sout() at low level or high level
 // TODO: how to make only one prompter (i.e. one scanner) for all classes to use
-// TODO: feel like there has to be a difference between adding stuff and prompting stuff (i.e. entry.addTransaction)
+// TODO: feel like there has to be a difference between adding stuff and prompting stuff (i.e. entry.addTransaction) this is important for tests?
+// TODO: I'm not sure how to use a handleCommand method here as I need to break and I can't break from a loop in a diff method. I don't want to use if + while statements (want to put whole thing in a method)
 public class Budgeter {
-    private Scanner reader;
     private Prompter prompter;
     private List<Entry> entryList;
 
     // Constructor
     public Budgeter() {
-        reader = new Scanner(System.in);
         prompter = new Prompter();
         entryList = new ArrayList<>();
 
@@ -25,8 +22,7 @@ public class Budgeter {
 
     // EFFECTS: starts Budgeter application
     private void start() {
-        System.out.println("BUDGETING APPLICATION");
-        System.out.println();
+        System.out.println("BUDGETING APPLICATION\n");
 
         while (true) {
             System.out.println("What would you like to do?");
@@ -64,8 +60,7 @@ public class Budgeter {
     }
 
     // TODO: make a separate add entry method? (for testing)
-    // TODO: I'm not sure how to use a handleCommand method here as I need to break and I can't break from a loop in a diff method. I don't want to use if statements
-    // TODO: have to implement set date method to Entry
+    // TODO: I'm not sure how to use a handleCommand method here as I need to break and I can't break from a loop in a diff method. I don't want to use if + while statements (want to put whole thing in a method)
     // MODIFIES: this
     // EFFECTS: pr
     private void addEntry() {
@@ -77,27 +72,41 @@ public class Budgeter {
         System.out.println();
 
     // TODO: make a method for yes/no qs since theres a similar one in entry? (maybe a command handler that handles yes/no questions, and takes the needed object as an add param)
+        // TODO: look at what steven did here with the command handler
         while (true) {
             String answer = prompter.returnUserCommand("Would you like to add a transaction to the new entry? ");
 
-            if (answer.equals("no")) {
-                break;
-            } else if (answer.equals("yes")) {
-                newEntry.addTransaction();
-                break;
-            } else {
-                System.out.println("Please type 'yes' or 'no'.");
-                System.out.println();
-            }
+                if (answer.equals("no")) {
+                    break;
+                } else if (answer.equals("yes")) {
+                    newEntry.addTransaction();
+                    newEntry.promptMoreTransactions();
+                    break;
+                } else {
+                    System.out.println("Please type 'yes' or 'no'.");
+                    System.out.println();
+                }
         }
-
-        newEntry.promptMoreTransactions();
 
         // TODO: make sure it prints out the entry list size too
         System.out.println("**New Entry (" + date + ") successfully added**");
         System.out.println();
 
         entryList.add(newEntry);
+    }
+
+    private boolean HandleCommandYesNo(Entry newEntry, String answer) {
+        if (answer.equals("no")) {
+            return true;
+        } else if (answer.equals("yes")) {
+            newEntry.addTransaction();
+            newEntry.promptMoreTransactions();
+            return true;
+        } else {
+            System.out.println("Please type 'yes' or 'no'.");
+            System.out.println();
+        }
+        return false;
     }
 
     // EFFECTS: prints out transactions
@@ -121,8 +130,6 @@ public class Budgeter {
     private void printOptions() {
         System.out.println("[0] Add a new Entry");
         System.out.println("[1] View all Entries");
-//        System.out.println("[1] Add an Expense");
-//        System.out.println("[2] Show all transactions");
         System.out.println("[exit] Exit application");
         System.out.println();
     }

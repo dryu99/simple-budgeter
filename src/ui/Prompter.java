@@ -1,8 +1,8 @@
 package ui;
 
-import model.enums.RevGenre;
-import model.enums.ExpGenre;
 import model.SimpleDate;
+import model.enums.ExpGenre;
+import model.enums.RevGenre;
 
 import java.util.Scanner;
 
@@ -31,21 +31,33 @@ public class Prompter {
         return reader.nextLine().trim();
     }
 
+    // TODO: do we have to make specification mention exceptions?
     // TODO: make the returned double be in form 0.00
     // EFFECTS: prints out given prompt, then prompts user for a double then returns it
     //          if double isn't given, re-prompt user
     public Double returnUserDouble(String prompt) {
-        System.out.print(prompt + " ");
+//        System.out.print(prompt + " ");
+//
+//        while (!reader.hasNextDouble()) {
+//            reader.nextLine();
+//
+//            System.out.println("Please give a double.");
+//            System.out.println();
+//            System.out.print(prompt + " ");
+//        }
+//
+//        return Double.parseDouble(reader.nextLine());
 
-        while (!reader.hasNextDouble()) {
-            reader.nextLine();
-
-            System.out.println("Please give a double.");
-            System.out.println();
+        while (true) {
             System.out.print(prompt + " ");
+            try {
+                double d = Double.parseDouble(reader.nextLine());
+                return d;
+            } catch (NumberFormatException ime) {
+                System.out.println("Please give a double.\n");
+            }
         }
 
-        return Double.parseDouble(reader.nextLine());
     }
 
     // TODO: how to avoid duplication from this method and returnUserExpGenre method? (put under one method? abstract?)

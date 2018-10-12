@@ -16,15 +16,19 @@ public enum ExpGenre {
     }
 
     public static void printUserInputList() {
-        int i = 0;
+        int i = 1;
 
         System.out.println("-----");
-        // TODO: Are there no get methods for ExpGenre.values()... I want to retrieve sth in the array
         for (ExpGenre eg : ExpGenre.values()) {
-            System.out.println(eg.lowerCaseForm);
+            System.out.println(i + ". " + eg.lowerCaseForm);
             i++;
         }
         System.out.println("-----");
+    }
+
+    // EFFECTS: returns case in lower case form
+    public String toLowerString() {
+        return lowerCaseForm;
     }
 
 }

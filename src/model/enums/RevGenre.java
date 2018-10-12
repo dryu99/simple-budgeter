@@ -12,15 +12,21 @@ public enum RevGenre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
+    // EFFECTS: prints out vertical list of RevGenre cases
     public static void printUserInputList() {
         int i = 0;
+
         System.out.println("-----");
-        // TODO: Are there no get methods for RevGenre.values()... I want to retrieve sth in the array
         for (RevGenre rg : RevGenre.values()) {
-            System.out.println(rg.lowerCaseForm);
+            System.out.println(i + ". " + rg.lowerCaseForm);
             i++;
         }
         System.out.println("-----");
+    }
+
+    // EFFECTS: returns case in lower case form
+    public String toLowerString() {
+        return lowerCaseForm;
     }
 
 }

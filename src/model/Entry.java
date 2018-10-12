@@ -31,8 +31,7 @@ public class Entry {
         while (true) {
             System.out.println("What kind of transaction do you want to add?");
             System.out.println("[0] Revenue");
-            System.out.println("[1] Expense");
-            System.out.println();
+            System.out.println("[1] Expense\n");
 
             String command = prompter.returnUserCommand("User Command: ");
             System.out.println();
@@ -44,8 +43,7 @@ public class Entry {
                 this.promptExpense();
                 break;
             } else {
-                System.out.println("That's not a real command! Try again.");
-                System.out.println();
+                System.out.println("That's not a real command! Try again.\n");
             }
         }
         System.out.println();
@@ -68,9 +66,12 @@ public class Entry {
         newRevenue.setDescription(desc);
         newRevenue.setGenre(genre);
 
+        // TODO: should this line of code go in addRevenue
         System.out.println("**Revenue: " + newRevenue + " added to Entry (" + date + ")**");
         this.addRevenue(newRevenue);
     }
+
+
 
     // TODO: change expense/revenue attribute "description" to sth else, and change the prompt here
     // TODO: so separating the user inputs and the actual adding of the revenue is the right thing to do for tests? How should I apply this systematic design to all methods involving scanners?
@@ -78,16 +79,13 @@ public class Entry {
     // MODIFIES: this
     // EFFECTS: prompts user for expense amount, description, and genre, and adds it to transaction list
     private void promptExpense() {
-        Expense newExpense = new Expense();
         System.out.println("--ADDING EXPENSE TO ENTRY (" + date + ")--");
 
         double amount = prompter.returnUserDouble("How much did you spend?");
         String desc = prompter.returnUserString("Description:");
         ExpGenre genre = prompter.returnUserExpGenre();
 
-        newExpense.setValue(amount);
-        newExpense.setDescription(desc);
-        newExpense.setGenre(genre);
+        Expense newExpense = new Expense(amount, desc, genre);
 
         System.out.println("**Expense: " + newExpense + " added to Entry (" + date + ")**");
         this.addExpense(newExpense);
@@ -104,8 +102,7 @@ public class Entry {
             } else if (answer.equals("yes")) {
                 this.addTransaction();
             } else {
-                System.out.println("Please type 'yes' or 'no'.");
-                System.out.println();
+                System.out.println("Please type 'yes' or 'no'.\n");
             }
         }
     }
@@ -197,7 +194,6 @@ public class Entry {
 
         printRevenues();
         System.out.println();
-
         printExpenses();
     }
 
