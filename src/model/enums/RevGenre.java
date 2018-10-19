@@ -12,9 +12,10 @@ public enum RevGenre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
+    // TODO: get rid of UI stuff here
     // EFFECTS: prints out vertical list of RevGenre cases
     public static void printUserInputList() {
-        int i = 0;
+        int i = 1;
 
         System.out.println("-----");
         for (RevGenre rg : RevGenre.values()) {

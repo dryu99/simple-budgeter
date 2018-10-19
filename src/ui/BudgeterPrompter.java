@@ -1,0 +1,131 @@
+package ui;
+
+import model.Entry;
+import model.EntryManager;
+
+// Budgeting application UI, prompting user for app commands upon initialization
+public class BudgeterPrompter {
+    private Prompter prompter;
+    private EntryPrompter entryPrompter;
+    private EntryManager entryManager;
+
+
+
+    // Constructor
+    public BudgeterPrompter() {
+        prompter = Prompter.getInstance();
+        entryPrompter = EntryPrompter.getInstance();
+        entryManager = EntryManager.getInstance();
+    }
+
+    // EFFECTS: Starts budgeting app, and prompts user for a command.
+    public void start() {
+        System.out.println("BUDGETING APPLICATION\n");
+
+        while (true) {
+            System.out.println("What would you like to do?");
+            printOptions();
+
+            // TODO: do I want to throw an exception if the incorrect user command is given? not sure if i should since there are a distinct number of options
+            String command = prompter.returnUserCommand("User Command: ");
+            System.out.println();
+
+            if (!handleBudgeterCommands(command)) {
+                break;
+            }
+        }
+    }
+
+    // TODO: is it worth making an interface "CommandHandler" with only one method in it
+    // EFFECTS: If valid command is given, execute it and return true. ow print "That's not a real command!" and return true
+    //          If command is "exit" return false instead.
+    private boolean handleBudgeterCommands(String command) {
+        switch (command) {
+            case "0":
+                addEntryCommand();
+                return true;
+            case "exit":
+                System.out.println("See you later!");
+                return false;
+//            case "1":
+//                this.viewAllEntries();
+                default:
+                    System.out.println("That's not a real command! Try again.\n");
+                    return true;
+        }
+    }
+
+    // MODIFIES: EntryManager
+    // EFFECTS: Creates and adds new entry made through user input into EntryManager
+    private void addEntryCommand() {
+        System.out.println("--ADDING ENTRY--");
+
+        Entry newEntry = entryPrompter.createEntry();
+//        entryPrompter.addMoreTransactions(newEntry);
+
+        // TODO: make sure it prints out the entry list size too
+        System.out.println("**New Entry (" + newEntry.getDate() + ") successfully added with "
+                + newEntry.transactionListSize() + " transactions**\n");
+
+        entryManager.addEntry(newEntry);
+    }
+
+//    // EFFECTS: prints out transactions
+//    private void viewAllEntries() {
+//        if (entryManager.isEmpty()) {
+//            System.out.println("No entries have been written yet!");
+//            return;
+//        }
+//
+//        System.out.println("--RECORDED ENTRIES--");
+//        System.out.println();
+//
+//        for (int i = 0, n = entryManager.size(); i < n; i++) {
+//            System.out.print((i + 1) + ": ");
+//            entryManager.get(i).print();
+//            System.out.println();
+//        }
+//    }
+
+    // EFFECTS: prints out budget application options
+    private void printOptions() {
+        System.out.println("[0] Add a new Entry");
+        System.out.println("[1] View all Entries");
+        System.out.println("[exit] Exit application");
+        System.out.println();
+    }
+
+    // TODO: when implementing save/load functionality, put load() and save() at beginning and break; of enter()
+//    @Override
+//    public void load() throws IOException {
+//        List<String> lines = Files.readAllLines(Paths.get("savedtransactionsfile.txt"));
+//        for (String line : lines) {
+//
+//            ArrayList<String> partsOfLine = splitOnSpace(line);
+//
+//            if (partsOfLine.get(0).equals("Revenue")) {
+//                Revenue revenue = new Revenue(Double.parseDouble(partsOfLine.get(1)), "Save-On Payroll", RevGenre.WORK);
+//                transactionList.add(revenue);
+//            } else {
+//                Expense expense = new Expense(Double.parseDouble(partsOfLine.get(1)), "McDonalds", ExpGenre.FOOD);
+//                transactionList.add(expense);
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void save() throws FileNotFoundException, UnsupportedEncodingException {
+//        PrintWriter writer = new PrintWriter("savedtransactionsfile.txt","UTF-8");
+//        for (Transaction t : transactionList) {
+//            String transaction = t.toString();
+//
+//            writer.println(transaction);
+//        }
+//        writer.close();
+//    }
+//
+//    private ArrayList<String> splitOnSpace(String line){
+//        String[] splits = line.split(" ");
+//        return new ArrayList<>(Arrays.asList(splits));
+//    }
+}

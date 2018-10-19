@@ -1,4 +1,4 @@
 package model.exceptions;
 
-public class NullParameterGiven extends Exception {
+public class NullParameterGiven extends RuntimeException {
 }

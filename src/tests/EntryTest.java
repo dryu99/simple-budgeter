@@ -12,30 +12,32 @@ public class EntryTest {
     private Entry testEntry;
     private Revenue testRevenue;
     private Expense testExpense;
+    private SimpleDate testDate;
 
     @Before
     public void setup() {
-        testEntry = new Entry();
+        testDate = new SimpleDate(2, 20, 1999);
+        testEntry = new Entry(testDate);
         testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
         testExpense = new Expense(20, "McDonalds", ExpGenre.FOOD);
     }
 
     @Test
     public void testAddRevenue() {
-        assertEquals(0, testEntry.sizeRevenueList());
+        assertEquals(0, testEntry.revenueListSize());
 
         testEntry.addRevenue(testRevenue);
 
-        assertEquals(1, testEntry.sizeRevenueList());
+        assertEquals(1, testEntry.revenueListSize());
     }
 
     @Test
     public void testAddExpense() {
-        assertEquals(0, testEntry.sizeExpenseList());
+        assertEquals(0, testEntry.expenseListSize());
 
         testEntry.addExpense(testExpense);
 
-        assertEquals(1, testEntry.sizeExpenseList());
+        assertEquals(1, testEntry.expenseListSize());
     }
 
     @Test

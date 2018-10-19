@@ -7,12 +7,18 @@ import model.enums.RevGenre;
 import java.util.Scanner;
 
 // TODO: implement try and catch stuff to reprompt users for invalid inputs
+// SINGLETON CLASS: only one prompter object for budgeting app.
 public class Prompter {
+    private static Prompter instance = new Prompter();
     private Scanner reader;
 
-    public Prompter() {
-        this.reader = new Scanner(System.in);
+    private Prompter() {
+        reader = SingleScanner.getInstance();
     }
+
+    // EFFECTS: returns singular Prompter instance
+    public static Prompter getInstance() { return instance; }
+
 
     // EFFECTS: prints out "User Command: " and returns lower-case user command
     public String returnUserCommand(String prompt) {
@@ -24,11 +30,14 @@ public class Prompter {
         return command;
     }
 
-    // EFFECTS: prints out given prompt, and returns user string
-    public String returnUserString(String prompt) {
-        System.out.print(prompt + " ");
+    // TODO: if I decide not to use the Calendar library, how to implement exception for checking valid dates? The returnUserDateValue would throw the exception "InvalidMonthException" etc and this method would tach it
+    // EFFECTS: Returns a simple date created by user input
+    public SimpleDate returnUserSimpleDate() {
+        int month = returnUserDateValue("Month");
+        int day = returnUserDateValue("Day");
+        int year = returnUserDateValue("Year");
 
-        return reader.nextLine().trim();
+        return new SimpleDate(month, day, year);
     }
 
     // TODO: do we have to make specification mention exceptions?
@@ -36,20 +45,8 @@ public class Prompter {
     // EFFECTS: prints out given prompt, then prompts user for a double then returns it
     //          if double isn't given, re-prompt user
     public Double returnUserDouble(String prompt) {
-//        System.out.print(prompt + " ");
-//
-//        while (!reader.hasNextDouble()) {
-//            reader.nextLine();
-//
-//            System.out.println("Please give a double.");
-//            System.out.println();
-//            System.out.print(prompt + " ");
-//        }
-//
-//        return Double.parseDouble(reader.nextLine());
-
         while (true) {
-            System.out.print(prompt + " ");
+            System.out.print(prompt);
             try {
                 double d = Double.parseDouble(reader.nextLine());
                 return d;
@@ -57,24 +54,21 @@ public class Prompter {
                 System.out.println("Please give a double.\n");
             }
         }
-
     }
 
-    // TODO: how to avoid duplication from this method and returnUserExpGenre method? (put under one method? abstract?)
     // TODO: better to instantiate String genre outside while loop or inside?
+    // TODO: make toLowerCase instaed? will have to change implementation of toString for genres
+    // TODO: how to implement a try-catch here
     // EFFECTS: prompts user for a valid revenue genre, then returns it.
     //          if valid genre isn't given, re-prompt user.
     public RevGenre returnUserRevGenre() {
         String genre;
-
         System.out.println("What type of revenue is this?");
 
         while (true) {
             RevGenre.printUserInputList();
             System.out.print("Choose one of the above: ");
-
-            genre = reader.nextLine();
-            genre = genre.toUpperCase().trim();
+            genre = reader.nextLine().toUpperCase().trim();
 
             for (RevGenre rg : RevGenre.values()) {
                 if (rg.toString().equals(genre)) {
@@ -90,15 +84,12 @@ public class Prompter {
     //          if valid genre isn't given, re-prompt user.
     public ExpGenre returnUserExpGenre() {
         String genre;
-
         System.out.println("What type of expense is this?");
 
         while (true) {
             ExpGenre.printUserInputList();
             System.out.print("Choose one of the above: ");
-
-            genre = reader.nextLine();
-            genre = genre.toUpperCase().trim();
+            genre = reader.nextLine().toUpperCase().trim();
 
             for (ExpGenre eg : ExpGenre.values()) {
                 if (eg.toString().equals(genre)) {
@@ -110,22 +101,22 @@ public class Prompter {
         }
     }
 
-    // TODO: implement checking functionality to reprompt user if non-int input is given (try and catch???)
-    // EFFECTS: prompts user to give month, day, and year.
-    //          returns a respective SimpleDate
-    public SimpleDate returnUserDate() {
-        System.out.println("Please provide the new entry's date in number form.");
-        System.out.print("Month: ");
-        int month = Integer.parseInt(reader.nextLine());
+    // EFFECTS: Prompts user for the specified integer date value and returns it
+    //          if user does not give an integer, throw a NumberFormatException and re-prompt.
+    private int returnUserDateValue(String dateType) {
 
-        System.out.print("Day: ");
-        int day = Integer.parseInt(reader.nextLine());
+        while (true) {
+            System.out.print(dateType + ": ");
 
-        System.out.print("Year: ");
-        int year = Integer.parseInt(reader.nextLine());
-
-        return new SimpleDate(month, day, year);
+            try {
+                int dateValue = Integer.parseInt(reader.nextLine());
+                return dateValue;
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please give a valid " + dateType + "\n");
+            }
+        }
     }
+
 
 
 
