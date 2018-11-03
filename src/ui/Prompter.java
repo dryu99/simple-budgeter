@@ -31,6 +31,7 @@ public class Prompter {
     }
 
     // TODO: if I decide not to use the Calendar library, how to implement exception for checking valid dates? The returnUserDateValue would throw the exception "InvalidMonthException" etc and this method would tach it
+    // TODO: have to add exceptions for invalid dates yaaaaa
     // EFFECTS: Returns a simple date created by user input
     public SimpleDate returnUserSimpleDate() {
         int month = returnUserDateValue("Month");

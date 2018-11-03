@@ -1,4 +1,4 @@
-package model;
+package model.saving;
 
 import java.io.IOException;
 

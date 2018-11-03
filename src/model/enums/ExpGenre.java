@@ -1,7 +1,7 @@
 package model.enums;
 
 // TODO: maybe make one FOOD_AND_DRINK case, but have to figure out the toString form of it
-public enum ExpGenre {
+public enum ExpGenre implements Genre {
     FOOD("Food"),
     DRINK("Drink"),
     SHOPPING("Shopping"),
@@ -15,6 +15,7 @@ public enum ExpGenre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
+    // EFFECTS: re
     public static void printUserInputList() {
         int i = 1;
 
@@ -25,6 +26,8 @@ public enum ExpGenre {
         }
         System.out.println("-----");
     }
+
+
 
     // EFFECTS: returns case in lower case form
     public String toLowerString() {

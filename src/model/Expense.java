@@ -3,27 +3,23 @@ package model;
 import model.enums.ExpGenre;
 
 public class Expense extends Transaction {
-    private ExpGenre genre;
 
     public Expense(double value, String desc, ExpGenre genre) {
-        super(value, desc);
-        this.genre = genre;
+        super(value, desc, genre);
     }
 
     public Expense() {
         super();
-        genre = null;
     }
 
-    // Getters:
-    public ExpGenre getGenre() { return genre; }
-
-    // Setters:
-    public void setGenre(ExpGenre genre) { this.genre = genre; }
-
-    // EFFECTS: returns expense object in string form "Expense: $<value>"
+    // MODIFIES: this
+    // EFFECTS: sets the entry the expense belongs to
     @Override
-    public String toString() {
-        return "$" + value + " - " + description + " (" + genre + ")";
+    public void setEntry(Entry newEntry) {
+        if (entry == null || !entry.equals(newEntry)) {
+            this.entry = newEntry;
+            newEntry.addExpense(this);
+        }
     }
+
 }

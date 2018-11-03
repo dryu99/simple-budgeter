@@ -5,13 +5,13 @@ import model.exceptions.NullParameterGiven;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: give entry a id field?
 // TODO: how to avoid duplication of add/prompt revenue/transaction methods
 
 public class Entry {
     private static int nextEntryId = 1;
     private int id;
     private SimpleDate date;
+    // TODO: transaction manager class? I want to keep these lists separate tho, setting bi=directional relationship will be annoying with two lists
     private List<Revenue> revenueList;
     private List<Expense> expenseList;
 
@@ -28,7 +28,6 @@ public class Entry {
     // Setters:
     public void setDate(SimpleDate date) { this.date = date; }
 
-
     // EFFECTS: returns size of revenue list
     public int revenueListSize() {
         return revenueList.size();
@@ -40,13 +39,31 @@ public class Entry {
     // EFFECTS: returns size of revenue + expense list
     public int transactionListSize() { return revenueListSize() + expenseListSize(); }
 
+    // TODO: add transactions like this? will get rid of duplication, but want to avoid typecasting
+//    public void addTransaction(Transaction t) {
+//        if (t == null) {
+//            throw new NullParameterGiven();
+//        }
+//
+//        if (t instanceof Revenue) {
+//            addRevenue((Revenue) t);
+//        } else if (t instanceof Expense) {
+//            addExpense((Expense) t);
+//        }
+//    }
+
+    // TODO: add exception decsription in specification
     // MODIFIES: this
     // EFFECTS: add revenue to revenue list
     public void addRevenue(Revenue r) {
         if (r == null) {
             throw new NullParameterGiven();
         }
-        revenueList.add(r);
+
+        if (!revenueList.contains(r)) {
+            revenueList.add(r);
+            r.setEntry(this);
+        }
     }
 
     // MODIFIES: this
@@ -55,7 +72,10 @@ public class Entry {
         if (e == null) {
             throw new NullParameterGiven();
         }
-        expenseList.add(e);
+        if (!expenseList.contains(e)) {
+            expenseList.add(e);
+            e.setEntry(this);
+        }
     }
 
     // REQUIRES: r != null
@@ -80,6 +100,7 @@ public class Entry {
         return false;
     }
 
+    // TODO: create a separate class for calculating stats?
     // EFFECTS: returns total revenues of this entry
     public double totalRevenue() {
         double totalRev = 0;
@@ -114,64 +135,90 @@ public class Entry {
     }
 
     public String toCompleteString() {
-        String header = this.toString();
-        return header;
+        String completeString = headerString(this.toString(), "=");
+
+        completeString += revenueString() + "\n";
+        completeString += expenseString() + "\n";
+
+        return completeString;
     }
 
-    // TODO: add statistic print statements add the bottom
-    // EFFECTS: print entry out, showing accumulated revenues and expenses
-    public void print() {
-        System.out.println("ENTRY " + "(" + date + ")");
-        printLine("ENTRY " + "(" + date + ")", "=");
-
-        printRevenues();
-        System.out.println();
-        printExpenses();
-    }
-
-    // EFFECTS: print vertical list of revenues from this revenueList.
-    //          if revenueList is empty, print out "(no revenues for this entry)"
-    private void printRevenues() {
-        System.out.println("Revenues:");
-        printLine("Revenues:", "-");
+    // TODO: is it preferred to write out entire string in one variable
+    // EFFECTS: returns vertical list of revenues from revenues.
+    //          if there are no revenues, return a "no rev" message
+    private String revenueString() {
+        String revenueString = headerString("Revenues:", "-");
 
         if (!revenueList.isEmpty()) {
             for (Revenue r : revenueList) {
-                System.out.println(r);
+                revenueString += r + "\n";
             }
         } else {
-            System.out.println("(no revenues for this entry)");
+            revenueString += "(no revenues for this entry)\n";
         }
+
+        return revenueString;
     }
 
-    // EFFECTS: print vertical list of revenues from this revenueList
-    //          if expense is empty, print out "(no expenses for this entry)"
-    private void printExpenses() {
-        System.out.println("Expenses:");
-        printLine("Expenses:", "-");
+    // EFFECTS: returns vertical list of revenues from revenues.
+    //          if there are no revenues, return a "no rev" message
+    private String expenseString() {
+        String expenseString = headerString("Expenses:", "-");
 
         if (!expenseList.isEmpty()) {
             for (Expense e : expenseList) {
-                System.out.println(e);
+                expenseString += e + "\n";
             }
         } else {
-            System.out.println("(no expenses for this entry)");
+            expenseString += "(no expenses for this entry)\n";
         }
+
+        return expenseString;
     }
 
-    // TODO: after giving each entry a unique id field, take out the if statement here
-    // EFFECTS: prints out line of a given type with length of given string (if type = "=", make length + 3)
-    private void printLine(String str, String lineType) {
-        String line = "";
+    // EFFECTS:
+    private String headerString(String str, String lineType) {
+        String header = str;
+        String headerLine = lineString(header, lineType);
+        return header + "\n" + headerLine + "\n";
+    }
 
-        if (lineType.equals("=")) {
-            line += "===";
-        }
+    // EFFECTS: returns line of a given type with length of given string
+    private String lineString(String str, String lineType) {
+        String line = "";
 
         for (int i = 0, n = str.length(); i < n; i++) {
             line += lineType;
         }
-        System.out.println(line);
+
+        return line;
+    }
+
+    // TODO: redo hashcode and equals, and how to compare lists?
+    // EFFECTS: returns true if entry has same id and date as compared
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        Entry compared = (Entry) o;
+
+        return id == compared.id && date.equals(compared.date);
+    }
+
+    // EFFECTS: returns unique id based on the entry's id and date
+    @Override
+    public int hashCode() {
+        if (date == null) {
+            return id + 7;
+        }
+
+        return id + date.hashCode();
     }
 
 

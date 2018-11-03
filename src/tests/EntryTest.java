@@ -68,6 +68,14 @@ public class EntryTest {
     }
 
     @Test
+    public void testTransactionListSize() {
+        testEntry.addRevenue(testRevenue);
+        testEntry.addExpense(testExpense);
+
+        assertEquals(2, testEntry.transactionListSize());
+    }
+
+    @Test
     public void testTotalRevenue() {
         // Checks that current entry revenue is 0
         assertEquals(0 , testEntry.totalRevenue(), 0.00001);
@@ -104,6 +112,11 @@ public class EntryTest {
         testEntry.addExpense(testExpense);
 
         assertEquals(30-20, testEntry.netValue(), 0.00001);
+    }
+
+    @Test
+    public void testToCompleteString() {
+
     }
 
 

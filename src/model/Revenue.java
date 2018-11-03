@@ -4,30 +4,28 @@ package model;
 import model.enums.RevGenre;
 
 public class Revenue extends Transaction {
-    private RevGenre genre;
 
     public Revenue(double value, String desc, RevGenre genre) {
-        super(value, desc);
-        this.genre = genre;
+        super(value, desc, genre);
     }
 
     public Revenue() {
         super();
-        genre = null;
     }
 
-    // Getters:
-    public RevGenre getGenre() { return genre; }
-
-    // Setters:
-    public void setGenre(RevGenre genre) { this.genre = genre; }
-
-    // EFFECTS: returns revenue object in string form "Revenue: $<value>"
+    // TODO: implement removing functionality
+    // MODIFIES: this
+    // EFFECTS: sets the entry the revenue belongs to
     @Override
-    public String toString() {
-        return "$" + value + " - " + description + " (" + genre + ")";
+    public void setEntry(Entry newEntry) {
+        if (newEntry != null) {
+
+        }
+
+        if (entry == null || !entry.equals(newEntry)) {
+            this.entry = newEntry;
+            newEntry.addRevenue(this);
+        }
     }
-
-
 
 }

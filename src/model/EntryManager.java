@@ -10,6 +10,7 @@ public class EntryManager {
     private static EntryManager instance = new EntryManager();
 
     private List<Entry> entryList;
+    // TODO: create map field
 
     // Constructor:
     private EntryManager() {
@@ -21,7 +22,9 @@ public class EntryManager {
         return instance;
     }
 
-    // TODO: is this a necessary exception to have?
+    // Getters:
+    public List<Entry> getEntryList() { return entryList; }
+
     // MODIFIES: this
     // EFFECTS: if null is given as a parameter, throw NullParameterGiven exception.
     //          ow, add given entry to this entryList
@@ -41,6 +44,7 @@ public class EntryManager {
     public boolean isEmpty() {
         return entryList.isEmpty();
     }
+
 
 
 

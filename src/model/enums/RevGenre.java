@@ -1,7 +1,7 @@
 package model.enums;
 
-// TODO: make one enum where each case has a string form AND a boolean. true = revenue, false = expense??
-public enum RevGenre {
+// TODO have to remove UI funtionality
+public enum RevGenre implements Genre{
     PAYCHEQUE("Paycheque"),
     REIMBURSEMENT("Reimbursement"),
     IOU("IOU");
