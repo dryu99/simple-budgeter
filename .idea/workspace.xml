@@ -2,38 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/EntrySearchManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/TransactionGenreManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/exceptions/InvalidDayException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/exceptions/InvalidMonthException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/exceptions/InvalidYearException.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Expense.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Expense.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Loadable.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Revenue.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Revenue.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Saveable.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Transaction.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Transaction.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/tests/EntryTest.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/tests/EntryTest.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/tests/ExpenseTest.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/tests/ExpenseTest.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/tests/RevenueTest.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/tests/RevenueTest.class" />
-      <change beforePath="$PROJECT_DIR$/src/model/Entry.java" afterPath="$PROJECT_DIR$/src/model/Entry.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/EntryManager.java" afterPath="$PROJECT_DIR$/src/model/EntryManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Expense.java" afterPath="$PROJECT_DIR$/src/model/Expense.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Loadable.java" afterPath="$PROJECT_DIR$/src/model/saving/Loadable.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Revenue.java" afterPath="$PROJECT_DIR$/src/model/Revenue.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Saveable.java" afterPath="$PROJECT_DIR$/src/model/saving/Saveable.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/SimpleDate.java" afterPath="$PROJECT_DIR$/src/model/SimpleDate.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Transaction.java" afterPath="$PROJECT_DIR$/src/model/Transaction.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/enums/RevGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
-      <change beforePath="$PROJECT_DIR$/src/tests/EntryTest.java" afterPath="$PROJECT_DIR$/src/tests/EntryTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ExpenseTest.java" afterPath="$PROJECT_DIR$/src/tests/ExpenseTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/tests/RevenueTest.java" afterPath="$PROJECT_DIR$/src/tests/RevenueTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/tests/SimpleDateTest.java" afterPath="$PROJECT_DIR$/src/tests/SimpleDateTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" afterPath="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Prompter.java" afterPath="$PROJECT_DIR$/src/ui/Prompter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -576,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539930477967</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class.">
+      <created>1541284709311</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541284709311</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -685,7 +668,8 @@
     <MESSAGE value="Fixed recursive bug in promptMoreTransactions. &#10;&#10;Changed Expense and Revenue toStrings" />
     <MESSAGE value="Commit before complete refactor of program. &#10;&#10;Attempting to separate UI functionality from the program model/data/behaviour functionality." />
     <MESSAGE value="Implemented EntryPrompter class.&#10;&#10;Added Exception throwing to methods that add a given parameter to a list. &#10;&#10;Created a singleton Prompter class that provides scanner return methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented EntryPrompter class.&#10;&#10;Added Exception throwing to methods that add a given parameter to a list. &#10;&#10;Created a singleton Prompter class that provides scanner return methods." />
+    <MESSAGE value="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -829,6 +813,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
