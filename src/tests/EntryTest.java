@@ -20,6 +20,7 @@ public class EntryTest {
         testEntry = new Entry(testDate);
         testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
         testExpense = new Expense(20, "McDonalds", ExpGenre.FOOD);
+
     }
 
     @Test
@@ -77,30 +78,22 @@ public class EntryTest {
 
     @Test
     public void testTotalRevenue() {
-        // Checks that current entry revenue is 0
+        // Checks that current manager revenue is 0
         assertEquals(0 , testEntry.totalRevenue(), 0.00001);
 
         testEntry.addRevenue(testRevenue);
 
         assertEquals(30, testEntry.totalRevenue(), 0.00001);
-
-        testEntry.addRevenue(testRevenue);
-
-        assertEquals(60, testEntry.totalRevenue(), 0.00001);
     }
 
     @Test
     public void testTotalExpenses() {
-        // Checks that current entry revenue is 0
+        // Checks that current manager revenue is 0
         assertEquals(0 , testEntry.totalExpenses(), 0.00001);
 
         testEntry.addExpense(testExpense);
 
         assertEquals(20, testEntry.totalExpenses(), 0.00001);
-
-        testEntry.addExpense(testExpense);
-
-        assertEquals(40, testEntry.totalExpenses(), 0.00001);
     }
 
     // TODO: can I test testTotalExpense and testTotalRevenue in here, or is it better to have separate tests
@@ -116,7 +109,18 @@ public class EntryTest {
 
     @Test
     public void testToCompleteString() {
+        testEntry.addRevenue(testRevenue);
+        testEntry.addExpense(testExpense);
 
+        String completeString = testEntry.getId() + ". ENTRY (" + testEntry.getDate() + ")\n";
+        completeString += "====================\n";
+        completeString += "Revenues:\n---------\n";
+        completeString += testRevenue.toString() +"\n\n";
+
+        completeString += "Expenses:\n---------\n";
+        completeString += testExpense.toString() + "\n\n";
+
+        assertEquals(completeString, testEntry.toCompleteString());
     }
 
 

@@ -23,20 +23,20 @@ public class EntryPrompter {
         return instance;
     }
 
-    // EFFECTS: New entry is created with a date prompted by the user.
+    // EFFECTS: New manager is created with a date prompted by the user.
     //          User is then prompted with the option to add additional transactions.
-    //          Returns the entry after user decision is made.
+    //          Returns the manager after user decision is made.
     public Entry createEntry() {
-        System.out.println("Please provide the new entry's date in number form.");
+        System.out.println("Please provide the new manager's date in number form.");
         SimpleDate date = prompter.returnUserSimpleDate();
 
         // TODO: maybe move this line of code to the top or bot of this method, just to make it cleaner. If you do this, you have to re-implement how to set a date.
-        // New entry is created!
+        // New manager is created!
         Entry newEntry = new Entry(date);
 
         // TODO: maybe turn this code into a separate method
         while (true) {
-            String command = prompter.returnUserCommand("Would you like to add a transaction to the entry? ");
+            String command = prompter.returnUserCommand("Would you like to add a transaction to the manager? ");
 
                 if (!handleEntryCommands(command, newEntry)) {
                     break;
@@ -94,7 +94,7 @@ public class EntryPrompter {
     // TODO: change expense/revenue attribute "description" to sth else, and change the prompt here
     // REQUIRES: e != null
     // MODIFIES: e
-    // EFFECTS: prompts user for revenue amount, description, and genre, and adds it to the given entry.
+    // EFFECTS: prompts user for revenue amount, description, and genre, and adds it to the given manager.
     private void addRevenueCommand(Entry e) {
         System.out.println("--ADDING REVENUE TO ENTRY (" + e.getDate() + ")--");
 
@@ -110,7 +110,7 @@ public class EntryPrompter {
 
     // REQUIRES: e != null
     // MODIFIES: e
-    // EFFECTS: prompts user for expense amount, description, and genre, and adds it to the given entry.
+    // EFFECTS: prompts user for expense amount, description, and genre, and adds it to the given manager.
     private void addExpenseCommand(Entry e) {
         System.out.println("--ADDING EXPENSE TO ENTRY (" + e.getDate() + ")--");
 

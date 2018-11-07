@@ -13,19 +13,4 @@ public class Revenue extends Transaction {
         super();
     }
 
-    // TODO: implement removing functionality
-    // MODIFIES: this
-    // EFFECTS: sets the entry the revenue belongs to
-    @Override
-    public void setEntry(Entry newEntry) {
-        if (newEntry != null) {
-
-        }
-
-        if (entry == null || !entry.equals(newEntry)) {
-            this.entry = newEntry;
-            newEntry.addRevenue(this);
-        }
-    }
-
 }

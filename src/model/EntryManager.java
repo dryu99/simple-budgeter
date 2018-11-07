@@ -5,7 +5,7 @@ import model.exceptions.NullParameterGiven;
 import java.util.List;
 import java.util.ArrayList;
 
-// SINGLETON CLASS: only one entry manager for the budgeting app. All entry data stored here.
+// SINGLETON CLASS: only one manager manager for the budgeting app. All manager data stored here.
 public class EntryManager {
     private static EntryManager instance = new EntryManager();
 
@@ -27,7 +27,7 @@ public class EntryManager {
 
     // MODIFIES: this
     // EFFECTS: if null is given as a parameter, throw NullParameterGiven exception.
-    //          ow, add given entry to this entryList
+    //          ow, add given manager to this entryList
     public void addEntry(Entry newEntry) {
         if (newEntry == null) {
             throw new NullParameterGiven();

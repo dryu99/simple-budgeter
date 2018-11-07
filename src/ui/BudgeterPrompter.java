@@ -60,14 +60,14 @@ public class BudgeterPrompter {
     }
 
     // MODIFIES: EntryManager
-    // EFFECTS: Creates and adds new entry made through user input into EntryManager
+    // EFFECTS: Creates and adds new manager made through user input into EntryManager
     private void addEntryCommand() {
         System.out.println("--ADDING ENTRY--");
 
         Entry newEntry = entryPrompter.createEntry();
 //        entryPrompter.addMoreTransactions(newEntry);
 
-        // TODO: make sure it prints out the entry list size too
+        // TODO: make sure it prints out the manager list size too
         System.out.println("**New Entry (" + newEntry.getDate() + ") successfully added with "
                 + newEntry.transactionListSize() + " transactions**\n");
 
@@ -98,7 +98,7 @@ public class BudgeterPrompter {
 
     // TODO: does this method modify 'this' or 'entryManager'
     // MODIFIES: this
-    // EFFECTS: initialize test entry for entryManager
+    // EFFECTS: initialize test manager for entryManager
     private void initialize() {
         Entry testEntry = new Entry(new SimpleDate(2, 20, 1999));
         Revenue revenue = new Revenue(10, "ta payroll", RevGenre.PAYCHEQUE);

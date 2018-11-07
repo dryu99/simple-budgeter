@@ -6,26 +6,28 @@ public abstract class Transaction {
     protected double value;
     protected String description;
     protected Genre genre;
-    protected Entry entry;
+    // TODO: a revenue cannot belong to a expense manager... perhaps implement this behaviour in the adding methods themselves? i.e. the transactionManager addTransaction method will throw an exception if the inproper trans type is added?
+    protected TransactionManager manager;
 
     public Transaction(double value, String desc, Genre genre) {
         this.value = value;
         this.description = desc;
         this.genre = genre;
-        entry = null;
+        manager = null;
     }
 
     public Transaction() {
         value = 0;
         description = null;
         genre = null;
-        entry = null;
+        manager = null;
     }
 
     // Getters:
     public double getValue() { return value; }
     public String getDesc() { return description; }
     public Genre getGenre() { return genre; }
+    public TransactionManager getManager() { return manager; }
 
     // TODO: make this throw a negative amount excpetion
     // Setters:
@@ -33,10 +35,28 @@ public abstract class Transaction {
     public void setDescription(String newDesc) { description = newDesc; }
     public void setGenre(Genre newGenre) { genre = newGenre; }
 
-    // TODO: implement the bi-directional relationship functionality
     // MODIFIES: this, Entry
-    // EFFECTS: sets the entry the transaction belongs to
-    public abstract void setEntry(Entry newEntry);
+    // EFFECTS: sets the manager the transaction belongs to and vice versa.
+    //          as well, deletes the link the old manager had with this transaction
+    public void setManager(TransactionManager newManager) {
+        if (manager != null) {
+            TransactionManager temp = manager;
+            manager = null;
+
+            temp.removeTransaction(this);
+        }
+
+        manager = newManager;
+
+        if (newManager != null && !newManager.contains(this)) {
+            manager.addTransaction(this);
+        }
+
+//        if (manager == null || !manager.equals(newManager)) {
+//            this.manager = newManager;
+//            newManager.addTransaction(this);
+//        }
+    }
 
     // EFFECTS: returns transaction object in string form "$<value> - <desc> (<genre>)"
     @Override

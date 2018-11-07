@@ -82,7 +82,7 @@ public class SimpleDate {
                 year == compared.year;
     }
 
-    // TODO: possible to have same hashCode for certain days? how to prevent
+    // TODO: possible to have same hashCode for certain days? how to prevent (i.e. 2/20/1999 = 2/19/2000)
     // EFFECTS: returns unique id based on the date's id and date
     @Override
     public int hashCode() {
