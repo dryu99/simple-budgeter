@@ -1,6 +1,8 @@
 package model.enums;
 
-// TODO: maybe make one FOOD_AND_DRINK case, but have to figure out the toString form of it
+import model.BudgeterStringer;
+
+// TODO: how to lower coupling here, make just one enum?
 public enum ExpGenre implements Genre {
     FOOD("Food"),
     DRINK("Drink"),
@@ -15,23 +17,38 @@ public enum ExpGenre implements Genre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
-    // EFFECTS: re
-    public static void printUserInputList() {
+    // EFFECTS: returns vertical list of Expense genres
+    public static String stringList() {
+        int longestGenreLength = ExpGenre.greatestLengthGenre().lowerCaseForm.length();
         int i = 1;
 
-        System.out.println("-----");
+        String str = BudgeterStringer.lineString(longestGenreLength,"-") + "\n";
+
         for (ExpGenre eg : ExpGenre.values()) {
-            System.out.println(i + ". " + eg.lowerCaseForm);
+            str += i + ". " + eg.lowerCaseForm + "\n";
             i++;
         }
-        System.out.println("-----");
-    }
+        str += BudgeterStringer.lineString(longestGenreLength,"-");
 
+        return str;
+    }
 
 
     // EFFECTS: returns case in lower case form
     public String toLowerString() {
         return lowerCaseForm;
+    }
+
+    // EFFECTS: returns the RevGenre with the highest char count
+    private static ExpGenre greatestLengthGenre() {
+        ExpGenre genre = FOOD;
+
+        for (ExpGenre eg : ExpGenre.values()) {
+            if (eg.toLowerString().length() > genre.toLowerString().length()) {
+                genre = eg;
+            }
+        }
+        return genre;
     }
 
 }

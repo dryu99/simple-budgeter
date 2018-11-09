@@ -8,7 +8,4 @@ public class Expense extends Transaction {
         super(value, desc, genre);
     }
 
-    public Expense() {
-        super();
-    }
 }

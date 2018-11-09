@@ -1,5 +1,7 @@
 package model.enums;
 
+import model.BudgeterStringer;
+
 // TODO have to remove UI funtionality
 public enum RevGenre implements Genre{
     PAYCHEQUE("Paycheque"),
@@ -12,22 +14,37 @@ public enum RevGenre implements Genre{
         this.lowerCaseForm = lowerCaseForm;
     }
 
-    // TODO: get rid of UI stuff here
-    // EFFECTS: prints out vertical list of RevGenre cases
-    public static void printUserInputList() {
+    // EFFECTS: returns vertical list of Revenue genres
+    public static String stringList() {
+        int longestGenreLength = RevGenre.greatestLengthGenre().lowerCaseForm.length();
         int i = 1;
 
-        System.out.println("-----");
+        String str = BudgeterStringer.lineString(longestGenreLength,"-") + "\n";
+
         for (RevGenre rg : RevGenre.values()) {
-            System.out.println(i + ". " + rg.lowerCaseForm);
+            str += i + ". " + rg.lowerCaseForm + "\n";
             i++;
         }
-        System.out.println("-----");
+        str += BudgeterStringer.lineString(longestGenreLength,"-");
+
+        return str;
     }
 
     // EFFECTS: returns case in lower case form
     public String toLowerString() {
         return lowerCaseForm;
+    }
+
+    // EFFECTS: returns the RevGenre with the highest char count
+    private static RevGenre greatestLengthGenre() {
+        RevGenre genre = PAYCHEQUE;
+
+        for (RevGenre rg : RevGenre.values()) {
+            if (rg.toLowerString().length() > genre.toLowerString().length()) {
+                genre = rg;
+            }
+        }
+        return genre;
     }
 
 }

@@ -123,5 +123,27 @@ public class EntryTest {
         assertEquals(completeString, testEntry.toCompleteString());
     }
 
+    @Test
+    public void testEquals() {
+        SimpleDate testDate2 = new SimpleDate(2, 20, 1999);
+        Entry testEntry2 = new Entry(testDate2);
+
+        // TODO: id is auto incremented when object is created causing this test to fail
+        assertTrue(testEntry.equals(testEntry2));
+    }
+
+    @Test
+    public void testHashCode() {
+        SimpleDate testDate2 = new SimpleDate(2, 20, 1999);
+        Entry testEntry2 = new Entry(testDate2);
+
+        // TODO: id is auto incremented when object is created causing this test to fail
+        assertEquals(testEntry2.hashCode(), testEntry.hashCode());
+    }
+
+
+
+
+
 
 }

@@ -53,16 +53,19 @@ public class BudgeterPrompter {
             case "1":
                 viewEntriesCommand();
                 return true;
+            case "2":
+                editEntryCommand();
                 default:
                     System.out.println("That's not a real command! Try again.\n");
                     return true;
         }
     }
 
+    // TODO: modifies EntryManager or this?
     // MODIFIES: EntryManager
-    // EFFECTS: Creates and adds new manager made through user input into EntryManager
+    // EFFECTS: Creates and adds new Entry made through user input into entry manager
     private void addEntryCommand() {
-        System.out.println("--ADDING ENTRY--");
+        System.out.println(BudgeterStringer.dashedHeaderString("ADDING ENTRY"));
 
         Entry newEntry = entryPrompter.createEntry();
 //        entryPrompter.addMoreTransactions(newEntry);
@@ -81,11 +84,19 @@ public class BudgeterPrompter {
             return;
         }
 
-        System.out.println("--RECORDED ENTRIES--\n");
+        System.out.println(BudgeterStringer.dashedHeaderString("RECORDED ENTRIES"));
 
         for (Entry e : entryManager.getEntryList()) {
             System.out.println(e.toCompleteString());
         }
+    }
+
+    // MODIFIES: EntryManager //TODO: or this?
+    // EFFECTS: edits
+    private void editEntryCommand() {
+        System.out.println(BudgeterStringer.dashedHeaderString("EDITING ENTRY"));
+
+
     }
 
     // EFFECTS: prints out budget application options

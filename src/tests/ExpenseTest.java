@@ -42,8 +42,7 @@ public class ExpenseTest {
 
         testExpense.setManager(testManager);
 
-        assertEquals(testManager, testExpense.getManager());
-        assertTrue(testManager.contains(testExpense));
+        assertBiDirectionalAssociationTestExpenseAndTestManager();
     }
 
     @Test
@@ -51,9 +50,7 @@ public class ExpenseTest {
         assertEquals(null, testExpense.getManager());
 
         testExpense.setManager(testManager);
-        // TODO: make a helper?
-        assertEquals(testManager, testExpense.getManager());
-        assertTrue(testManager.contains(testExpense));
+        assertBiDirectionalAssociationTestExpenseAndTestManager();
 
         testExpense.setManager(null);
 
@@ -69,8 +66,7 @@ public class ExpenseTest {
         assertEquals(null, testExpense.getManager());
 
         testExpense.setManager(testManager);
-        assertEquals(testManager, testExpense.getManager());
-        assertTrue(testManager.contains(testExpense));
+        assertBiDirectionalAssociationTestExpenseAndTestManager();
 
         TransactionManager newManager = new ExpenseManager(null);
         testExpense.setManager(newManager);
@@ -84,6 +80,26 @@ public class ExpenseTest {
     @Test
     public void testToString() {
         assertEquals("$20.00 - McDonalds (FOOD)", testExpense.toString());
+    }
+
+    // TODO: do i need to test situations where the compared object has slightly different content values (e.g. everything's the same except the genre)
+    @Test
+    public void testEquals() {
+        Expense testExpense2 = new Expense(20, "McDonalds", ExpGenre.FOOD);
+
+        assertTrue(testExpense.equals(testExpense2));
+    }
+
+    @Test
+    public void testHashCode() {
+        Expense testExpense2 = new Expense(20, "McDonalds", ExpGenre.FOOD);
+
+        assertEquals(testExpense2.hashCode(), testExpense.hashCode());
+    }
+
+    private void assertBiDirectionalAssociationTestExpenseAndTestManager() {
+        assertEquals(testManager, testExpense.getManager());
+        assertTrue(testManager.contains(testExpense));
     }
 
 

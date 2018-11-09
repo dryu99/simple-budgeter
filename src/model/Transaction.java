@@ -16,13 +16,6 @@ public abstract class Transaction {
         manager = null;
     }
 
-    public Transaction() {
-        value = 0;
-        description = null;
-        genre = null;
-        manager = null;
-    }
-
     // Getters:
     public double getValue() { return value; }
     public String getDesc() { return description; }
@@ -51,11 +44,6 @@ public abstract class Transaction {
         if (newManager != null && !newManager.contains(this)) {
             manager.addTransaction(this);
         }
-
-//        if (manager == null || !manager.equals(newManager)) {
-//            this.manager = newManager;
-//            newManager.addTransaction(this);
-//        }
     }
 
     // EFFECTS: returns transaction object in string form "$<value> - <desc> (<genre>)"

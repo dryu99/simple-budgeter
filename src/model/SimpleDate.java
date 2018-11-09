@@ -4,12 +4,12 @@ import model.exceptions.InvalidDayException;
 import model.exceptions.InvalidMonthException;
 import model.exceptions.InvalidYearException;
 
-// TODO: really look into using a Calendar class lol
 public class SimpleDate {
     private int month;
     private int day;
     private int year;
 
+    // TODO: have exceptions here?
     // Constructors:
     public SimpleDate(int month, int day, int year) {
         this.month = month;
@@ -86,7 +86,8 @@ public class SimpleDate {
     // EFFECTS: returns unique id based on the date's id and date
     @Override
     public int hashCode() {
-        return month + day + year;
+        int result = (month * 7) + (day * 17) + (year * 31);
+        return result;
     }
 
 }

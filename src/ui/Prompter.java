@@ -67,7 +67,7 @@ public class Prompter {
         System.out.println("What type of revenue is this?");
 
         while (true) {
-            RevGenre.printUserInputList();
+            System.out.println(RevGenre.stringList());
             System.out.print("Choose one of the above: ");
             genre = reader.nextLine().toUpperCase().trim();
 
@@ -88,7 +88,7 @@ public class Prompter {
         System.out.println("What type of expense is this?");
 
         while (true) {
-            ExpGenre.printUserInputList();
+            System.out.println(ExpGenre.stringList());
             System.out.print("Choose one of the above: ");
             genre = reader.nextLine().toUpperCase().trim();
 

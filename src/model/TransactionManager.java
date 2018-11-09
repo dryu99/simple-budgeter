@@ -23,7 +23,17 @@ public abstract class TransactionManager {
     // EFFECTS: returns true if transaction list contains given transaction, false ow
     public boolean contains(Transaction t) { return transactionList.contains(t); }
 
-    // TODO: bidirectional conditions dont work there, infinite recursion
+    // TODO: create a separate class for calculating stats?
+    // EFFECTS: returns total revenues of this manager
+    public double totalValue() {
+        double totalVal = 0;
+
+        for (Transaction t : transactionList) {
+            totalVal += t.getValue();
+        }
+        return totalVal;
+    }
+
     // MODIFIES: this, t
     // EFFECTS: if t == null, throw NullParameterGiven exception,
     //          ow add given transaction to transaction list if it hasn't already been,
@@ -45,7 +55,7 @@ public abstract class TransactionManager {
     // EFFECTS: if t == null, throw NullParameterGiven exception,
     //          ow eliminate the given transaction's relationship to this manager
     //          as well, remove the transaction from this manager
-    public void removeTransaction(Transaction t) {
+    public boolean removeTransaction(Transaction t) {
         if (t == null) {
             throw new NullParameterGiven();
         }
@@ -53,6 +63,8 @@ public abstract class TransactionManager {
         if (transactionList.contains(t)) {
             t.setManager(null);
             transactionList.remove(t);
+            return true;
         }
+        return false;
     }
 }

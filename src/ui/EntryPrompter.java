@@ -1,13 +1,10 @@
 package ui;
 
-import model.Entry;
-import model.Expense;
-import model.Revenue;
-import model.SimpleDate;
+import model.*;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 
-// Entry creator through user input
+// CLASS: Responsible for creating complete Entries (with transactions included)
 public class EntryPrompter {
     private static EntryPrompter instance = new EntryPrompter();
 
@@ -96,7 +93,7 @@ public class EntryPrompter {
     // MODIFIES: e
     // EFFECTS: prompts user for revenue amount, description, and genre, and adds it to the given manager.
     private void addRevenueCommand(Entry e) {
-        System.out.println("--ADDING REVENUE TO ENTRY (" + e.getDate() + ")--");
+        System.out.println(BudgeterStringer.dashedHeaderString("ADDING REVENUE TO ENTRY (" + e.getDate() + ")"));
 
         double amount = prompter.returnUserDouble("How much did you receive? ");
         String desc = prompter.returnUserCommand("Description: ");
@@ -112,7 +109,7 @@ public class EntryPrompter {
     // MODIFIES: e
     // EFFECTS: prompts user for expense amount, description, and genre, and adds it to the given manager.
     private void addExpenseCommand(Entry e) {
-        System.out.println("--ADDING EXPENSE TO ENTRY (" + e.getDate() + ")--");
+        System.out.println(BudgeterStringer.dashedHeaderString("ADDING EXPENSE TO ENTRY (" + e.getDate() + ")"));
 
         double amount = prompter.returnUserDouble("How much did you spend? ");
         String desc = prompter.returnUserCommand("Description: ");

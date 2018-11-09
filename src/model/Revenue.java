@@ -9,8 +9,4 @@ public class Revenue extends Transaction {
         super(value, desc, genre);
     }
 
-    public Revenue() {
-        super();
-    }
-
 }

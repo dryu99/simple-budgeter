@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
+// TODO: finish tests
 public class RevenueTest {
     private Transaction testRevenue;
 

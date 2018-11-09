@@ -1,7 +1,5 @@
 package model;
 
-// TODO: how to avoid duplication of add/prompt revenue/transaction methods
-
 public class Entry {
     private static int nextEntryId = 1;
     private int id;
@@ -50,7 +48,6 @@ public class Entry {
 //        }
 //    }
 
-    // TODO: add exception decsription in specification
     // MODIFIES: this
     // EFFECTS: add revenue to revenue list
     public void addRevenue(Revenue r) {
@@ -63,30 +60,29 @@ public class Entry {
         expenseManager.addTransaction(e);
     }
 
-    // TODO: have to implement bidirectional removing
-    // REQUIRES: r != null
+    // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null?
     // MODIFIES: this
     // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
     public boolean removeRevenue(Revenue r) {
-        return revenueManager.removeRevenue(r);
+        return revenueManager.removeTransaction(r);
     }
 
     // REQUIRES: e != null
     // MODIFIES: this
     // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
     public boolean removeExpense(Expense e) {
-        return expenseManager.removeExpense(e);
+        return expenseManager.removeTransaction(e);
     }
 
     // TODO: create a separate class for calculating stats?
     // EFFECTS: returns total revenues of this manager
     public double totalRevenue() {
-        return revenueManager.totalRevenue();
+        return revenueManager.totalValue();
     }
 
     // EFFECTS: returns total expenses of this manager
     public double totalExpenses() {
-        return expenseManager.totalExpenses();
+        return expenseManager.totalValue();
     }
 
     // EFFECTS: returns net value of this manager (revenues - expenses)
@@ -103,7 +99,7 @@ public class Entry {
     }
 
     public String toCompleteString() {
-        String completeString = EntryStringReturner.headerString(this.toString(), "=");
+        String completeString = BudgeterStringer.underlinedHeaderString(this.toString(), "=");
 
         completeString += revenueManager.toString() + "\n";
         completeString += expenseManager.toString() + "\n";
@@ -111,31 +107,31 @@ public class Entry {
         return completeString;
     }
 
-    // TODO: redo hashcode and equals, and how to compare lists?
     // EFFECTS: returns true if manager has same id and date as compared
     @Override
     public boolean equals(Object o) {
-        if (o == null) {
-            return false;
-        }
+        if (o == null) { return false; }
 
-        if (this.getClass() != o.getClass()) {
-            return false;
-        }
+        if (!(o instanceof Entry)) { return false; }
 
         Entry compared = (Entry) o;
 
-        return id == compared.id && date.equals(compared.date);
+        if (id != compared.id) { return false; }
+
+        if (date != null ? !date.equals(compared.date) : compared.date != null) {
+            return false;
+        }
+
+        return true;
     }
 
     // EFFECTS: returns unique id based on the manager's id and date
     @Override
     public int hashCode() {
-        if (date == null) {
-            return id + 7;
-        }
+        int result = id * 7;
+        result += date != null ? date.hashCode() : 0;
 
-        return id + date.hashCode();
+        return result;
     }
 
 

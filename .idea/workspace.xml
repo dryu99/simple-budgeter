@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/EntryStringReturner.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/ExpenseManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/RevenueManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/TransactionManager.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/StatsCalculator.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/tests/BudgeterStringerTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Expense.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Expense.class" />
@@ -14,17 +12,22 @@
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/tests/EntryTest.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/tests/EntryTest.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Budgeter/tests/ExpenseTest.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/tests/ExpenseTest.class" />
       <change beforePath="$PROJECT_DIR$/src/model/Entry.java" afterPath="$PROJECT_DIR$/src/model/Entry.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/EntryManager.java" afterPath="$PROJECT_DIR$/src/model/EntryManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/EntrySearchManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/model/EntryStringReturner.java" afterPath="$PROJECT_DIR$/src/model/BudgeterStringer.java" />
       <change beforePath="$PROJECT_DIR$/src/model/Expense.java" afterPath="$PROJECT_DIR$/src/model/Expense.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/ExpenseManager.java" afterPath="$PROJECT_DIR$/src/model/ExpenseManager.java" />
       <change beforePath="$PROJECT_DIR$/src/model/Revenue.java" afterPath="$PROJECT_DIR$/src/model/Revenue.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/RevenueManager.java" afterPath="$PROJECT_DIR$/src/model/RevenueManager.java" />
       <change beforePath="$PROJECT_DIR$/src/model/SimpleDate.java" afterPath="$PROJECT_DIR$/src/model/SimpleDate.java" />
       <change beforePath="$PROJECT_DIR$/src/model/Transaction.java" afterPath="$PROJECT_DIR$/src/model/Transaction.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/TransactionGenreManager.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/model/TransactionManager.java" afterPath="$PROJECT_DIR$/src/model/TransactionManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/RevGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
       <change beforePath="$PROJECT_DIR$/src/tests/EntryTest.java" afterPath="$PROJECT_DIR$/src/tests/EntryTest.java" />
       <change beforePath="$PROJECT_DIR$/src/tests/ExpenseTest.java" afterPath="$PROJECT_DIR$/src/tests/ExpenseTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/tests/RevenueTest.java" afterPath="$PROJECT_DIR$/src/tests/RevenueTest.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" afterPath="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/EntryPrompter.java" afterPath="$PROJECT_DIR$/src/ui/EntryPrompter.java" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Prompter.java" afterPath="$PROJECT_DIR$/src/ui/Prompter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,42 +43,19 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SimpleBudgeter$ExpenseTest_testEquals.coverage" NAME="ExpenseTest.testEquals Coverage Results" MODIFIED="1541577283474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Entry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Entry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="43" />
-              <folding>
-                <element signature="e#1978#1979#0" expanded="true" />
-                <element signature="e#2026#2027#0" expanded="true" />
-                <element signature="e#2133#2134#0" expanded="true" />
-                <element signature="e#2181#2182#0" expanded="true" />
-                <element signature="e#2428#2429#0" expanded="true" />
-                <element signature="e#2482#2483#0" expanded="true" />
-                <element signature="e#2675#2676#0" expanded="true" />
-                <element signature="e#2729#2730#0" expanded="true" />
-                <element signature="e#2880#2881#0" expanded="true" />
-                <element signature="e#2932#2933#0" expanded="true" />
-                <element signature="e#3024#3025#0" expanded="true" />
-                <element signature="e#3077#3078#0" expanded="true" />
-                <element signature="e#3362#3363#0" expanded="true" />
-                <element signature="e#3419#3420#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpenseManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ExpenseManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-              <folding>
-                <element signature="e#168#169#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,93 +63,89 @@
       <file leaf-file-name="Revenue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Revenue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntryStringReturner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/EntryStringReturner.java">
+      <file leaf-file-name="ExpenseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ExpenseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RevenueManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
+      <file leaf-file-name="BudgeterStringerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/BudgeterStringerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding>
-                <element signature="e#168#169#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/TransactionManager.java">
+      <file leaf-file-name="EntryManagerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/EntryManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transaction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-              <folding>
-                <element signature="e#2122#2123#0" expanded="true" />
-                <element signature="e#2199#2200#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpenseTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/ExpenseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding>
-                <element signature="e#2523#2524#0" expanded="true" />
-                <element signature="e#2604#2605#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntryTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EntryTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/EntryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="95" column="61" lean-forward="false" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+            <state relative-caret-position="1750">
+              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Expense.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Expense.java">
+      <file leaf-file-name="SimpleDate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/SimpleDate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevenueManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpGenre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#240#241#0" expanded="true" />
-              </folding>
+              <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevGenre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,10 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/RevGenre.java" />
-        <option value="$PROJECT_DIR$/src/model/Loadable.java" />
-        <option value="$PROJECT_DIR$/src/model/Saveable.java" />
-        <option value="$PROJECT_DIR$/src/tests/BudgeterTest.java" />
         <option value="$PROJECT_DIR$/savedtransactionsfile.txt" />
         <option value="$PROJECT_DIR$/src/ui/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/ui/UserPrompt.java" />
@@ -216,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/model/exceptions/NullParameterGiven.java" />
         <option value="$PROJECT_DIR$/src/ui/Prompter2.java" />
         <option value="$PROJECT_DIR$/src/ui/SingleScanner.java" />
-        <option value="$PROJECT_DIR$/src/ui/EntryPrompter.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/InvaliDayException.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/InvalidDayException.java" />
@@ -228,32 +199,37 @@
         <option value="$PROJECT_DIR$/src/tests/TransactionGenreManagerTest.java" />
         <option value="$PROJECT_DIR$/src/tests/TransactionTest.java" />
         <option value="$PROJECT_DIR$/src/model/saving/Saveable.java" />
-        <option value="$PROJECT_DIR$/src/tests/RevenueTest.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
-        <option value="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" />
-        <option value="$PROJECT_DIR$/src/ui/Prompter.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
         <option value="$PROJECT_DIR$/src/model/EntryManager.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/Genre.java" />
-        <option value="$PROJECT_DIR$/src/tests/EntryTest.java" />
-        <option value="$PROJECT_DIR$/src/model/EntryStringReturner.java" />
         <option value="$PROJECT_DIR$/src/ui/BudgeterApp.java" />
-        <option value="$PROJECT_DIR$/src/model/ExpenseManager.java" />
-        <option value="$PROJECT_DIR$/src/model/Revenue.java" />
-        <option value="$PROJECT_DIR$/src/model/Expense.java" />
-        <option value="$PROJECT_DIR$/src/model/Entry.java" />
-        <option value="$PROJECT_DIR$/src/model/SimpleDate.java" />
         <option value="$PROJECT_DIR$/src/tests/ExpenseTest.java" />
-        <option value="$PROJECT_DIR$/src/model/TransactionManager.java" />
+        <option value="$PROJECT_DIR$/src/tests/RevenueTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/EntryTest.java" />
         <option value="$PROJECT_DIR$/src/model/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/model/Expense.java" />
+        <option value="$PROJECT_DIR$/src/model/Revenue.java" />
+        <option value="$PROJECT_DIR$/src/model/StatsCalculator.java" />
+        <option value="$PROJECT_DIR$/src/model/EntryStringReturner.java" />
+        <option value="$PROJECT_DIR$/src/model/BudgeterStringReturner.java" />
+        <option value="$PROJECT_DIR$/src/tests/BudgeterStringReturnerTest.java" />
+        <option value="$PROJECT_DIR$/src/model/SimpleDate.java" />
+        <option value="$PROJECT_DIR$/src/model/Entry.java" />
+        <option value="$PROJECT_DIR$/src/model/ExpenseManager.java" />
         <option value="$PROJECT_DIR$/src/model/RevenueManager.java" />
+        <option value="$PROJECT_DIR$/src/model/TransactionManager.java" />
+        <option value="$PROJECT_DIR$/src/ui/EntryPrompter.java" />
+        <option value="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" />
+        <option value="$PROJECT_DIR$/src/model/BudgeterStringer.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/Genre.java" />
+        <option value="$PROJECT_DIR$/src/ui/Prompter.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="35" />
     <option name="y" value="23" />
-    <option name="width" value="1115" />
+    <option name="width" value="1284" />
     <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -272,9 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -305,6 +279,13 @@
               <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -317,6 +298,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,6 +308,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -347,13 +331,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ExpenseTest">
+  <component name="RunManager" selected="Application.BudgeterApp">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="BudgeterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ui.BudgeterApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Budgeter" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -369,7 +372,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="EntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EntryTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -381,8 +384,33 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.EntryTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="EntryTest.testHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Budgeter" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.EntryTest" />
+      <option name="METHOD_NAME" value="testHashCode" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -419,7 +447,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ExpenseTest.testSetTransactionManagerFromNullToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExpenseTest.testHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -431,57 +459,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ExpenseTest" />
-      <option name="METHOD_NAME" value="testSetTransactionManagerFromNullToNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ExpenseTest.testSetTransactionManagerFromNullToSth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Budgeter" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExpenseTest" />
-      <option name="METHOD_NAME" value="testSetTransactionManagerFromNullToSth" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ExpenseTest.testSetTransactionManagerFromSthToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Budgeter" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExpenseTest" />
-      <option name="METHOD_NAME" value="testSetTransactionManagerFromSthToNull" />
+      <option name="METHOD_NAME" value="testHashCode" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -531,19 +509,19 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.EntryTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromNullToSth" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromNullToNull" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromSthToNull" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ExpenseTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ExpenseTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testHashCode" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.EntryTest.testEquals" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.EntryTest.testHashCode" />
+      <item index="4" class="java.lang.String" itemvalue="Application.BudgeterApp" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ExpenseTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromSthToNull" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromNullToSth" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSetTransactionManagerFromNullToNull" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.EntryTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.BudgeterApp" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.EntryTest.testHashCode" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EntryTest.testEquals" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ExpenseTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testHashCode" />
       </list>
     </recent_temporary>
   </component>
@@ -607,39 +585,46 @@
       <option name="project" value="LOCAL" />
       <updated>1541284717253</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Created setters for TransactionManager and Transaction that properly establish and remove bi-directional associations">
+      <created>1541573359693</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541573359694</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EntryTest_testToCompleteString - 2018.11.03 at 16h 38m 52s.xml">
-      <configuration name="EntryTest.testToCompleteString" configurationId="JUnit" />
+    <history-entry file="EntryTest_testEquals - 2018.11.07 at 00h 50m 04s.xml">
+      <configuration name="EntryTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntryTest_testToCompleteString - 2018.11.03 at 16h 38m 54s.xml">
-      <configuration name="EntryTest.testToCompleteString" configurationId="JUnit" />
+    <history-entry file="EntryTest_testEquals - 2018.11.07 at 00h 50m 17s.xml">
+      <configuration name="EntryTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntryTest_testToCompleteString - 2018.11.03 at 16h 39m 43s.xml">
-      <configuration name="EntryTest.testToCompleteString" configurationId="JUnit" />
+    <history-entry file="EntryTest_testHashCode - 2018.11.07 at 00h 54m 10s.xml">
+      <configuration name="EntryTest.testHashCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EntryTest_testHashCode - 2018.11.07 at 11h 33m 27s.xml">
+      <configuration name="EntryTest.testHashCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EntryTest_testHashCode - 2018.11.07 at 11h 33m 31s.xml">
+      <configuration name="EntryTest.testHashCode" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExpenseTest - 2018.11.06 at 22h 11m 24s.xml">
       <configuration name="ExpenseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromNullToNull - 2018.11.06 at 21h 48m 43s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromNullToNull" configurationId="JUnit" />
+    <history-entry file="ExpenseTest - 2018.11.06 at 23h 57m 15s.xml">
+      <configuration name="ExpenseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromNullToSth - 2018.11.06 at 21h 39m 53s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromNullToSth" configurationId="JUnit" />
+    <history-entry file="ExpenseTest_testEquals - 2018.11.06 at 23h 54m 23s.xml">
+      <configuration name="ExpenseTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromNullToSth - 2018.11.06 at 21h 48m 53s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromNullToSth" configurationId="JUnit" />
+    <history-entry file="ExpenseTest_testEquals - 2018.11.06 at 23h 54m 44s.xml">
+      <configuration name="ExpenseTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromNullToSth - 2018.11.06 at 21h 50m 46s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromNullToSth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromSthToNull - 2018.11.06 at 21h 50m 50s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromSthToNull" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExpenseTest_testSetTransactionManagerFromSthToNull - 2018.11.06 at 22h 11m 19s.xml">
-      <configuration name="ExpenseTest.testSetTransactionManagerFromSthToNull" configurationId="JUnit" />
+    <history-entry file="ExpenseTest_testHashCode - 2018.11.06 at 23h 57m 09s.xml">
+      <configuration name="ExpenseTest.testHashCode" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -652,21 +637,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="23" width="1115" height="803" extended-state="0" />
+    <frame x="35" y="23" width="1284" height="803" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26861313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26861313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27422303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24148852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980362" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -675,10 +659,12 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -717,23 +703,16 @@
     <MESSAGE value="Commit before complete refactor of program. &#10;&#10;Attempting to separate UI functionality from the program model/data/behaviour functionality." />
     <MESSAGE value="Implemented EntryPrompter class.&#10;&#10;Added Exception throwing to methods that add a given parameter to a list. &#10;&#10;Created a singleton Prompter class that provides scanner return methods." />
     <MESSAGE value="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class." />
+    <MESSAGE value="Created setters for TransactionManager and Transaction that properly establish and remove bi-directional associations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created setters for TransactionManager and Transaction that properly establish and remove bi-directional associations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tests/Expense.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SavedTransactions" />
     <entry file="file://$PROJECT_DIR$/savedtransactionsfile" />
     <entry file="file://$PROJECT_DIR$/savedtransactionsfile.txt">
@@ -808,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/SimpleDateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="87" column="5" lean-forward="false" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/TransactionGenreManagerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/TransactionTest.java" />
     <entry file="file://$PROJECT_DIR$/src/model/saving/Loadable.java">
@@ -831,11 +803,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+    <entry file="file://$PROJECT_DIR$/src/model/TransactionGenreManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/model/EntrySearchManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/tests/SimpleDateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="688">
+          <caret line="86" column="29" lean-forward="true" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/RevenueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/ExpenseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-752">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/StatsCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/EntryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/EntryPrompter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="95" column="109" lean-forward="false" selection-start-line="95" selection-start-column="109" selection-end-line="95" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/BudgeterPrompter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -846,46 +864,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
+    <entry file="file://$PROJECT_DIR$/src/model/TransactionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        <state relative-caret-position="450">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/TransactionGenreManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/EntrySearchManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Expense.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#397#398#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/BudgeterStringer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Prompter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="90" column="39" lean-forward="false" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/BudgeterApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/BudgeterPrompter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/EntryPrompter.java">
+    <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Entry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/SimpleDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Revenue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ExpenseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/BudgeterStringerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -898,150 +991,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Prompter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/RevenueTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SimpleDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#2613#2614#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/EntryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/EntryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="95" column="61" lean-forward="false" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+        <state relative-caret-position="1750">
+          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/ExpenseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2604#2605#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/EntryStringReturner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Expense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ExpenseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Revenue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="43" />
-          <folding>
-            <element signature="e#1978#1979#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
-            <element signature="e#2181#2182#0" expanded="true" />
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2482#2483#0" expanded="true" />
-            <element signature="e#2675#2676#0" expanded="true" />
-            <element signature="e#2729#2730#0" expanded="true" />
-            <element signature="e#2880#2881#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#3024#3025#0" expanded="true" />
-            <element signature="e#3077#3078#0" expanded="true" />
-            <element signature="e#3362#3363#0" expanded="true" />
-            <element signature="e#3419#3420#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2199#2200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/TransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
