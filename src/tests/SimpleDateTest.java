@@ -1,14 +1,12 @@
 package tests;
 
 import model.SimpleDate;
-import model.exceptions.InvalidDayException;
-import model.exceptions.InvalidMonthException;
-
-import model.exceptions.InvalidYearException;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Calendar;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 // TODO: finish testing setters
 public class SimpleDateTest {
@@ -16,15 +14,26 @@ public class SimpleDateTest {
 
     @Before
     public void setup() {
-        testDate = new SimpleDate(2, 20, 1999);
+        testDate = new SimpleDate(1999, 2, 20);
     }
 
     @Test
-    public void testConstructor() {
-        assertEquals(testDate.getMonth(), 2);
-        assertEquals(testDate.getDay(), 20);
-        assertEquals(testDate.getYear(), 1999);
+    public void testConstructorArgs() {
+        assertEquals(testDate.get(Calendar.YEAR), 1999);
+        assertEquals(testDate.get(Calendar.MONTH), 2);
+        assertEquals(testDate.get(Calendar.DATE), 20);
+
+        assertEquals("February 1999", testDate.getSimpleFormat());
     }
+
+    @Test
+    public void testSetYear() {
+
+    }
+
+
+
+/*
 
     @Test
     public void testSetMonthPass() {
@@ -91,4 +100,6 @@ public class SimpleDateTest {
     public void testToString() {
         assertEquals("2/20/1999", testDate.toString());
     }
+
+    */
 }

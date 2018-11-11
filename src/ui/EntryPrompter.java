@@ -1,6 +1,7 @@
 package ui;
 
 import model.*;
+import model.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 

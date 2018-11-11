@@ -8,6 +8,7 @@ public class RevenueManager extends TransactionManager {
     }
 
     // EFFECTS: returns vertical list of revenues from revenue list.
+    @Override
     public String toString() {
         String revenuesString = BudgeterStringer.underlinedHeaderString("Revenues:", "-");
         revenuesString += BudgeterStringer.bodyString("revenues", transactionList);

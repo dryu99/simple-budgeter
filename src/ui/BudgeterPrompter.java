@@ -3,6 +3,7 @@ package ui;
 // TODO: remove import statements that you dont need (i.e. the test ones)
 // TODO: turn this into a singleton?
 import model.*;
+import model.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 

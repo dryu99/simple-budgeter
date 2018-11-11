@@ -1,6 +1,7 @@
 package tests;
 
 import model.*;
+import model.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 import org.junit.Before;

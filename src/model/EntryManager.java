@@ -5,7 +5,7 @@ import model.exceptions.NullParameterGiven;
 import java.util.List;
 import java.util.ArrayList;
 
-// SINGLETON CLASS: only one manager manager for the budgeting app. All manager data stored here.
+// SINGLETON CLASS: only one Entry manager for the budgeting app. All entry data stored here.
 public class EntryManager {
     private static EntryManager instance = new EntryManager();
 
@@ -44,15 +44,5 @@ public class EntryManager {
     public boolean isEmpty() {
         return entryList.isEmpty();
     }
-
-
-
-
-
-
-
-
-
-
 
 }
