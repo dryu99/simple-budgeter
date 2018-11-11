@@ -2,13 +2,14 @@ package model;
 
 import model.enums.Genre;
 
-public abstract class Transaction {
-    protected double value;
-    protected String description;
-    protected Genre genre;
-    // TODO: a revenue cannot belong to a expense manager... perhaps implement this behaviour in the adding methods themselves? i.e. the transactionManager addTransaction method will throw an exception if the inproper trans type is added?
-    protected TransactionManager manager;
+// CLASS: financial transaction
+public class Transaction {
+    private double value; // +value = revenue, -value = expense
+    private String description;
+    private Genre genre;
+    private TransactionManager manager;
 
+    // Constructor:
     public Transaction(double value, String desc, Genre genre) {
         this.value = value;
         this.description = desc;
@@ -22,7 +23,6 @@ public abstract class Transaction {
     public Genre getGenre() { return genre; }
     public TransactionManager getManager() { return manager; }
 
-    // TODO: make this throw a negative amount excpetion
     // Setters:
     public void setValue(double amount) { this.value = amount; }
     public void setDescription(String newDesc) { description = newDesc; }
@@ -49,6 +49,8 @@ public abstract class Transaction {
     // EFFECTS: returns transaction object in string form "$<value> - <desc> (<genre>)"
     @Override
     public String toString() {
+        double value = this.value < 0 ? this.value * -1 : this.value;
+
         return "$" + value + " - " + description + " (" + genre + ")";
     }
 

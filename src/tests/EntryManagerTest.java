@@ -3,7 +3,7 @@ package tests;
 import model.Entry;
 import model.EntryManager;
 
-import model.SimpleDate;
+import model.date.SimpleDate;
 import model.exceptions.NullParameterGiven;
 import org.junit.Before;
 import org.junit.Test;

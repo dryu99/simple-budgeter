@@ -5,9 +5,9 @@ import model.exceptions.NullParameterGiven;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class TransactionManager {
+public class TransactionManager {
     protected Entry entry;
-    protected List<Transaction> transactionList;
+    private List<Transaction> transactionList;
 
     // EFFECTS: creates a transaction manager that's linked to the given entry
     public TransactionManager(Entry e) {
@@ -67,4 +67,20 @@ public abstract class TransactionManager {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        if (transactionList.get(0).getValue() > 0) {
+            String revenuesString = BudgeterStringer.underlinedHeaderString("Revenues:", "-");
+            revenuesString += BudgeterStringer.bodyString("revenues", transactionList);
+
+            return revenuesString;
+        } else {
+            String expensesString = BudgeterStringer.underlinedHeaderString("Expenses:", "-");
+            expensesString += BudgeterStringer.bodyString("expenses", transactionList);
+
+            return expensesString;
+        }
+    }
+
 }

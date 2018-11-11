@@ -1,20 +1,19 @@
 package model;
 
+import model.date.SimpleDate;
+
 public class Entry {
     private static int nextEntryId = 1;
     private int id;
     private SimpleDate date;
-//    private List<Transaction> transactionList;
-    // TODO: do i want to make the apparent classes ALWAYS be as abstract as possible??? or should I be making separate unique methods for each subclass (i.e. addExpense addRevenue). I could also ovverride the addTransaction method in each class
-    private RevenueManager revenueManager;
-//    private List<Transaction> expenseList;
-    private ExpenseManager expenseManager;
+    private TransactionManager revenueManager;
+    private TransactionManager expenseManager;
 
     public Entry(SimpleDate date) {
         id = nextEntryId++;
         this.date = date;
-        revenueManager = new RevenueManager(this);
-        expenseManager = new ExpenseManager(this);
+        revenueManager = new TransactionManager(this);
+        expenseManager = new TransactionManager(this);
     }
 
     // Getters:
@@ -48,29 +47,30 @@ public class Entry {
 //        }
 //    }
 
+    // TODO: do i want to make one method addTransaction?
     // MODIFIES: this
     // EFFECTS: add revenue to revenue list
-    public void addRevenue(Revenue r) {
+    public void addRevenue(Transaction r) {
         revenueManager.addTransaction(r);
     }
 
     // MODIFIES: this
     // EFFECTS: add expense to expense list
-    public void addExpense(Expense e) {
+    public void addExpense(Transaction e) {
         expenseManager.addTransaction(e);
     }
 
     // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null?
     // MODIFIES: this
     // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
-    public boolean removeRevenue(Revenue r) {
+    public boolean removeRevenue(Transaction r) {
         return revenueManager.removeTransaction(r);
     }
 
     // REQUIRES: e != null
     // MODIFIES: this
     // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
-    public boolean removeExpense(Expense e) {
+    public boolean removeExpense(Transaction e) {
         return expenseManager.removeTransaction(e);
     }
 
@@ -87,17 +87,16 @@ public class Entry {
 
     // EFFECTS: returns net value of this manager (revenues - expenses)
     public double netValue() {
-        double netVal = totalRevenue() - totalExpenses();
-
-        return netVal;
+        return totalRevenue() - totalExpenses();
     }
 
     @Override
-    // EFFECTS: returns manager in string form
+    // EFFECTS: returns manager in simple string form
     public String toString() {
         return id + ". ENTRY " + "(" + date + ")";
     }
 
+    // EFFECTS: returns manager in complete string form listing all revenues and expenses
     public String toCompleteString() {
         String completeString = BudgeterStringer.underlinedHeaderString(this.toString(), "=");
 
@@ -112,11 +111,11 @@ public class Entry {
     public boolean equals(Object o) {
         if (o == null) { return false; }
 
-        if (!(o instanceof Entry)) { return false; }
+        if (this.getClass() != o.getClass()) { return false; }
 
         Entry compared = (Entry) o;
 
-        if (id != compared.id) { return false; }
+//        if (id != compared.id) { return false; }
 
         if (date != null ? !date.equals(compared.date) : compared.date != null) {
             return false;
@@ -125,13 +124,12 @@ public class Entry {
         return true;
     }
 
-    // EFFECTS: returns unique id based on the manager's id and date
+    // EFFECTS: returns unique id based on the manager's date
     @Override
     public int hashCode() {
-        int result = id * 7;
-        result += date != null ? date.hashCode() : 0;
+        int result = date != null ? date.hashCode() : 0;
 
-        return result;
+        return result * 31;
     }
 
 

@@ -7,6 +7,6 @@ public class SingleDateFormatSymbols {
 
     // EFFECTS: returns given month in String form
     public static String getMonth(int month) {
-        return instance.getMonths()[month - 1];
+        return instance.getMonths()[month];
     }
 }

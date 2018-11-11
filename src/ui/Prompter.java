@@ -1,6 +1,6 @@
 package ui;
 
-import model.SimpleDate;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 
@@ -34,11 +34,11 @@ public class Prompter {
     // TODO: have to add exceptions for invalid dates yaaaaa
     // EFFECTS: Returns a simple date created by user input
     public SimpleDate returnUserSimpleDate() {
+        int year = returnUserDateValue("Year");
         int month = returnUserDateValue("Month");
         int day = returnUserDateValue("Day");
-        int year = returnUserDateValue("Year");
 
-        return new SimpleDate(month, day, year);
+        return new SimpleDate(year, month, day);
     }
 
     // TODO: do we have to make specification mention exceptions?

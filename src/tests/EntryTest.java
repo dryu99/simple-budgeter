@@ -1,7 +1,7 @@
 package tests;
 
 import model.*;
-import model.SimpleDate;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 import org.junit.Before;
@@ -11,16 +11,16 @@ import static org.junit.Assert.*;
 
 public class EntryTest {
     private Entry testEntry;
-    private Revenue testRevenue;
-    private Expense testExpense;
+    private Transaction testRevenue;
+    private Transaction testExpense;
     private SimpleDate testDate;
 
     @Before
     public void setup() {
-        testDate = new SimpleDate(2, 20, 1999);
+        testDate = new SimpleDate(1999, 2, 20);
         testEntry = new Entry(testDate);
-        testRevenue = new Revenue(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
-        testExpense = new Expense(20, "McDonalds", ExpGenre.FOOD);
+        testRevenue = new Transaction(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
+        testExpense = new Transaction(20, "McDonalds", ExpGenre.FOOD);
 
     }
 
@@ -114,7 +114,7 @@ public class EntryTest {
         testEntry.addExpense(testExpense);
 
         String completeString = testEntry.getId() + ". ENTRY (" + testEntry.getDate() + ")\n";
-        completeString += "====================\n";
+        completeString += "===================\n";
         completeString += "Revenues:\n---------\n";
         completeString += testRevenue.toString() +"\n\n";
 
@@ -126,7 +126,7 @@ public class EntryTest {
 
     @Test
     public void testEquals() {
-        SimpleDate testDate2 = new SimpleDate(2, 20, 1999);
+        SimpleDate testDate2 = new SimpleDate(1999, 2, 20);
         Entry testEntry2 = new Entry(testDate2);
 
         // TODO: id is auto incremented when object is created causing this test to fail
@@ -135,7 +135,7 @@ public class EntryTest {
 
     @Test
     public void testHashCode() {
-        SimpleDate testDate2 = new SimpleDate(2, 20, 1999);
+        SimpleDate testDate2 = new SimpleDate(1999, 2, 20);
         Entry testEntry2 = new Entry(testDate2);
 
         // TODO: id is auto incremented when object is created causing this test to fail

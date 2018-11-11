@@ -1,7 +1,7 @@
 package ui;
 
 import model.*;
-import model.SimpleDate;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 
@@ -100,7 +100,7 @@ public class EntryPrompter {
         String desc = prompter.returnUserCommand("Description: ");
         RevGenre genre = prompter.returnUserRevGenre();
 
-        Revenue newRevenue = new Revenue(amount, desc, genre);
+        Transaction newRevenue = new Transaction(amount, desc, genre);
 
         System.out.println("**Revenue: " + newRevenue + " added to Entry (" + e.getDate() + ")**\n");
         e.addRevenue(newRevenue);
@@ -116,7 +116,7 @@ public class EntryPrompter {
         String desc = prompter.returnUserCommand("Description: ");
         ExpGenre genre = prompter.returnUserExpGenre();
 
-        Expense newExpense = new Expense(amount, desc, genre);
+        Transaction newExpense = new Transaction(amount, desc, genre);
 
         System.out.println("**Expense: " + newExpense + " added to Entry (" + e.getDate() + ")**\n");
         e.addExpense(newExpense);

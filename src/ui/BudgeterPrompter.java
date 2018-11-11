@@ -3,7 +3,7 @@ package ui;
 // TODO: remove import statements that you dont need (i.e. the test ones)
 // TODO: turn this into a singleton?
 import model.*;
-import model.SimpleDate;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 
@@ -112,9 +112,9 @@ public class BudgeterPrompter {
     // MODIFIES: this
     // EFFECTS: initialize test manager for entryManager
     private void initialize() {
-        Entry testEntry = new Entry(new SimpleDate(2, 20, 1999));
-        Revenue revenue = new Revenue(10, "ta payroll", RevGenre.PAYCHEQUE);
-        Expense expense = new Expense(20, "mcds", ExpGenre.FOOD);
+        Entry testEntry = new Entry(new SimpleDate(1999, 2, 20));
+        Transaction revenue = new Transaction(10, "ta payroll", RevGenre.PAYCHEQUE);
+        Transaction expense = new Transaction(20, "mcds", ExpGenre.FOOD);
         testEntry.addRevenue(revenue);
         testEntry.addExpense(expense);
         entryManager.addEntry(testEntry);
