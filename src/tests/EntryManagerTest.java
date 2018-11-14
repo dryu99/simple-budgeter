@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+// TODO: implement tests
 public class EntryManagerTest {
     private EntryManager testEntryManager;
     private Entry testEntry;
@@ -16,7 +17,7 @@ public class EntryManagerTest {
 
     @Before
     public void setup() {
-        testEntryManager = EntryManager.getInstance();
+        testEntryManager = new EntryManager();
         testDate = new SimpleDate(2, 20, 1999);
         testEntry = new Entry (testDate);
     }

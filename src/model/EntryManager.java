@@ -5,21 +5,13 @@ import model.exceptions.NullParameterGiven;
 import java.util.List;
 import java.util.ArrayList;
 
-// SINGLETON CLASS: only one Entry manager for the budgeting app. All entry data stored here.
+// CLASS: Entry manager for the budgeting app. Stores entry data.
 public class EntryManager {
-    private static EntryManager instance = new EntryManager();
-
     private List<Entry> entryList;
-    // TODO: create map field
 
     // Constructor:
-    private EntryManager() {
+    public EntryManager() {
         entryList = new ArrayList<>();
-    }
-
-    // EFFECTS: returns singular instance of EntryManager
-    public static EntryManager getInstance() {
-        return instance;
     }
 
     // Getters:
@@ -27,12 +19,15 @@ public class EntryManager {
 
     // MODIFIES: this
     // EFFECTS: if null is given as a parameter, throw NullParameterGiven exception.
-    //          ow, add given manager to this entryList
+    //          ow, add given manager to this entryList (if not already in list, ow do nothing)
     public void addEntry(Entry newEntry) {
         if (newEntry == null) {
             throw new NullParameterGiven();
         }
-        entryList.add(newEntry);
+
+        if (!entryList.contains(newEntry)) {
+            entryList.add(newEntry);
+        }
     }
 
     // EFFECTS: returns entryList size
@@ -44,5 +39,8 @@ public class EntryManager {
     public boolean isEmpty() {
         return entryList.isEmpty();
     }
+
+    // EFFECTS: returns true if entryList contains the given entry, false ow
+    public boolean contains(Entry e) { return entryList.contains(e); }
 
 }

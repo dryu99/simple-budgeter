@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.util.Calendar;
 
+import static junit.framework.TestCase.assertTrue;
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
@@ -27,7 +28,7 @@ public class SimpleDateTest {
         assertEquals(testDate.get(Calendar.MONTH), 2);
         assertEquals(testDate.get(Calendar.DATE), 20);
 
-        assertEquals("February 1999", testDate.getSimpleFormat());
+        assertEquals("February 1999", testDate.simpleFormat());
     }
 
     @Test
@@ -94,6 +95,20 @@ public class SimpleDateTest {
     @Test
     public void testToString() {
         assertEquals("20/02/99", testDate.toString());
+    }
+
+    @Test
+    public void testCompareToReturnPositive() {
+        SimpleDate compared = new SimpleDate(1999, 2, 19);
+
+        assertTrue(testDate.compareTo(compared) > 0);
+    }
+
+    @Test
+    public void testCompareToReturnNegative() {
+        SimpleDate compared = new SimpleDate(1999, 2, 21);
+
+        assertTrue(testDate.compareTo(compared) < 0);
     }
 
 

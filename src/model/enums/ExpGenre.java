@@ -1,6 +1,6 @@
 package model.enums;
 
-import model.BudgeterStringer;
+import model.BudgetStringer;
 
 // TODO: how to lower coupling here, make just one enum?
 public enum ExpGenre implements Genre {
@@ -22,13 +22,13 @@ public enum ExpGenre implements Genre {
         int longestGenreLength = ExpGenre.greatestLengthGenre().lowerCaseForm.length();
         int i = 1;
 
-        String str = BudgeterStringer.lineString(longestGenreLength,"-") + "\n";
+        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
 
         for (ExpGenre eg : ExpGenre.values()) {
             str += i + ". " + eg.lowerCaseForm + "\n";
             i++;
         }
-        str += BudgeterStringer.lineString(longestGenreLength,"-");
+        str += BudgetStringer.lineString(longestGenreLength,"-");
 
         return str;
     }
@@ -39,6 +39,7 @@ public enum ExpGenre implements Genre {
         return lowerCaseForm;
     }
 
+    // TODO: should i put this in a diff class (inc cohesion)
     // EFFECTS: returns the RevGenre with the highest char count
     private static ExpGenre greatestLengthGenre() {
         ExpGenre genre = FOOD;

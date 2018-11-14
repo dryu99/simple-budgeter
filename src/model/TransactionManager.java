@@ -5,12 +5,16 @@ import model.exceptions.NullParameterGiven;
 import java.util.ArrayList;
 import java.util.List;
 
+// CLASS: manages transactions in a list
 public class TransactionManager {
-    protected Entry entry;
+    // TODO: how to better identify whether a manager is revenue or expense. need to know because of tostring method, right now im using a boolean opposed to subclasses
+    private boolean isRevenue;
+    private Entry entry;
     private List<Transaction> transactionList;
 
     // EFFECTS: creates a transaction manager that's linked to the given entry
-    public TransactionManager(Entry e) {
+    public TransactionManager(Entry e, boolean type) {
+        isRevenue = type;
         entry = e;
         transactionList = new ArrayList<>();
     }
@@ -38,7 +42,7 @@ public class TransactionManager {
     // EFFECTS: if t == null, throw NullParameterGiven exception,
     //          ow add given transaction to transaction list if it hasn't already been,
     //          as well, assign the transaction to this transaction manager
-    public void addTransaction(Transaction t) {
+    public boolean addTransaction(Transaction t) {
         if (t == null) {
             throw new NullParameterGiven();
         }
@@ -48,7 +52,9 @@ public class TransactionManager {
             if (!this.equals(t.getManager())) {
                 t.setManager(this);
             }
+            return true;
         }
+        return false;
     }
 
     // MODIFIES: this, t
@@ -68,16 +74,17 @@ public class TransactionManager {
         return false;
     }
 
+    // TODO: how to code this better lol
     @Override
     public String toString() {
-        if (transactionList.get(0).getValue() > 0) {
-            String revenuesString = BudgeterStringer.underlinedHeaderString("Revenues:", "-");
-            revenuesString += BudgeterStringer.bodyString("revenues", transactionList);
+        if (isRevenue) {
+            String revenuesString = BudgetStringer.underlinedHeaderString("Revenues:", "-");
+            revenuesString += BudgetStringer.bodyString("revenues", transactionList);
 
             return revenuesString;
         } else {
-            String expensesString = BudgeterStringer.underlinedHeaderString("Expenses:", "-");
-            expensesString += BudgeterStringer.bodyString("expenses", transactionList);
+            String expensesString = BudgetStringer.underlinedHeaderString("Expenses:", "-");
+            expensesString += BudgetStringer.bodyString("expenses", transactionList);
 
             return expensesString;
         }

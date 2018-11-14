@@ -7,7 +7,7 @@ import model.exceptions.InvalidYearException;
 
 import java.util.Calendar;
 
-public class SimpleDate {
+public class SimpleDate implements Comparable<SimpleDate> {
     private Calendar calendar = Calendar.getInstance();
     private String simpleFormat;
 
@@ -33,12 +33,12 @@ public class SimpleDate {
 
         return calendar.get(calField);
     }
-    public String getSimpleFormat() { return simpleFormat; }
+    public String simpleFormat() { return simpleFormat; }
 
     // Setters:
 
     // REQUIRES: valid calField and value
-    // MODIFIES: this //TODO: do i write modifies this here, or where the actual modification is occuring
+    // MODIFIES: this //TODO: do i write modifies this here, or where the actual modification is occuring (in set methods)
     // EFFECTS: throws InvalidDateException if invalid value is given
     //          ow, sets given value to the given calendar field
     public void set(int calField, int value) throws InvalidDateException {
@@ -134,6 +134,12 @@ public class SimpleDate {
         result += simpleFormat.hashCode();
 
         return result;
+    }
+
+    // EFFECTS: returns positive number if this date is older than compared
+    @Override
+    public int compareTo(SimpleDate compared) {
+        return calendar.compareTo(compared.calendar);
     }
 
 

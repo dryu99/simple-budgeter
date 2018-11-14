@@ -21,7 +21,7 @@ public class TransactionTest {
     public void setup() {
         testRevenue = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE);
         testExpense = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
-        testManager = new TransactionManager(null);
+        testManager = new TransactionManager(null,true);
     }
 
     @Test
@@ -79,7 +79,7 @@ public class TransactionTest {
         testRevenue.setManager(testManager);
         assertBiDirectionalAssociationTestTransactionAndTestManager(testRevenue);
 
-        TransactionManager newManager = new TransactionManager(null);
+        TransactionManager newManager = new TransactionManager(null, true);
         testRevenue.setManager(newManager);
 
         assertEquals(newManager, testRevenue.getManager());

@@ -6,23 +6,35 @@ import model.*;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
+import org.json.simple.parser.ParseException;
+import parser.JSONReturner;
+
+import java.io.IOException;
 
 // Budgeting application UI, prompting user for app commands upon initialization
 public class BudgeterPrompter {
     private Prompter prompter;
     private EntryPrompter entryPrompter;
     private EntryManager entryManager;
+    private BudgetManager budgetManager;
 
     // Constructor
     public BudgeterPrompter() {
         prompter = Prompter.getInstance();
         entryPrompter = EntryPrompter.getInstance();
-        entryManager = EntryManager.getInstance();
+        entryManager = new EntryManager();
+        budgetManager = BudgetManager.getInstance();
     }
 
     // EFFECTS: Starts budgeting app, and prompts user for a command.
     public void start() {
-        initialize();
+        try {
+            initialize();
+        } catch (IOException e) {
+            System.out.println("Something went wrong with reading/writing data!");
+        } catch (ParseException e) {
+            System.out.println("Something went from with parsing data!");
+        }
 
         System.out.println("BUDGETING APPLICATION\n");
 
@@ -66,7 +78,7 @@ public class BudgeterPrompter {
     // MODIFIES: EntryManager
     // EFFECTS: Creates and adds new Entry made through user input into entry manager
     private void addEntryCommand() {
-        System.out.println(BudgeterStringer.dashedHeaderString("ADDING ENTRY"));
+        System.out.println(BudgetStringer.dashedHeaderString("ADDING ENTRY"));
 
         Entry newEntry = entryPrompter.createEntry();
 //        entryPrompter.addMoreTransactions(newEntry);
@@ -74,7 +86,7 @@ public class BudgeterPrompter {
         // TODO: make sure it prints out the manager list size too
         System.out.println("**New Entry (" + newEntry.getDate() + ") successfully added with "
                 + newEntry.transactionListSize() + " transactions**\n");
-
+        
         entryManager.addEntry(newEntry);
     }
 
@@ -85,7 +97,7 @@ public class BudgeterPrompter {
             return;
         }
 
-        System.out.println(BudgeterStringer.dashedHeaderString("RECORDED ENTRIES"));
+        System.out.println(BudgetStringer.dashedHeaderString("RECORDED ENTRIES"));
 
         for (Entry e : entryManager.getEntryList()) {
             System.out.println(e.toCompleteString());
@@ -95,7 +107,7 @@ public class BudgeterPrompter {
     // MODIFIES: EntryManager //TODO: or this?
     // EFFECTS: edits
     private void editEntryCommand() {
-        System.out.println(BudgeterStringer.dashedHeaderString("EDITING ENTRY"));
+        System.out.println(BudgetStringer.dashedHeaderString("EDITING ENTRY"));
 
 
     }
@@ -111,12 +123,16 @@ public class BudgeterPrompter {
     // TODO: does this method modify 'this' or 'entryManager'
     // MODIFIES: this
     // EFFECTS: initialize test manager for entryManager
-    private void initialize() {
+    private void initialize() throws IOException, ParseException {
         Entry testEntry = new Entry(new SimpleDate(1999, 2, 20));
-        Transaction revenue = new Transaction(10, "ta payroll", RevGenre.PAYCHEQUE);
-        Transaction expense = new Transaction(20, "mcds", ExpGenre.FOOD);
-        testEntry.addRevenue(revenue);
-        testEntry.addExpense(expense);
+        Transaction revenue1 = new Transaction(10, "TA Payroll", RevGenre.PAYCHEQUE);
+        Transaction expense1 = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
+        Transaction expense2 = JSONReturner.returnParsedExpenseFrom("http://lcboapi.com/products/438457");
+        expense2.setGenre(ExpGenre.DRINK);
+
+        testEntry.addRevenue(revenue1);
+        testEntry.addExpense(expense1);
+        testEntry.addExpense(expense2);
         entryManager.addEntry(testEntry);
     }
 

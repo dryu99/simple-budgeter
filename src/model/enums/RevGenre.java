@@ -1,6 +1,6 @@
 package model.enums;
 
-import model.BudgeterStringer;
+import model.BudgetStringer;
 
 // TODO have to remove UI funtionality
 public enum RevGenre implements Genre{
@@ -19,13 +19,13 @@ public enum RevGenre implements Genre{
         int longestGenreLength = RevGenre.greatestLengthGenre().lowerCaseForm.length();
         int i = 1;
 
-        String str = BudgeterStringer.lineString(longestGenreLength,"-") + "\n";
+        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
 
         for (RevGenre rg : RevGenre.values()) {
             str += i + ". " + rg.lowerCaseForm + "\n";
             i++;
         }
-        str += BudgeterStringer.lineString(longestGenreLength,"-");
+        str += BudgetStringer.lineString(longestGenreLength,"-");
 
         return str;
     }

@@ -2,7 +2,7 @@ package model;
 
 import model.date.SimpleDate;
 
-public class Entry {
+public class Entry implements Comparable<Entry> {
     private static int nextEntryId = 1;
     private int id;
     private SimpleDate date;
@@ -12,8 +12,8 @@ public class Entry {
     public Entry(SimpleDate date) {
         id = nextEntryId++;
         this.date = date;
-        revenueManager = new TransactionManager(this);
-        expenseManager = new TransactionManager(this);
+        revenueManager = new TransactionManager(this,true);
+        expenseManager = new TransactionManager(this, false);
     }
 
     // Getters:
@@ -34,20 +34,7 @@ public class Entry {
     // EFFECTS: returns size of revenue + expense list
     public int transactionListSize() { return revenueListSize() + expenseListSize(); }
 
-    // TODO: add transactions like this? will get rid of duplication, but want to avoid typecasting
-//    public void addTransaction(Transaction t) {
-//        if (t == null) {
-//            throw new NullParameterGiven();
-//        }
-//
-//        if (t instanceof Revenue) {
-//            addTransaction((Revenue) t);
-//        } else if (t instanceof Expense) {
-//            addExpense((Expense) t);
-//        }
-//    }
-
-    // TODO: do i want to make one method addTransaction?
+    // TODO: do i want to make one method addTransaction? (can check the value)
     // MODIFIES: this
     // EFFECTS: add revenue to revenue list
     public void addRevenue(Transaction r) {
@@ -60,7 +47,7 @@ public class Entry {
         expenseManager.addTransaction(e);
     }
 
-    // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null?
+    // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null (even tho that clause is in the manager method)
     // MODIFIES: this
     // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
     public boolean removeRevenue(Transaction r) {
@@ -87,7 +74,7 @@ public class Entry {
 
     // EFFECTS: returns net value of this manager (revenues - expenses)
     public double netValue() {
-        return totalRevenue() - totalExpenses();
+        return totalRevenue() + totalExpenses();
     }
 
     @Override
@@ -98,7 +85,7 @@ public class Entry {
 
     // EFFECTS: returns manager in complete string form listing all revenues and expenses
     public String toCompleteString() {
-        String completeString = BudgeterStringer.underlinedHeaderString(this.toString(), "=");
+        String completeString = BudgetStringer.underlinedHeaderString(this.toString(), "=");
 
         completeString += revenueManager.toString() + "\n";
         completeString += expenseManager.toString() + "\n";
@@ -132,14 +119,9 @@ public class Entry {
         return result * 31;
     }
 
-
-
-
-
-
-
-
-
-
-
+    // EFFECTS: returns a positive number if this Entry's date is older than compared
+    @Override
+    public int compareTo(Entry compared) {
+        return date.compareTo(compared.date);
+    }
 }

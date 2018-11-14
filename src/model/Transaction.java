@@ -2,19 +2,29 @@ package model;
 
 import model.enums.Genre;
 
+import java.text.DecimalFormat;
+
 // CLASS: financial transaction
 public class Transaction {
-    private double value; // +value = revenue, -value = expense
+    private final DecimalFormat df = new DecimalFormat("0.00");
+    private double value; // +value = revenue, -value = expense //TODO: how to prevent human error of accidentally putting/forgetting the - sign, as well preventing accidentally assigning a transaction to an incorrect maanger
     private String description;
     private Genre genre;
     private TransactionManager manager;
 
     // Constructor:
+
+    // EFFECTS: creates a transaction with a value, description, and genre
     public Transaction(double value, String desc, Genre genre) {
         this.value = value;
         this.description = desc;
         this.genre = genre;
         manager = null;
+    }
+
+    // EFFECTS: creatse a transaction with a value and description (no genre)
+    public Transaction(double value, String desc) {
+        this(value, desc, null);
     }
 
     // Getters:
@@ -51,7 +61,7 @@ public class Transaction {
     public String toString() {
         double value = this.value < 0 ? this.value * -1 : this.value;
 
-        return "$" + value + " - " + description + " (" + genre + ")";
+        return "$" + df.format(value) + " - " + description + " (" + genre + ")";
     }
 
     // EFFECTS: returns true if given object is a transaction and contains the same contents
@@ -59,7 +69,7 @@ public class Transaction {
     public boolean equals(Object o) {
         if (o == null) { return false; }
 
-        if (!(o instanceof Transaction)) { return false; }
+        if (this.getClass() != o.getClass()) { return false; }
 
         Transaction compared = (Transaction) o;
 

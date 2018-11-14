@@ -3,8 +3,8 @@ package model;
 import java.util.List;
 
 // TODO: static class vs Singleton (singleton prob when we need an individual class with fields, static classes don't need fields)
-// CLASS: returns specific topic strings related to a Budgeter
-public class BudgeterStringer {
+// CLASS: returns specific multi-lined strings related to a Budgeter
+public class BudgetStringer {
 
     // EFFECTS: returns body part of a given transaction list, displaying the recorded transactions
     public static String bodyString(String str, List<Transaction> transactionList) {

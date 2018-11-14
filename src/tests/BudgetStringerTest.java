@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BudgeterStringerTest {
+public class BudgetStringerTest {
     private List<Transaction> testTransactionList;
 
     @Before

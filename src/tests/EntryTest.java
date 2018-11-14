@@ -10,17 +10,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class EntryTest {
+    private final double DELTA = 10e-8;
     private Entry testEntry;
     private Transaction testRevenue;
     private Transaction testExpense;
-    private SimpleDate testDate;
 
     @Before
     public void setup() {
-        testDate = new SimpleDate(1999, 2, 20);
-        testEntry = new Entry(testDate);
+        testEntry = new Entry(new SimpleDate(1999, 2, 20));
         testRevenue = new Transaction(30, "Save-On Payroll", RevGenre.PAYCHEQUE);
-        testExpense = new Transaction(20, "McDonalds", ExpGenre.FOOD);
+        testExpense = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
 
     }
 
@@ -80,32 +79,32 @@ public class EntryTest {
     @Test
     public void testTotalRevenue() {
         // Checks that current manager revenue is 0
-        assertEquals(0 , testEntry.totalRevenue(), 0.00001);
+        assertEquals(0 , testEntry.totalRevenue(), DELTA);
 
         testEntry.addRevenue(testRevenue);
 
-        assertEquals(30, testEntry.totalRevenue(), 0.00001);
+        assertEquals(30, testEntry.totalRevenue(), DELTA);
     }
 
     @Test
     public void testTotalExpenses() {
-        // Checks that current manager revenue is 0
-        assertEquals(0 , testEntry.totalExpenses(), 0.00001);
+        // Checks that current manager expense is 0
+        assertEquals(0 , testEntry.totalExpenses(), DELTA);
 
         testEntry.addExpense(testExpense);
 
-        assertEquals(20, testEntry.totalExpenses(), 0.00001);
+        assertEquals(-20, testEntry.totalExpenses(), DELTA);
     }
 
     // TODO: can I test testTotalExpense and testTotalRevenue in here, or is it better to have separate tests
     @Test
     public void testNetValue() {
-        assertEquals(0, testEntry.netValue(), 0.00001);
+        assertEquals(0, testEntry.netValue(), DELTA);
 
         testEntry.addRevenue(testRevenue);
         testEntry.addExpense(testExpense);
 
-        assertEquals(30-20, testEntry.netValue(), 0.00001);
+        assertEquals(30-20, testEntry.netValue(), DELTA);
     }
 
     @Test
@@ -140,6 +139,21 @@ public class EntryTest {
 
         // TODO: id is auto incremented when object is created causing this test to fail
         assertEquals(testEntry2.hashCode(), testEntry.hashCode());
+    }
+
+    // TODO: should i test sorting?
+    @Test
+    public void testCompareToReturnPositive() {
+        Entry compared = new Entry(new SimpleDate(1999, 2, 19));
+
+        assertTrue(testEntry.compareTo(compared) > 0);
+    }
+
+    @Test
+    public void testCompareToReturnNegative() {
+        Entry compared = new Entry(new SimpleDate(1999, 2, 21));
+
+        assertTrue(testEntry.compareTo(compared) < 0);
     }
 
 
