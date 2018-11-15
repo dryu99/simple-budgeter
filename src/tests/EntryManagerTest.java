@@ -35,8 +35,14 @@ public class EntryManagerTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testAddEntryFail() throws IllegalArgumentException {
+    public void testAddEntryFailIllegalArg() throws IllegalArgumentException {
             testEntryManager.addEntry(null);
+    }
+
+    // TODO finish this test
+    @Test
+    public void testToString() {
+
     }
 
 

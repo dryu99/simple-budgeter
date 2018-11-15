@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: finish this test
 public class BudgetStringerTest {
     private List<Transaction> testTransactionList;
 

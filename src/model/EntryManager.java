@@ -45,8 +45,6 @@ public class EntryManager {
         }
     }
 
-
-
     // TODO: implement this method, have it run a for loop just returning all entry complete strings
     @Override
     public String toString() {

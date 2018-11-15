@@ -1,6 +1,5 @@
 package tests;
 
-import model.ExpenseManager;
 import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
@@ -13,7 +12,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 // TODO: seems like im testing redundant methods, as things like addtransaction and size are also tested in EntryTest. What do?
-// TODO: test a rev manager and exp manager both (YES) test all transactionMan methods in one class, and tostring methods in two other test classes for rev/exp man
 public class TransactionManagerTest {
     private final double DELTA = 10e-8;
     private TransactionManager testManager;
@@ -25,16 +23,7 @@ public class TransactionManagerTest {
 
     @Test
     public void testConstructor() {
-
-    }
-
-    @Test
-    public void testSize() {
         assertEquals(0, testManager.size());
-
-        loadTransactions();
-
-        assertEquals(3, testManager.size());
     }
 
     @Test
@@ -55,18 +44,23 @@ public class TransactionManagerTest {
     }
 
     @Test
+    public void testAddTransactionSuccess() {
+        assertTrue(testManager.addTransaction(new Transaction(2, "save-ons", RevGenre.PAYCHEQUE)));
+    }
+
+    @Test
     public void testAddDuplicateTransaction() {
         loadTransactions();
         assertFalse(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testAddTransactionFailNullParameter() throws IllegalArgumentException {
+    public void testAddTransactionFailIllegalArg() throws IllegalArgumentException {
         testManager.addTransaction(null);
     }
 
     @Test
-    public void testRemoveTransactionSucess() {
+    public void testRemoveTransactionSuccess() {
         loadTransactions();
         assertTrue(testManager.removeTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
     }
@@ -78,48 +72,9 @@ public class TransactionManagerTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testRemoveTransactionFailNullParamater() throws IllegalArgumentException {
+    public void testRemoveTransactionFailIllegalArg() throws IllegalArgumentException {
         testManager.removeTransaction(null);
     }
-
-    @Test
-    public void testToStringEmptyRevenueManager() {
-        String managerString = "Revenues:\n" +
-                "---------\n" +
-                "(no revenues for this manager)\n";
-
-        assertEquals(managerString, testManager.toString());
-    }
-
-    @Test
-    public void testToStringEmptyExpenseManager() {
-        TransactionManager testExpenseManager = new ExpenseManager(null);
-        String managerString = "Expenses:\n" +
-                "---------\n" +
-                "(no expenses for this manager)\n";
-
-        assertEquals(managerString,testExpenseManager.toString());
-    }
-
-    @Test
-    public void testToStringRevenueManager() {
-        loadTransactions();
-
-        String managerString = "Revenues:\n" +
-                "---------\n" +
-                "$2.00 - save-ons (PAYCHEQUE)\n" +
-                "$5.00 - yon iou (IOU)\n" +
-                "$25.00 - ta (PAYCHEQUE)\n";
-
-        assertEquals(managerString, testManager.toString());
-    }
-
-    // TODO: do this one, you prob want to think about making another private field to represent an expense manager
-    @Test
-    public void testToStringExpenseManager() {
-
-    }
-
 
     private void loadTransactions() {
         assertTrue(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
