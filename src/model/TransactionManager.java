@@ -1,7 +1,5 @@
 package model;
 
-import model.exceptions.NullParameterGiven;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +34,12 @@ public abstract class TransactionManager {
     }
 
     // MODIFIES: this, t
-    // EFFECTS: if t == null, throw NullParameterGiven exception,
+    // EFFECTS: if t == null, throw IllegalArgumentException,
     //          ow add given transaction to transaction list if it hasn't already been,
     //          as well, assign the transaction to this transaction manager
     public boolean addTransaction(Transaction t) {
         if (t == null) {
-            throw new NullParameterGiven();
+            throw new IllegalArgumentException();
         }
 
         if (!transactionList.contains(t)) {
@@ -55,12 +53,12 @@ public abstract class TransactionManager {
     }
 
     // MODIFIES: this, t
-    // EFFECTS: if t == null, throw NullParameterGiven exception,
+    // EFFECTS: if t == null, throw IllegalArgumentException,
     //          ow eliminate the given transaction's relationship to this manager
     //          as well, remove the transaction from this manager
     public boolean removeTransaction(Transaction t) {
         if (t == null) {
-            throw new NullParameterGiven();
+            throw new IllegalArgumentException();
         }
 
         if (transactionList.contains(t)) {

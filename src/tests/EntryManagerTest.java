@@ -2,12 +2,12 @@ package tests;
 
 import model.Entry;
 import model.EntryManager;
-
 import model.date.SimpleDate;
-import model.exceptions.NullParameterGiven;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 // TODO: implement tests
 public class EntryManagerTest {
@@ -23,14 +23,21 @@ public class EntryManagerTest {
     }
 
     @Test
-    public void testAddEntry() {
-        assertEquals(0, testEntryManager.size());
-
-        try {
-            testEntryManager.addEntry(testEntry);
-            assertEquals(1, testEntryManager.size());
-        } catch (NullParameterGiven npg) {
-            System.out.println("Null value was given");
-        }
+    public void testConstructor() {
+        assertEquals("February 1999", testEntryManager.getDate());
+        assertTrue(testEntryManager.isEmpty());
     }
+
+    @Test
+    public void testAddEntry() {
+        testEntryManager.addEntry(testEntry);
+        assertEquals(1, testEntryManager.size());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testAddEntryFail() throws IllegalArgumentException {
+            testEntryManager.addEntry(null);
+    }
+
+
 }

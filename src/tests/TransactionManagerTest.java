@@ -5,7 +5,6 @@ import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
 import model.enums.RevGenre;
-import model.exceptions.NullParameterGiven;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -61,8 +60,8 @@ public class TransactionManagerTest {
         assertFalse(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
     }
 
-    @Test (expected = NullParameterGiven.class)
-    public void testAddTransactionFailNullParameter() throws NullParameterGiven {
+    @Test (expected = IllegalArgumentException.class)
+    public void testAddTransactionFailNullParameter() throws IllegalArgumentException {
         testManager.addTransaction(null);
     }
 
@@ -78,8 +77,8 @@ public class TransactionManagerTest {
         assertFalse(testManager.removeTransaction(new Transaction(200,"save-ons", RevGenre.PAYCHEQUE)));
     }
 
-    @Test (expected = NullParameterGiven.class)
-    public void testRemoveTransactionFailNullParamater() throws NullParameterGiven {
+    @Test (expected = IllegalArgumentException.class)
+    public void testRemoveTransactionFailNullParamater() throws IllegalArgumentException {
         testManager.removeTransaction(null);
     }
 
