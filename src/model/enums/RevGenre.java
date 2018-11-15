@@ -2,8 +2,7 @@ package model.enums;
 
 import model.BudgetStringer;
 
-// TODO have to remove UI funtionality
-public enum RevGenre implements Genre{
+public enum RevGenre implements Genre {
     PAYCHEQUE("Paycheque"),
     REIMBURSEMENT("Reimbursement"),
     IOU("IOU");

@@ -12,8 +12,8 @@ public class Entry implements Comparable<Entry> {
     public Entry(SimpleDate date) {
         id = nextEntryId++;
         this.date = date;
-        revenueManager = new TransactionManager(this,true);
-        expenseManager = new TransactionManager(this, false);
+        revenueManager = new RevenueManager(this);
+        expenseManager = new ExpenseManager(this);
     }
 
     // Getters:

@@ -21,7 +21,7 @@ public class TransactionTest {
     public void setup() {
         testRevenue = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE);
         testExpense = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
-        testManager = new TransactionManager(null,true);
+        testManager = new RevenueManager(null);
     }
 
     @Test
@@ -58,18 +58,18 @@ public class TransactionTest {
 
     @Test
     public void testSetTransactionManagerFromSthToNull() {
-        assertEquals(null, testExpense.getManager());
+        assertEquals(null, testRevenue.getManager());
 
-        testExpense.setManager(testManager);
-        assertBiDirectionalAssociationTestTransactionAndTestManager(testExpense);
+        testRevenue.setManager(testManager);
+        assertBiDirectionalAssociationTestTransactionAndTestManager(testRevenue);
 
-        testExpense.setManager(null);
+        testRevenue.setManager(null);
 
         // testExpense is no longer associated with a manager
-        assertEquals(null, testExpense.getManager());
+        assertEquals(null, testRevenue.getManager());
 
         // testManager no longer contains the previously associated expense
-        assertFalse(testManager.contains(testExpense));
+        assertFalse(testManager.contains(testRevenue));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class TransactionTest {
         testRevenue.setManager(testManager);
         assertBiDirectionalAssociationTestTransactionAndTestManager(testRevenue);
 
-        TransactionManager newManager = new TransactionManager(null, true);
+        TransactionManager newManager = new RevenueManager(null);
         testRevenue.setManager(newManager);
 
         assertEquals(newManager, testRevenue.getManager());

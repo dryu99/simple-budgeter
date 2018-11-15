@@ -6,15 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // CLASS: manages transactions in a list
-public class TransactionManager {
-    // TODO: how to better identify whether a manager is revenue or expense. need to know because of tostring method, right now im using a boolean opposed to subclasses
-    private boolean isRevenue;
+public abstract class TransactionManager {
     private Entry entry;
-    private List<Transaction> transactionList;
+    protected List<Transaction> transactionList;
 
     // EFFECTS: creates a transaction manager that's linked to the given entry
-    public TransactionManager(Entry e, boolean type) {
-        isRevenue = type;
+    public TransactionManager(Entry e) {
         entry = e;
         transactionList = new ArrayList<>();
     }
@@ -72,22 +69,6 @@ public class TransactionManager {
             return true;
         }
         return false;
-    }
-
-    // TODO: how to code this better lol
-    @Override
-    public String toString() {
-        if (isRevenue) {
-            String revenuesString = BudgetStringer.underlinedHeaderString("Revenues:", "-");
-            revenuesString += BudgetStringer.bodyString("revenues", transactionList);
-
-            return revenuesString;
-        } else {
-            String expensesString = BudgetStringer.underlinedHeaderString("Expenses:", "-");
-            expensesString += BudgetStringer.bodyString("expenses", transactionList);
-
-            return expensesString;
-        }
     }
 
 }

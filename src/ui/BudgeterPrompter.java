@@ -15,14 +15,12 @@ import java.io.IOException;
 public class BudgeterPrompter {
     private Prompter prompter;
     private EntryPrompter entryPrompter;
-    private EntryManager entryManager;
     private BudgetManager budgetManager;
 
     // Constructor
     public BudgeterPrompter() {
         prompter = Prompter.getInstance();
         entryPrompter = EntryPrompter.getInstance();
-        entryManager = new EntryManager();
         budgetManager = BudgetManager.getInstance();
     }
 
@@ -86,21 +84,28 @@ public class BudgeterPrompter {
         // TODO: make sure it prints out the manager list size too
         System.out.println("**New Entry (" + newEntry.getDate() + ") successfully added with "
                 + newEntry.transactionListSize() + " transactions**\n");
-        
-        entryManager.addEntry(newEntry);
+
+        budgetManager.addEntry(newEntry);
     }
 
+    // TODO: implement this
     // EFFECTS: prints out transactions
     private void viewEntriesCommand() {
-        if (entryManager.isEmpty()) {
-            System.out.println("No entries have been written yet!");
-            return;
-        }
+//        if (entryManager.isEmpty()) {
+//            System.out.println("No entries have been written yet!");
+//            return;
+//        }
+//
+//        System.out.println(BudgetStringer.dashedHeaderString("RECORDED ENTRIES"));
+//
+//        for (Entry e : entryManager.getEntryList()) {
+//            System.out.println(e.toCompleteString());
+//        }
 
-        System.out.println(BudgetStringer.dashedHeaderString("RECORDED ENTRIES"));
-
-        for (Entry e : entryManager.getEntryList()) {
-            System.out.println(e.toCompleteString());
+        for (EntryManager em : budgetManager.getAllEntryManagers()) {
+            for (Entry e : em.getEntryList()) {
+                System.out.println(e.toCompleteString());
+            }
         }
     }
 
@@ -133,7 +138,7 @@ public class BudgeterPrompter {
         testEntry.addRevenue(revenue1);
         testEntry.addExpense(expense1);
         testEntry.addExpense(expense2);
-        entryManager.addEntry(testEntry);
+        budgetManager.addEntry(testEntry);
     }
 
     // TODO: when implementing save/load functionality, put load() and save() at beginning and break; of enter()

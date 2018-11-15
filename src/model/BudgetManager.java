@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
@@ -16,6 +17,12 @@ public class BudgetManager {
     // EFFECTS: returns only BudgeterManager instance
     public static BudgetManager getInstance() {
         return instance;
+    }
+
+    // Getters:
+
+    public Collection<EntryManager> getAllEntryManagers() {
+        return entryManagers.values();
     }
 
     // TODO: maybe I can overload this method to take in strings and simpledates?
@@ -49,6 +56,14 @@ public class BudgetManager {
         }
 
         entryManagers.get(simpleFormattedDate).addEntry(e);
+    }
+
+    // TODO: Should I be able to add transactions from a budgeter manager?
+
+    // TODO: implement toString to return every entry manager under their respective month
+    @Override
+    public String toString() {
+        return "";
     }
 
 

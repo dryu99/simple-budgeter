@@ -1,5 +1,7 @@
 package tests;
 
+import model.ExpenseManager;
+import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
 import model.enums.RevGenre;
@@ -12,14 +14,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 // TODO: seems like im testing redundant methods, as things like addtransaction and size are also tested in EntryTest. What do?
-// TODO: test a rev manager and exp manager both?
+// TODO: test a rev manager and exp manager both (YES) test all transactionMan methods in one class, and tostring methods in two other test classes for rev/exp man
 public class TransactionManagerTest {
     private final double DELTA = 10e-8;
     private TransactionManager testManager;
 
     @Before
     public void setup() {
-        testManager = new TransactionManager(null, true);
+        testManager = new RevenueManager(null);
     }
 
     @Test
@@ -92,7 +94,7 @@ public class TransactionManagerTest {
 
     @Test
     public void testToStringEmptyExpenseManager() {
-        TransactionManager testExpenseManager = new TransactionManager(null, false);
+        TransactionManager testExpenseManager = new ExpenseManager(null);
         String managerString = "Expenses:\n" +
                 "---------\n" +
                 "(no expenses for this manager)\n";

@@ -2,12 +2,13 @@ package model;
 
 import model.exceptions.NullParameterGiven;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 // CLASS: Entry manager for the budgeting app. Stores entry data.
 public class EntryManager {
     private List<Entry> entryList;
+    private String date;// TODO: should I make this field a String or SimpleDate
 
     // Constructor:
     public EntryManager() {
@@ -16,6 +17,8 @@ public class EntryManager {
 
     // Getters:
     public List<Entry> getEntryList() { return entryList; }
+
+    // TODO: refactor this method so that when you add an entry that has the same date, you don't create a new entry, you just add to the existing entry
 
     // MODIFIES: this
     // EFFECTS: if null is given as a parameter, throw NullParameterGiven exception.
@@ -42,5 +45,11 @@ public class EntryManager {
 
     // EFFECTS: returns true if entryList contains the given entry, false ow
     public boolean contains(Entry e) { return entryList.contains(e); }
+
+    // TODO: implement this method, have it run a for loop just returning all entry complete strings
+    @Override
+    public String toString() {
+        return "";
+    }
 
 }

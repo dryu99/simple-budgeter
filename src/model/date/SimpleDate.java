@@ -5,6 +5,7 @@ import model.exceptions.InvalidDayException;
 import model.exceptions.InvalidMonthException;
 import model.exceptions.InvalidYearException;
 
+import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
 public class SimpleDate implements Comparable<SimpleDate> {
@@ -91,7 +92,7 @@ public class SimpleDate implements Comparable<SimpleDate> {
 
     // EFFECTS: sets simpleFormat field according to current calendar date in string form "<month> <year>"
     private void setSimpleFormat() {
-        String monthStr = SingleDateFormatSymbols.getMonth(calendar.get(Calendar.MONTH));
+        String monthStr = new DateFormatSymbols().getMonths()[calendar.get(Calendar.MONTH)];
         simpleFormat = monthStr + " " + calendar.get((Calendar.YEAR));
     }
 
@@ -127,6 +128,7 @@ public class SimpleDate implements Comparable<SimpleDate> {
     }
 
     // TODO: possible to have same hashCode for certain days? how to prevent (i.e. 2/20/1999 = 2/19/2000)
+    // TODO: should I just have the hashcode be calendar.hashcode()
     // EFFECTS: returns unique id based on the date's y/m/d and simple format
     @Override
     public int hashCode() {
