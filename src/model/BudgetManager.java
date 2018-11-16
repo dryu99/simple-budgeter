@@ -38,7 +38,7 @@ public class BudgetManager {
     //          ow do nothing and return false
     public boolean createEntryManFromDate(String date) {
         if (!entryManagers.containsKey(date)) {
-            entryManagers.put(date, new EntryManager());
+            entryManagers.put(date, new EntryManager(date));
             return true;
         }
         return false;
@@ -63,7 +63,12 @@ public class BudgetManager {
     // TODO: implement toString to return every entry manager under their respective month
     @Override
     public String toString() {
-        return "";
+        String budgetManString = BudgetStringer.underlinedHeaderString("ALL ENTRIES BY MONTH", "=") + "\n";
+        for (EntryManager em : entryManagers.values()) {
+            budgetManString += em + "\n";
+        }
+
+        return budgetManString;
     }
 
 

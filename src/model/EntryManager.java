@@ -9,7 +9,8 @@ public class EntryManager {
     private List<Entry> entryList;
 
     // Constructor:
-    public EntryManager() {
+    public EntryManager(String date) {
+        this.date = date;
         entryList = new ArrayList<>();
     }
 
@@ -48,7 +49,16 @@ public class EntryManager {
     // TODO: implement this method, have it run a for loop just returning all entry complete strings
     @Override
     public String toString() {
-        return "";
+        String entryManString = BudgetStringer.underlinedHeaderString(date, "-");
+        if (entryList.isEmpty()) {
+            return entryManString + "No entries have been written yet!";
+        } else {
+            for (Entry e : entryList) {
+                entryManString += e.toCompleteString() + "\n";
+            }
+        }
+
+        return entryManString.trim();
     }
 
 }

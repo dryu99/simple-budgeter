@@ -90,7 +90,7 @@ public class Entry implements Comparable<Entry> {
         completeString += revenueManager.toString() + "\n";
         completeString += expenseManager.toString() + "\n";
 
-        return completeString;
+        return completeString.trim();
     }
 
     // EFFECTS: returns true if manager has same id and date as compared

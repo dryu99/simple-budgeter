@@ -12,13 +12,13 @@ import parser.JSONReturner;
 import java.io.IOException;
 
 // Budgeting application UI, prompting user for app commands upon initialization
-public class BudgeterPrompter {
+public class BudgetPrompter {
     private Prompter prompter;
     private EntryPrompter entryPrompter;
     private BudgetManager budgetManager;
 
     // Constructor
-    public BudgeterPrompter() {
+    public BudgetPrompter() {
         prompter = Prompter.getInstance();
         entryPrompter = EntryPrompter.getInstance();
         budgetManager = BudgetManager.getInstance();
@@ -102,11 +102,7 @@ public class BudgeterPrompter {
 //            System.out.println(e.toCompleteString());
 //        }
 
-        for (EntryManager em : budgetManager.getAllEntryManagers()) {
-            for (Entry e : em.getEntryList()) {
-                System.out.println(e.toCompleteString());
-            }
-        }
+        System.out.println(budgetManager);
     }
 
     // MODIFIES: EntryManager //TODO: or this?

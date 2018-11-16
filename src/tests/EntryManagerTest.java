@@ -17,8 +17,8 @@ public class EntryManagerTest {
 
     @Before
     public void setup() {
-        testEntryManager = new EntryManager();
         testDate = new SimpleDate(2, 20, 1999);
+        testEntryManager = new EntryManager( "February 1999");
         testEntry = new Entry (testDate);
     }
 
