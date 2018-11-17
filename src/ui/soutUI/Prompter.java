@@ -1,4 +1,4 @@
-package ui;
+package ui.soutUI;
 
 import model.date.SimpleDate;
 import model.enums.ExpGenre;

@@ -3,6 +3,7 @@ package model;
 import java.util.Collection;
 import java.util.HashMap;
 
+// TODO: how to keep entry managers sorted when printing out (lowest date to highest date)
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
 public class BudgetManager {
     private static BudgetManager instance = new BudgetManager();

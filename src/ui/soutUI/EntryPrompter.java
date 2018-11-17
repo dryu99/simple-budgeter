@@ -1,4 +1,4 @@
-package ui;
+package ui.soutUI;
 
 import model.*;
 import model.date.SimpleDate;

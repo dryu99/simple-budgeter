@@ -111,8 +111,7 @@ public class SimpleDate implements Comparable<SimpleDate> {
 
         SimpleDate compared = (SimpleDate) o;
 
-        // TODO: i call these get methods so much, should i just make a field for them in this class?
-        // TODO: but i dont think i can because they arent references and wont update whenever i set new values for the calendar
+        // TODO: i call these get methods so much, should i just make a field for them in this class?  but i dont think i can because they arent references and wont update whenever i set new values for the calendar
 
         if (calendar != null ? get(Calendar.YEAR) != compared.get(Calendar.YEAR) ||
                 get(Calendar.MONTH) != compared.get(Calendar.MONTH) ||

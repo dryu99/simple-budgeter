@@ -1,4 +1,4 @@
-package ui;
+package ui.soutUI;
 
 // TODO: remove import statements that you dont need (i.e. the test ones)
 // TODO: turn this into a singleton?
