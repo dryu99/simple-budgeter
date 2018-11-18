@@ -1,13 +1,13 @@
 package model;
 
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.*;
 
 // TODO: how to keep entry managers sorted when printing out (lowest date to highest date)
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
 public class BudgetManager {
     private static BudgetManager instance = new BudgetManager();
 
+    // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order
     private HashMap<String, EntryManager> entryManagers;
 
     // Constructor:
@@ -21,10 +21,14 @@ public class BudgetManager {
     }
 
     // Getters:
+    public List<String> getMonths() {
+        List<String> monthAsList = new ArrayList<>(entryManagers.keySet());
+        Collections.sort(monthAsList);
 
-    public Collection<EntryManager> getAllEntryManagers() {
-        return entryManagers.values();
+        return monthAsList;
     }
+
+    public Collection<EntryManager> getAllEntryManagers() { return entryManagers.values(); }
 
     // TODO: maybe I can overload this method to take in strings and simpledates?
     // EFFECTS: if date exists, returns entry manager of given date, ow return null
@@ -45,7 +49,7 @@ public class BudgetManager {
         return false;
     }
 
-    // TODO: when should the sorting occur? in this method after an entry is added? or should i create a method that sorts from entry and call it here
+    // TODO: when should the sorting occur? in this method after an entry is added? or should i create a method that sorts from entry and call it here. or should sorting occur only when i need to see the entry on the ui (so when retrieving)
     // MODIFIES: this
     // EFFECTS: adds an entry to the bud-manager in its respective e-manager (according to month),
     //          if no such e-manager exists, create one first and then add entry

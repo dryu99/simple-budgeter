@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-// TODO: static class vs Singleton (singleton prob when we need an individual class with fields, static classes don't need fields)
+// TODO: dont make these methods static
 // CLASS: returns specific multi-lined strings related to a Budgeter
 public class BudgetStringer {
 
