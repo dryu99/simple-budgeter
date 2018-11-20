@@ -20,8 +20,18 @@ public class MonthListDisplay extends JPanel {
     }
 
     private void createComponents() {
-        header = new JLabel("Months");
+        initializeHeader();
+        initializeMonthUIList();
 
+        add(header, BorderLayout.NORTH);
+        add(monthUIList);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: initialize month header
+    private void initializeHeader() {
+        header = new JLabel("Months");
+        header.setHorizontalAlignment(JLabel.CENTER);
     }
 
     // MODIFIES: this
@@ -39,6 +49,6 @@ public class MonthListDisplay extends JPanel {
         monthUIList.setLayoutOrientation(JList.VERTICAL);
         monthUIList.setVisibleRowCount(-1);
 
-        monthUIList.addListSelectionListener(new MonthSelectionListener(mainUI));
+        monthUIList.addListSelectionListener(new MonthSelectionListener(mainUI)); // TODO would need to pass in "this" too? unless monthUIList was declared in SimpleBudgeterUI and had a getter
     }
 }

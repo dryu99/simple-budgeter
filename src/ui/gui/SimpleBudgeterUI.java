@@ -3,22 +3,22 @@ package ui.gui;
 import model.BudgetManager;
 import model.Entry;
 import model.date.SimpleDate;
+import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
 import java.awt.*;
+// TODO: not sure how much I should try to increase cohesion, because a lot of passing begins to occur (show example in github, with how I would have to pass in both MonthListDisplay AND SimpleBudgeterUI to MonthSelectionListener. alternatively i could have made monthUIList a field in SimpleBudgeterUI hmmm as essentially all the fields in this class are those that may be modified/accessed)
 public class SimpleBudgeterUI implements Runnable {
     private static final int WIDTH = 500;
     private static final int HEIGHT = 600;
 
     private JFrame frame;
 
-//    private JList monthUIList;
-//    private DefaultListModel monthsModel;
+    private JList monthUIList;
     private JPanel monthListDisplay;
     private JPanel entryManagerDisplay; // TODO: this will be a TABLE
     private JSplitPane splitPane;
     private ButtonPanel buttonPanel;
-//    private JDesktopPane desktopPane;
 
     private BudgetManager budgetManager;
 
@@ -28,8 +28,7 @@ public class SimpleBudgeterUI implements Runnable {
 
     // Getters:
     public JFrame getFrame() { return frame; }
-//    public JList getMonthUIList() { return monthUIList; }
-//    public DefaultListModel getMonthsModel() { return monthsModel; }
+    public JList getMonthUIList() { return monthUIList; }
     public JPanel getMonthListDisplay() { return monthListDisplay; }
     public JPanel getEntryManagerDisplay() { return entryManagerDisplay; }
     public BudgetManager getBudgetManager() { return budgetManager; }
@@ -56,7 +55,6 @@ public class SimpleBudgeterUI implements Runnable {
     private void createComponents() {
         initializeSplitPane();
         initializeButtonPanel();
-//        initializeListeners();
 
         frame.add(splitPane);
         frame.add(buttonPanel, BorderLayout.SOUTH);
@@ -77,10 +75,29 @@ public class SimpleBudgeterUI implements Runnable {
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, monthScrollPane, entryScrollPane);
     }
 
+    // TODO: see i wish i could just make a month list display class for this panel
     // MODIFIES: this
     // EFFECTS: initializes month list display
     private void initializeMonthListDisplay() {
-        monthListDisplay = new MonthListDisplay(this);
+        monthListDisplay = new JPanel(new BorderLayout());
+
+        JLabel monthLabel = new JLabel("Months"); // TODO: make a nice border for this
+        monthLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        DefaultListModel monthsModel = new DefaultListModel();
+        for (String s : budgetManager) {
+            monthsModel.addElement(s);
+        }
+
+        monthUIList = new JList(monthsModel);
+        monthUIList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        monthUIList.setSelectedIndex(0);
+        monthUIList.setLayoutOrientation(JList.VERTICAL);
+        monthUIList.setVisibleRowCount(-1);
+        monthUIList.addListSelectionListener(new MonthSelectionListener(this));
+
+        monthListDisplay.add(monthLabel, BorderLayout.PAGE_START);
+        monthListDisplay.add(monthUIList);
     }
 
     // TODO: this will be a TABLE
@@ -93,13 +110,6 @@ public class SimpleBudgeterUI implements Runnable {
     private void initializeButtonPanel() {
         buttonPanel = new ButtonPanel(this);
     }
-
-    // MODIFIES: this
-    // EFFECTS: initializes listeners for UI components
-    private void initializeListeners() {
-
-    }
-
 
     public static void main(String[] args) {
         BudgetManager budgetManager = BudgetManager.getInstance();
