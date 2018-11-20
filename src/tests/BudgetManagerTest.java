@@ -6,12 +6,32 @@ import model.EntryManager;
 import model.date.SimpleDate;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 // TODO: how to test singleton classes
 public class BudgetManagerTest {
     private BudgetManager testBudgetManager = BudgetManager.getInstance();
+
+    @Test
+    public void testGetMonths() {
+        assertTrue(testBudgetManager.createEntryManFromDate("April 2018"));
+        assertTrue(testBudgetManager.createEntryManFromDate("February 2018"));
+        assertTrue(testBudgetManager.createEntryManFromDate("February 2019"));
+        assertTrue(testBudgetManager.createEntryManFromDate("January 2019"));
+
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("February 2018");
+        expectedList.add("April 2018");
+        expectedList.add("January 2019");
+        expectedList.add("February 2019");
+
+        assertEquals(expectedList, testBudgetManager.getMonths());
+    }
 
     @Test
     public void testCreateEntryManFromDateSuccess() {

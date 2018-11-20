@@ -7,12 +7,12 @@ import model.exceptions.InvalidYearException;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
-
+// TODO: create a SimpleFormat class and have that as  afield here?
 public class SimpleDate implements Comparable<SimpleDate> {
     private Calendar calendar = Calendar.getInstance();
     private String simpleFormat;
 
-    // TODO: have exceptions here?
+    // TODO: have exceptions here? or maybe have a DROP MENU FOR SELECTING DATES
     // Constructors:
 
     // EFFECTS: creates a date object with today's date info

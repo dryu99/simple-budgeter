@@ -9,7 +9,7 @@ import javax.swing.event.ListSelectionListener;
 
 public class MonthSelectionListener implements ListSelectionListener {
     private JList monthUIList;
-    private JLabel entryManagerDisplay;
+    private JPanel entryManagerDisplay;
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
@@ -28,7 +28,7 @@ public class MonthSelectionListener implements ListSelectionListener {
     }
 
     // tODO: should i declare this method in simplebudgeterui, and just call it from there
+    // TODO: have it be updateTable
     private void updateLabel(Object o) {
-        entryManagerDisplay.setText(o.toString());
     }
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 // TODO: how to keep entry managers sorted when printing out (lowest date to highest date)
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
-public class BudgetManager {
+public class BudgetManager implements Iterable<String> {
     private static BudgetManager instance = new BudgetManager();
 
     // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order
@@ -21,14 +21,15 @@ public class BudgetManager {
     }
 
     // Getters:
+    public Collection<EntryManager> getAllEntryManagers() { return entryManagers.values(); }
+
+    // EFFECTS: returns list of available months in budget manager in order
     public List<String> getMonths() {
         List<String> monthAsList = new ArrayList<>(entryManagers.keySet());
-        Collections.sort(monthAsList);
+        Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getMonthNum));
 
         return monthAsList;
     }
-
-    public Collection<EntryManager> getAllEntryManagers() { return entryManagers.values(); }
 
     // TODO: maybe I can overload this method to take in strings and simpledates?
     // EFFECTS: if date exists, returns entry manager of given date, ow return null
@@ -63,7 +64,7 @@ public class BudgetManager {
         entryManagers.get(simpleFormattedDate).addEntry(e);
     }
 
-    // TODO: Should I be able to add transactions from a budgeter manager?
+    // TODO: Should I be able to add transactions from a budgeter manager? the method should take in an ENTRY and TRANSACTION, and adds the TRANSACTION to the ENTRY
 
     // TODO: implement toString to return every entry manager under their respective month
     @Override
@@ -75,6 +76,52 @@ public class BudgetManager {
 
         return budgetManString;
     }
+
+    // EFFECTS: returns iterator for budget manager's month list
+    @Override
+    public Iterator<String> iterator() {
+        List<String> months = getMonths();
+
+        return months.iterator();
+    }
+
+    // TODO: the sorting doesn't consider the year, so higher numbers are placed before lower ones. have to refactor
+    // EFFECTS: returns the respective num representation of the month of the given date
+    private static int getMonthNum(String date) {
+        if(date.contains(" ")) {
+            date = date.split(" ")[0];
+        }
+
+        switch(date){
+            case "January":
+                return 1;
+            case "February":
+                return 2;
+            case "March":
+                return 3;
+            case "April":
+                return 4;
+            case "May":
+                return 5;
+            case "June":
+                return 6;
+            case "July":
+                return 7;
+            case "August":
+                return 8;
+            case "September":
+                return 9;
+            case "October":
+                return 10;
+            case "November":
+                return 11;
+            case "December":
+                return 12;
+
+        }
+        return -1;
+    }
+
 
 
 }

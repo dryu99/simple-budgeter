@@ -34,7 +34,7 @@ public class Entry implements Comparable<Entry> {
     // EFFECTS: returns size of revenue + expense list
     public int transactionListSize() { return revenueListSize() + expenseListSize(); }
 
-    // TODO: do i want to make one method addTransaction? (can check the value)
+    // TODO: do i want to make one method addTransaction? (can check the value - +)
     // MODIFIES: this
     // EFFECTS: add revenue to revenue list
     public void addRevenue(Transaction r) {
@@ -61,7 +61,6 @@ public class Entry implements Comparable<Entry> {
         return expenseManager.removeTransaction(e);
     }
 
-    // TODO: create a separate class for calculating stats?
     // EFFECTS: returns total revenues of this manager
     public double totalRevenue() {
         return revenueManager.totalValue();
