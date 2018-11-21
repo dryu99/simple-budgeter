@@ -2,33 +2,30 @@ package ui.gui.listeners;
 
 import model.BudgetManager;
 import ui.gui.SimpleBudgeterUI;
+import ui.gui.data_models.EntryManagerTableModel;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class MonthSelectionListener implements ListSelectionListener {
-    private JList monthUIList;
-    private JPanel entryManagerDisplay;
+    private EntryManagerTableModel tableModel;
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
-        monthUIList = ui.getMonthUIList();
-        entryManagerDisplay = ui.getEntryManagerDisplay();
+        tableModel = ui.getTableModel();
+//        tableModel = emd.getTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
         budgetManager = ui.getBudgetManager();
     }
 
     // MODIFIES: // TODO: what to put for modifies
-    // EFFECTS:
+    // EFFECTS: sets new Table data
     @Override
     public void valueChanged(ListSelectionEvent e) {
+        JList monthUIList = (JList) e.getSource();
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
 
-        updateLabel(budgetManager.getEntryManagerFromDate(selectedDate));
+        tableModel.setTableData(budgetManager.getAllTransactionsFromDate(selectedDate));
     }
 
-    // tODO: should i declare this method in simplebudgeterui, and just call it from there
-    // TODO: have it be updateTable
-    private void updateLabel(Object o) {
-    }
 }

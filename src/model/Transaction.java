@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 
 // CLASS: financial transaction
 public class Transaction {
-    private final DecimalFormat df = new DecimalFormat("0.00");
+    private final DecimalFormat df = new DecimalFormat("#.00"); // TODO: how to format doubles and have them stay as doubles, not strings?
     private double value; // +value = revenue, -value = expense //TODO: how to prevent human error of accidentally putting/forgetting the - sign, as well preventing accidentally assigning a transaction to an incorrect maanger
     private String description;
     private Genre genre;
@@ -32,6 +32,13 @@ public class Transaction {
     public String getDesc() { return description; }
     public Genre getGenre() { return genre; }
     public TransactionManager getManager() { return manager; }
+
+    // EFFECTS: returns formatted value of transaction (no - signs, $, and decimals) //TODO want it to return double not string
+    public String getFormattedValue() {
+        double value = this.value < 0 ? this.value * -1 : this.value;
+
+        return "$" + df.format(value);
+    }
 
     // Setters:
     public void setValue(double amount) { this.value = amount; }

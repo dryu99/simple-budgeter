@@ -18,6 +18,20 @@ public class EntryManager {
     public String getDate() { return date; }
     public List<Entry> getEntryList() { return entryList; }
 
+    // TODO: test this method
+    public List<Transaction> getAllTransactions() {
+        List<Transaction> transactions = new ArrayList<>();
+
+        for (Entry e : entryList) {
+            for (Transaction t : e.getTransactions()) { //TODO implement iterable?
+                transactions.add(t);
+            }
+        }
+
+        return transactions;
+    }
+
+
     // EFFECTS: returns entryList size
     public int size() {
         return entryList.size();

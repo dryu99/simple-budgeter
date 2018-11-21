@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/data_models/EntryManagerTableModel.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" afterPath="$PROJECT_DIR$/out/production/Budgeter/model/Entry.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Budgeter/model/Transaction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/model/BudgetManager.java" afterPath="$PROJECT_DIR$/src/model/BudgetManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/Entry.java" afterPath="$PROJECT_DIR$/src/model/Entry.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/EntryManager.java" afterPath="$PROJECT_DIR$/src/model/EntryManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/Transaction.java" afterPath="$PROJECT_DIR$/src/model/Transaction.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/TransactionManager.java" afterPath="$PROJECT_DIR$/src/model/TransactionManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" afterPath="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java" afterPath="$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" afterPath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" afterPath="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,42 +40,37 @@
       <file leaf-file-name="MonthSelectionListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntryManagerDisplay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoxLayout.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/BoxLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+            <state relative-caret-position="308">
+              <caret line="27" column="57" lean-forward="false" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4011#4012#0" expanded="true" />
-                <element signature="e#4078#4079#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntryManagerTableModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ui/gui/data_models/EntryManagerTableModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractTableModel.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/table/AbstractTableModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1736">
+              <caret line="196" column="16" lean-forward="false" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+              <folding>
+                <element signature="e#3194#3195#0" expanded="true" />
+                <element signature="e#3229#3230#0" expanded="true" />
+                <element signature="e#5610#5611#0" expanded="true" />
+                <element signature="e#5669#5670#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,32 +79,8 @@
       <file leaf-file-name="AddButtonListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="195">
               <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonthListDisplay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="192" lean-forward="false" selection-start-line="51" selection-start-column="192" selection-end-line="51" selection-end-column="192" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ButtonPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -108,8 +89,8 @@
       <file leaf-file-name="BudgetManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/BudgetManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+            <state relative-caret-position="170">
+              <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
               <folding>
                 <element signature="e#538#539#0" expanded="true" />
                 <element signature="e#585#586#0" expanded="true" />
@@ -120,27 +101,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BudgetManagerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/BudgetManagerTest.java">
+      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/String.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="194">
+              <caret line="2421" column="0" lean-forward="false" selection-start-line="2421" selection-start-column="0" selection-end-line="2421" selection-end-column="0" />
               <folding>
-                <element signature="e#1203#1204#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#94636#94637#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddingEntryFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/AddingEntryFrame.java">
+      <file leaf-file-name="ButtonPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/tests/SimpleDateTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/EntryTest.java" />
         <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
         <option value="$PROJECT_DIR$/src/parser/Main.java" />
         <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
@@ -187,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/model/StatsTracker.java" />
         <option value="$PROJECT_DIR$/src/model/statistics/StatsTracker.java" />
         <option value="$PROJECT_DIR$/src/model/statistics/TransactionStats.java" />
-        <option value="$PROJECT_DIR$/src/model/TransactionManager.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/NullParameterGiven.java" />
         <option value="$PROJECT_DIR$/src/tests/ExpenseManagerTest.java" />
         <option value="$PROJECT_DIR$/src/tests/RevenueManagerTest.java" />
@@ -199,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/ui/BudgeterPrompter.java" />
         <option value="$PROJECT_DIR$/src/ui/BudgetPrompter.java" />
         <option value="$PROJECT_DIR$/src/tests/EntryManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/model/EntryManager.java" />
         <option value="$PROJECT_DIR$/src/ui/SingleScanner.java" />
         <option value="$PROJECT_DIR$/src/ui/soutUI/BudgeterApp.java" />
         <option value="$PROJECT_DIR$/src/ui/soutUI/SingleScanner.java" />
@@ -211,18 +185,22 @@
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/ButtonPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/AddFrame.java" />
-        <option value="$PROJECT_DIR$/src/model/Entry.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/AddingEntryFrame.java" />
         <option value="$PROJECT_DIR$/src/model/date/SimpleDate.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java" />
         <option value="$PROJECT_DIR$/src/tests/BudgetManagerTest.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerTable.java" />
+        <option value="$PROJECT_DIR$/src/model/TransactionManager.java" />
+        <option value="$PROJECT_DIR$/src/model/EntryManager.java" />
+        <option value="$PROJECT_DIR$/src/model/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
+        <option value="$PROJECT_DIR$/src/model/Entry.java" />
         <option value="$PROJECT_DIR$/src/model/BudgetManager.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" />
-        <option value="$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java" />
-        <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/data_models/EntryManagerTableModel.java" />
       </list>
     </option>
   </component>
@@ -247,10 +225,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,12 +256,6 @@
               <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -301,12 +271,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="listeners" type="462c0819:PsiDirectoryNode" />
+              <item name="data_models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -680,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542704734804</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Refactored SimpleBudgeterUI to have implementation of components inside of it, instead of in unique component classes. Essentially reverted back from the previous commit.">
+      <created>1542710474033</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1542710474033</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -726,7 +705,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="807" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -739,12 +717,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16138126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16138126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24913494" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39767778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06676342" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -753,6 +730,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -778,69 +756,16 @@
     <MESSAGE value="Created a SimpleBudgeterUI class and started basic implementation of UI. Currently it implements Runnable." />
     <MESSAGE value="Created MonthSelectionListener class and slightly refactored SimpleBudgeterUI" />
     <MESSAGE value="Semi-fixed sorting of date strings in BudgetManager method getMonths(), still need to account for years.&#10;&#10;Currently in process of refactoring gui classes, so that instead of having implementation of creating certain components be inside SimpleBudgeterUI, its inside unique classes that extend java component classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Semi-fixed sorting of date strings in BudgetManager method getMonths(), still need to account for years.&#10;&#10;Currently in process of refactoring gui classes, so that instead of having implementation of creating certain components be inside SimpleBudgeterUI, its inside unique classes that extend java component classes." />
+    <MESSAGE value="Refactored SimpleBudgeterUI to have implementation of components inside of it, instead of in unique component classes. Essentially reverted back from the previous commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored SimpleBudgeterUI to have implementation of components inside of it, instead of in unique component classes. Essentially reverted back from the previous commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/JSONReturner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="60" lean-forward="false" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/date/SingleDateFormatSymbols.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/exceptions/NullParameterGiven.java" />
-    <entry file="file://$PROJECT_DIR$/src/tests/ExpenseManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/TransactionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/TransactionManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <caret line="13" column="127" lean-forward="false" selection-start-line="13" selection-start-column="127" selection-end-line="13" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/SimpleDateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="103" column="19" lean-forward="false" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/BudgetStringerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -874,16 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/TransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/soutUI/BudgeterApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -891,33 +806,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/BudgetPrompter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/soutUI/EntryPrompter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/Prompter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/SingleScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -938,166 +830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/BudgetStringer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/date/DateFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaInternalFrameUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8220">
           <caret line="645" column="0" lean-forward="false" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
-          <folding>
-            <marker date="1530951661000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1530951661000" expanded="false" signature="137:1900" ph="..." />
-            <marker date="1530951661000" expanded="true" signature="2748:2904" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2787:2898" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2996:3155" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3035:3149" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3243:3398" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3282:3392" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3581:5139" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3626:4348" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3684:4009" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3775:3995" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4025:4290" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4116:4276" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4393:5133" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4451:4796" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4542:4782" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4812:5075" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4903:5061" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5266:5808" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5311:5693" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5369:5620" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5460:5606" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="5737:5752" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="5792:5802" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="5899:6232" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5938:6226" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5988:6215" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6064:6201" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="6273:6284" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="6316:6322" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="6370:6381" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="6417:6423" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="6457:6468" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="6490:6496" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="6553:6564" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="6617:6623" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="6676:6687" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="6699:6705" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="6750:7718" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7757:7988" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8036:8345" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="8387:8398" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="8427:8433" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="8478:8489" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="8521:8527" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="8568:8579" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="8607:8613" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="8659:8666" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="8707:9361" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9401:9589" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9631:9747" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9795:9802" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="9861:9978" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="10039:10162" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="10196:10443" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="10500:10815" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="10863:10949" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="11016:11264" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="11340:11408" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="11445:12998" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="13040:13051" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="13098:13104" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="13143:13154" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="13182:13188" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="13237:13248" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="13276:13282" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="13361:14016" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="14174:21728" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="14325:14605" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="14634:14649" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="14725:14735" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="14767:14782" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="14861:14871" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="14908:15186" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="15233:17504" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="17578:17593" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="17633:17643" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="17695:18049" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="18122:19003" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="19054:19069" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="19100:19110" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="19162:19173" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="19224:19235" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="19287:19996" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20049:20408" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20460:20566" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20616:20627" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="20687:21099" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="21158:21173" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="21200:21210" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="21267:21282" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="21309:21319" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="21376:21391" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="21418:21428" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="21487:21498" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="21561:21722" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="21812:22854" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="21844:21855" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="22004:22848" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="22170:22837" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="22234:22257" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="22292:22310" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="22359:22382" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="22395:22413" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="22528:22823" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="22935:23043" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="22994:23009" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="23027:23037" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="23106:25286" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="23135:23146" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="23209:25280" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="25353:38907" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="25691:25702" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="25754:27027" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="27081:27520" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="27559:27670" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="27723:30576" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="30628:32200" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="32256:32525" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="32576:32720" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="32786:33496" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="33548:35685" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="35735:35850" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="35901:36224" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="36283:37583" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="37661:38294" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="38346:38901" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="38972:39527" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="39029:39044" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="39073:39083" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="39166:39290" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="39333:39348" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="39370:39380" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="39415:39430" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="39440:39450" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="39486:39501" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="39511:39521" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,54 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
           <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding>
-            <marker date="1530951661000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1530951661000" expanded="false" signature="137:1302" ph="..." />
-            <marker date="1530951661000" expanded="true" signature="1821:1828" ph="{}" />
-            <marker date="1530951661000" expanded="false" signature="1885:1896" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="1937:1943" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="1988:2110" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2157:2297" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2338:2596" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2639:2754" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2794:2955" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2997:3167" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="3221:3232" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="3261:3267" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="3321:3332" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="3363:3369" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="3425:3436" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="3465:3471" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="3517:3528" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="3558:3564" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="3587:3598" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="3626:3632" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="3680:3833" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3882:4585" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4633:4980" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5027:5155" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5203:5210" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="5258:5265" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="5311:5318" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="5373:5380" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="5434:5441" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="5497:5589" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5643:5735" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5772:9242" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5955:6305" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6348:7832" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7875:8950" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8979:9236" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9286:11377" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="9314:9329" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="9364:9374" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="9402:10556" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="10599:11142" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="11188:11203" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="11262:11272" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="11317:11332" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="11361:11371" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1160,39 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
           <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding>
-            <marker date="1530951661000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1530951661000" expanded="false" signature="137:1214" ph="..." />
-            <marker date="1530951661000" expanded="true" signature="1725:1732" ph="{}" />
-            <marker date="1530951661000" expanded="false" signature="1789:1800" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="1838:1844" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="1889:2629" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="2676:2988" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3042:3802" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3858:4623" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="4682:5500" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5536:5653" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5713:5997" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6049:6580" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6634:6641" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="6693:6700" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="6752:6843" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6897:6989" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7038:7045" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7095:7102" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7151:7239" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7291:7298" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7352:7359" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7414:7421" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7475:7482" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7534:7541" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="7628:8427" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8490:8615" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8674:9155" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="8752:8767" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="8784:8794" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="8850:9149" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1200,66 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6420">
           <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
-          <folding>
-            <marker date="1530951661000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1530951661000" expanded="false" signature="137:1767" ph="..." />
-            <marker date="1530951661000" expanded="true" signature="2451:2458" ph="{}" />
-            <marker date="1530951661000" expanded="false" signature="2515:2526" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="2561:2567" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="2625:3780" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="3839:3846" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="3903:5184" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5248:5463" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5525:5872" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="5951:6101" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6164:6240" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="6312:7012" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7071:7609" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7674:7853" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="7900:8077" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8144:8325" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="8386:9022" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9082:9175" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9265:9330" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="9386:11570" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="11730:12752" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="12835:14482" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="14574:15272" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="15368:15435" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="15510:15521" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="15544:15550" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="15605:15889" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="15946:16385" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="16440:16724" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="16811:16896" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="16965:17153" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="17215:17358" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="17422:17568" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="17655:20798" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="17755:17818" ph="{...}" />
-            <marker date="1530951661000" expanded="false" signature="17868:17883" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="17923:17933" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="17981:17996" ph=" { " />
-            <marker date="1530951661000" expanded="true" signature="18036:18046" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="18109:19972" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20028:20039" ph="{}" />
-            <marker date="1530951661000" expanded="false" signature="20094:20109" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="20136:20146" ph=" }" />
-            <marker date="1530951661000" expanded="false" signature="20203:20218" ph=" { " />
-            <marker date="1530951661000" expanded="false" signature="20245:20255" ph=" }" />
-            <marker date="1530951661000" expanded="true" signature="20302:20792" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20874:21549" ph="{...}" />
-            <marker date="1530951661000" expanded="true" signature="20914:20925" ph="{}" />
-            <marker date="1530951661000" expanded="true" signature="20985:21543" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,30 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/EntryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1336,18 +907,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/EntryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1364,29 +927,209 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/BudgetManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/BoxLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="6420">
           <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/BudgetPrompter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="131" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/SingleScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/soutUI/Prompter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/BudgetManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/text/DecimalFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="380" column="13" lean-forward="false" selection-start-line="380" selection-start-column="13" selection-end-line="380" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/text/NumberFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="289" column="24" lean-forward="false" selection-start-line="289" selection-start-column="24" selection-end-line="289" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/BudgetStringer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/RevenueManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/date/DateFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="35" column="69" lean-forward="false" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/JList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="1801" column="0" lean-forward="false" selection-start-line="1801" selection-start-column="0" selection-end-line="1801" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/AddingEntryFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/table/TableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="49" column="194" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="194" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4918#4919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/AbstractButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="1924" column="16" lean-forward="false" selection-start-line="1924" selection-start-column="16" selection-end-line="1924" selection-end-column="16" />
+          <folding>
+            <element signature="e#68197#68198#0" expanded="false" />
+            <element signature="e#68254#68255#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="2421" column="0" lean-forward="false" selection-start-line="2421" selection-start-column="0" selection-end-line="2421" selection-end-column="0" />
+          <folding>
+            <element signature="e#94636#94637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="57" lean-forward="false" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/BudgetManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+        <state relative-caret-position="170">
+          <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
           <folding>
             <element signature="e#538#539#0" expanded="true" />
             <element signature="e#585#586#0" expanded="true" />
@@ -1396,68 +1139,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java">
+    <entry file="file://$PROJECT_DIR$/src/model/EntryManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/AddingEntryFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="251">
+          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="148">
+          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/model/TransactionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/table/AbstractTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="192" lean-forward="false" selection-start-line="51" selection-start-column="192" selection-end-line="51" selection-end-column="192" />
+        <state relative-caret-position="-1736">
+          <caret line="196" column="16" lean-forward="false" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3194#3195#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#5610#5611#0" expanded="true" />
+            <element signature="e#5669#5670#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/data_models/EntryManagerTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+        <state relative-caret-position="330">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4011#4012#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,6 +2,9 @@ package model;
 
 import model.date.SimpleDate;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Entry implements Comparable<Entry> {
     private static int nextEntryId = 1;
     private int id;
@@ -19,6 +22,15 @@ public class Entry implements Comparable<Entry> {
     // Getters:
     public int getId() { return id; }
     public SimpleDate getDate() { return date; }
+    public List<Transaction> getRevenues() { return revenueManager.getTransactionList(); }
+    public List<Transaction> getExpenses() { return expenseManager.getTransactionList(); }
+    public List<Transaction> getTransactions() { //TODO: have to test this method
+        List<Transaction> combinedList = new ArrayList<>();
+        combinedList.addAll(getRevenues());
+        combinedList.addAll(getExpenses());
+
+        return combinedList;
+    }
 
     // Setters:
     public void setDate(SimpleDate date) { this.date = date; }

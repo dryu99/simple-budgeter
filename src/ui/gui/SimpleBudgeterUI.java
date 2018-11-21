@@ -2,7 +2,11 @@ package ui.gui;
 
 import model.BudgetManager;
 import model.Entry;
+import model.Transaction;
 import model.date.SimpleDate;
+import model.enums.ExpGenre;
+import model.enums.RevGenre;
+import ui.gui.data_models.EntryManagerTableModel;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
@@ -14,9 +18,10 @@ public class SimpleBudgeterUI implements Runnable {
 
     private JFrame frame;
 
-    private JList monthUIList;
     private JPanel monthListDisplay;
-    private JPanel entryManagerDisplay; // TODO: this will be a TABLE
+    private JList monthUIList;
+    private EntryManagerDisplay entryManagerDisplay; // TODO: this will be a TABLE
+    private EntryManagerTableModel tableModel;
     private JSplitPane splitPane;
     private ButtonPanel buttonPanel;
 
@@ -28,9 +33,11 @@ public class SimpleBudgeterUI implements Runnable {
 
     // Getters:
     public JFrame getFrame() { return frame; }
-    public JList getMonthUIList() { return monthUIList; }
     public JPanel getMonthListDisplay() { return monthListDisplay; }
-    public JPanel getEntryManagerDisplay() { return entryManagerDisplay; }
+    public JList getMonthUIList() { return monthUIList; }
+    public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
+    public EntryManagerTableModel getTableModel() { return tableModel; }
+    public ButtonPanel getButtonPanel() { return buttonPanel; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
     // MODIFIES: this
@@ -55,9 +62,11 @@ public class SimpleBudgeterUI implements Runnable {
     private void createComponents() {
         initializeSplitPane();
         initializeButtonPanel();
+        initalizeListeners();
 
         frame.add(splitPane);
         frame.add(buttonPanel, BorderLayout.SOUTH);
+
     }
 
     // MODIFIES: this
@@ -94,7 +103,6 @@ public class SimpleBudgeterUI implements Runnable {
         monthUIList.setSelectedIndex(0);
         monthUIList.setLayoutOrientation(JList.VERTICAL);
         monthUIList.setVisibleRowCount(-1);
-        monthUIList.addListSelectionListener(new MonthSelectionListener(this));
 
         monthListDisplay.add(monthLabel, BorderLayout.PAGE_START);
         monthListDisplay.add(monthUIList);
@@ -104,18 +112,54 @@ public class SimpleBudgeterUI implements Runnable {
     // MODIFIES: this
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
+        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+        tableModel = new EntryManagerTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
+
         entryManagerDisplay = new EntryManagerDisplay(this);
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes button pannel
     private void initializeButtonPanel() {
         buttonPanel = new ButtonPanel(this);
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes listeners
+    private void initalizeListeners() {
+        monthUIList.addListSelectionListener(new MonthSelectionListener(this));
+    }
+
     public static void main(String[] args) {
         BudgetManager budgetManager = BudgetManager.getInstance();
-        budgetManager.addEntry(new Entry(new SimpleDate(2018, 2, 20)));
-        budgetManager.addEntry(new Entry(new SimpleDate(2018, 3, 20)));
-        budgetManager.addEntry(new Entry(new SimpleDate(2018, 4, 20)));
+
+        Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
+        Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
+        Entry entry3 = new Entry(new SimpleDate(2018, 4, 20));
+
+        Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE);
+        Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD);
+        Transaction expense2 = new Transaction(-50d, "Boots", ExpGenre.SHOPPING);
+
+        Transaction revenue2 = new Transaction(20.56, "Yon-Jun IOU", RevGenre.IOU);
+        Transaction revenue3 = new Transaction(60d, "Music Gig", RevGenre.PAYCHEQUE);
+
+        Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING);
+        Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD);
+
+        entry1.addRevenue(revenue1);
+        entry1.addExpense(expense1);
+        entry1.addExpense(expense2);
+
+        entry2.addRevenue(revenue2);
+        entry2.addRevenue(revenue3);
+
+        entry3.addExpense(expense3);
+        entry3.addExpense(expense4);
+
+        budgetManager.addEntry(entry1);
+        budgetManager.addEntry(entry2);
+        budgetManager.addEntry(entry3);
 
         SwingUtilities.invokeLater(new SimpleBudgeterUI(budgetManager));
     }

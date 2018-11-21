@@ -1,7 +1,5 @@
 package ui.gui;
 
-import ui.gui.listeners.MonthSelectionListener;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -49,6 +47,6 @@ public class MonthListDisplay extends JPanel {
         monthUIList.setLayoutOrientation(JList.VERTICAL);
         monthUIList.setVisibleRowCount(-1);
 
-        monthUIList.addListSelectionListener(new MonthSelectionListener(mainUI)); // TODO would need to pass in "this" too? unless monthUIList was declared in SimpleBudgeterUI and had a getter
+//        monthUIList.addListSelectionListener(new MonthSelectionListener(mainUI)); // TODO would need to pass in "this" too? unless monthUIList was declared in SimpleBudgeterUI and had a getter
     }
 }

@@ -14,6 +14,9 @@ public abstract class TransactionManager {
         transactionList = new ArrayList<>();
     }
 
+    // Getters:
+    public List<Transaction> getTransactionList() { return transactionList; }
+
     // EFFECTS: returns size of revenue list
     public int size() {
         return transactionList.size();
