@@ -7,9 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EntryManagerDisplay extends JPanel {
-    private JTable revenueTable; //tODO: should i put every component taht exists in this panel (i.e. scroll pane too) or just have the ones that may be modified
+    private JTable revenueTable;
     private JTable expenseTable;
-    private JPanel tablePanel;
+    private JPanel revenueTablePanel;
+    private JPanel expenseTablePanel;
+    private JPanel displayPanel;
     private JLabel statsLabel;
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
@@ -31,11 +33,28 @@ public class EntryManagerDisplay extends JPanel {
     // MODIFIES:
     // EFFECTS: creates and adds components for the panel
     private void createComponents() { //TODO should i split up methods like i did in SimpleBudgeterUI
+        initializeTables();
+        initializeTablePanels();
+        initializeDisplayPanel();
+        initializeStatsLabel();
 
+        add(displayPanel);
+        add(statsLabel, BorderLayout.SOUTH);
+    }
+
+    private void initializeStatsLabel() {
+        // Initialize JLabel
+        statsLabel = new JLabel("Statistics"); // TODO have to have this updated at the start of program (HOWEVER HTIS REQUIRES THE NEED FOR MONTHUILIST WHICH IS OUTSIDE IN SIMPLEBUDGETERUI AND I AVOIDED PASSING IT IN ORIGINALLY BUTNOW HWOHEIWOFAHEIOA)
+        statsLabel.setHorizontalAlignment(JLabel.CENTER);
+        statsLabel.setPreferredSize(new Dimension(0,75));
+    }
+
+    // EFFECTS: initializes transaction tables
+    private void initializeTables() {
         // Initialize JTable for revenues
         revenueTable = new JTable(revenueTableModel);
         revenueTable.setFillsViewportHeight(true);
-        revenueTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        revenueTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // TODO: make these blocks into intialize methods?
         revenueTable.setGridColor(Color.BLACK);
         // TODO: have to set customized renderer
 
@@ -46,18 +65,36 @@ public class EntryManagerDisplay extends JPanel {
         expenseTable.setGridColor(Color.BLACK);
         // TODO: have to set customized renderer
 
-        // Initialize JPanel for two tables
-        tablePanel = new JPanel(new GridLayout(1,2,25,0));
-        tablePanel.add(new JScrollPane(revenueTable));
-        tablePanel.add(new JScrollPane(expenseTable)); // TODO: maybe add scroll panes to both?
+        // TODO: idk what the optimal way to do this would be (init tables first or table panels) or just have the tables be global fields
+    }
 
-        // Initialize JLabel
-        statsLabel = new JLabel("Statistics");
-        statsLabel.setHorizontalAlignment(JLabel.CENTER);
-        statsLabel.setPreferredSize(new Dimension(0,75));
+    // EFFECTS: initializes panels for the given transaction tables
+    private void initializeTablePanels() {
+        // Init JPanel for transaction tables
+        revenueTablePanel = new JPanel(new BorderLayout());
+        expenseTablePanel = new JPanel(new BorderLayout());
 
-        add(tablePanel);
-        add(statsLabel, BorderLayout.SOUTH);
+        // Init JLabel headers
+        JLabel revHeader = new JLabel("Revenues");
+        JLabel expHeader = new JLabel("Expenses");
+        revHeader.setHorizontalAlignment(JLabel.CENTER);
+        expHeader.setHorizontalAlignment(JLabel.CENTER);
+        revHeader.setPreferredSize(new Dimension(0,50));
+        expHeader.setPreferredSize(new Dimension(0,50));
+
+        // create table panels with scroll panes
+        revenueTablePanel.add(revHeader, BorderLayout.NORTH);
+        revenueTablePanel.add(new JScrollPane(revenueTable));
+
+        expenseTablePanel.add(expHeader, BorderLayout.NORTH);
+        expenseTablePanel.add(new JScrollPane(expenseTable));
+    }
+
+    // EFFECTS: Initialize panel for transaction table panels
+    private void initializeDisplayPanel() {
+        displayPanel = new JPanel(new GridLayout(1,2,25,0));
+        displayPanel.add(revenueTablePanel);
+        displayPanel.add(expenseTablePanel);
     }
 
 

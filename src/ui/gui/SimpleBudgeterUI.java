@@ -18,9 +18,9 @@ public class SimpleBudgeterUI implements Runnable {
 
     private JFrame frame;
 
-    private JPanel monthListDisplay;
+    private JPanel monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
     private JList monthUIList;
-    private EntryManagerDisplay entryManagerDisplay; // TODO: this will be a TABLE
+    private EntryManagerDisplay entryManagerDisplay;
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
     private JSplitPane splitPane;
@@ -67,7 +67,7 @@ public class SimpleBudgeterUI implements Runnable {
         initializeButtonPanel();
         initializeListeners();
 
-        frame.add(splitPane);
+        frame.add(splitPane); // TODO: better to add here or in the init methods?
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
     }
@@ -115,8 +115,8 @@ public class SimpleBudgeterUI implements Runnable {
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex()); // TODO: this is the method call that's preventing me from smoothly creating a monthDisplay class, because it needs access to monthUIlist
-        revenueTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate)); //TODO: perhaps I can invoke a list selection event to set up the data? instead of setting it up this way
-        expenseTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
+        revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO: perhaps I can invoke a list selection event to set up the data? instead of setting it up this way
+        expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
 
         entryManagerDisplay = new EntryManagerDisplay(this);
     }

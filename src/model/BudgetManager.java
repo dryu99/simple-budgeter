@@ -38,6 +38,18 @@ public class BudgetManager implements Iterable<String> {
     }
 
     // TODO write a unit test for this
+    // EFFECTS: returns total specified transaction amount from entry manager of given date
+    public double getSpecifiedTransactionTotalFromDate(String date, Boolean isRevenue) {
+        return entryManagers.get(date).getSpecifiedTransactionTotal(isRevenue);
+    }
+
+    // TODO write a unit test for this
+    // EFFECTS: returns total net value from entry manager of given date
+    public double getTotalNetValueFromDate(String date) {
+        return entryManagers.get(date).getTotalNetValue();
+    }
+
+    // TODO write a unit test for this
     // EFFECTS: returns ALL transactions from the entry manager of the given date
     public List<Transaction> getAllTransactionsFromDate(String date) {
         return entryManagers.get(date).getAllTransactions();

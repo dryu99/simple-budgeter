@@ -18,6 +18,35 @@ public class EntryManager {
     public String getDate() { return date; }
     public List<Entry> getEntryList() { return entryList; }
 
+    // TODO: test this method + rid duplication by making entry getters take in booleans too?
+    // EFFECTS: returns total revenue amount in entry list
+    public double getSpecifiedTransactionTotal(Boolean isRevenue) {
+        double totalValue = 0;
+
+        if (isRevenue) {
+            for (Entry e : entryList) {
+                totalValue += e.totalRevenue();
+            }
+        } else {
+            for (Entry e : entryList) {
+                totalValue += e.totalExpenses();
+            }
+        }
+        return totalValue;
+    }
+
+    // TODO: test this method
+    // EFFECTS: returns total net value in entry list
+    public double getTotalNetValue() {
+        double totalValue = 0;
+
+        for (Entry e : entryList) {
+            totalValue += e.netValue();
+        }
+
+        return totalValue;
+    }
+
     // TODO: test this method
     // EFFECTS: returns all transactions in entry list
     public List<Transaction> getAllTransactions() {
@@ -28,7 +57,6 @@ public class EntryManager {
                 transactions.add(t);
             }
         }
-
         return transactions;
     }
 
