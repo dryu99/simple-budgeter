@@ -2,19 +2,19 @@ package ui.gui.listeners;
 
 import model.BudgetManager;
 import ui.gui.SimpleBudgeterUI;
-import ui.gui.data_models.EntryManagerTableModel;
+import ui.gui.data_models.TransactionTableModel;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class MonthSelectionListener implements ListSelectionListener {
-    private EntryManagerTableModel tableModel;
+    private TransactionTableModel tableModel;
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
-        tableModel = ui.getTableModel();
-//        tableModel = emd.getTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
+        tableModel = ui.getRevenueTableModel();
+//        tableModel = emd.getRevenueTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
         budgetManager = ui.getBudgetManager();
     }
 

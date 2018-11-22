@@ -1,5 +1,6 @@
 package model;
 
+import model.date.SimpleDate;
 import model.enums.Genre;
 
 import java.text.DecimalFormat;
@@ -10,6 +11,7 @@ public class Transaction {
     private double value; // +value = revenue, -value = expense //TODO: how to prevent human error of accidentally putting/forgetting the - sign, as well preventing accidentally assigning a transaction to an incorrect maanger
     private String description;
     private Genre genre;
+    private SimpleDate date;
     private TransactionManager manager;
 
     // Constructor:
@@ -19,6 +21,7 @@ public class Transaction {
         this.value = value;
         this.description = desc;
         this.genre = genre;
+        date = null;
         manager = null;
     }
 
@@ -31,7 +34,9 @@ public class Transaction {
     public double getValue() { return value; }
     public String getDesc() { return description; }
     public Genre getGenre() { return genre; }
+    public SimpleDate getDate() { return date; }
     public TransactionManager getManager() { return manager; }
+
 
     // EFFECTS: returns formatted value of transaction (no - signs, $, and decimals) //TODO want it to return double not string
     public String getFormattedValue() {
@@ -57,6 +62,9 @@ public class Transaction {
         }
 
         manager = newManager;
+        if (manager != null) {
+            date = manager.getEntry().getDate(); // TODO test that the transaction is actually being assigned a date
+        }
 
         if (newManager != null && !newManager.contains(this)) {
             manager.addTransaction(this);

@@ -15,6 +15,7 @@ public abstract class TransactionManager {
     }
 
     // Getters:
+    public Entry getEntry() { return entry; }
     public List<Transaction> getTransactionList() { return transactionList; }
 
     // EFFECTS: returns size of revenue list

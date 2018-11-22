@@ -6,7 +6,7 @@ import model.Transaction;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
-import ui.gui.data_models.EntryManagerTableModel;
+import ui.gui.data_models.TransactionTableModel;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
@@ -21,7 +21,8 @@ public class SimpleBudgeterUI implements Runnable {
     private JPanel monthListDisplay;
     private JList monthUIList;
     private EntryManagerDisplay entryManagerDisplay; // TODO: this will be a TABLE
-    private EntryManagerTableModel tableModel;
+    private TransactionTableModel revenueTableModel;
+    private TransactionTableModel expenseTableModel;
     private JSplitPane splitPane;
     private ButtonPanel buttonPanel;
 
@@ -36,7 +37,8 @@ public class SimpleBudgeterUI implements Runnable {
     public JPanel getMonthListDisplay() { return monthListDisplay; }
     public JList getMonthUIList() { return monthUIList; }
     public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
-    public EntryManagerTableModel getTableModel() { return tableModel; }
+    public TransactionTableModel getRevenueTableModel() { return revenueTableModel; }
+    public TransactionTableModel getExpenseTableModel() { return expenseTableModel; }
     public ButtonPanel getButtonPanel() { return buttonPanel; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
@@ -114,7 +116,8 @@ public class SimpleBudgeterUI implements Runnable {
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
-        tableModel = new EntryManagerTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
+        revenueTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
+        expenseTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
 
         entryManagerDisplay = new EntryManagerDisplay(this);
     }
@@ -131,11 +134,13 @@ public class SimpleBudgeterUI implements Runnable {
         monthUIList.addListSelectionListener(new MonthSelectionListener(this));
     }
 
+    // MODIFIES: this
+    // EFFECTS: centers the frame in the middle of the screen
     private void centerOnScreen() {
         int width = Toolkit.getDefaultToolkit().getScreenSize().width;
         int height = Toolkit.getDefaultToolkit().getScreenSize().width;
 
-        frame.setLocation((width - frame.getWidth()) / 2, 100);
+        frame.setLocation((width - frame.getWidth()) / 2, 100); //TODO: dont know how to do the y part
     }
 
     public static void main(String[] args) {
@@ -144,6 +149,7 @@ public class SimpleBudgeterUI implements Runnable {
         Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
         Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
         Entry entry3 = new Entry(new SimpleDate(2018, 4, 20));
+        Entry entry4 = new Entry(new SimpleDate(2018,2,25));
 
         Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE);
         Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD);
@@ -155,6 +161,9 @@ public class SimpleBudgeterUI implements Runnable {
         Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING);
         Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD);
 
+        Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING);
+        Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK);
+
         entry1.addRevenue(revenue1);
         entry1.addExpense(expense1);
         entry1.addExpense(expense2);
@@ -165,9 +174,13 @@ public class SimpleBudgeterUI implements Runnable {
         entry3.addExpense(expense3);
         entry3.addExpense(expense4);
 
+        entry4.addExpense(expense5);
+        entry4.addExpense(expense6);
+
         budgetManager.addEntry(entry1);
         budgetManager.addEntry(entry2);
         budgetManager.addEntry(entry3);
+        budgetManager.addEntry(entry4);
 
         SwingUtilities.invokeLater(new SimpleBudgeterUI(budgetManager));
     }

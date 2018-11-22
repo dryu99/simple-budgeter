@@ -1,8 +1,10 @@
 package tests;
 
+import model.Entry;
 import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
+import model.date.SimpleDate;
 import model.enums.RevGenre;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +20,7 @@ public class TransactionManagerTest {
 
     @Before
     public void setup() {
-        testManager = new RevenueManager(null);
+        testManager = new RevenueManager(new Entry(new SimpleDate(1999,2,1999)));
     }
 
     @Test

@@ -1,19 +1,20 @@
 package ui.gui.data_models;
 
 import model.Transaction;
+import model.date.SimpleDate;
 import model.enums.Genre;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
-public class EntryManagerTableModel extends AbstractTableModel { //tODO make this a singleton?
+public class TransactionTableModel extends AbstractTableModel { //tODO make this a singleton?
     private List<Transaction> data;
 
-    private String[] columnNames = {"Value", "Description", "Genre"};
-    private Class[] columnClasses = {String.class, String.class, Genre.class};
+    private String[] columnNames = {"Date", "Amount Earned", "Genre"};
+    private Class[] columnClasses = {SimpleDate.class, String.class, Genre.class}; // TODO: after making customized renderer, turn string int double
 
-    public EntryManagerTableModel(List<Transaction> transactionList) {
-        this.data = transactionList;
+    public TransactionTableModel(List<Transaction> revenueList) {
+        this.data = revenueList;
     }
 
     // EFFECTS: returns number of rows in this table
@@ -46,9 +47,9 @@ public class EntryManagerTableModel extends AbstractTableModel { //tODO make thi
         Transaction row = data.get(rowIndex);
 
         if (columnIndex == 0) {
-            return row.getFormattedValue();
+            return row.getDate();
         } else if (columnIndex == 1) {
-            return row.getDesc();
+            return row.getFormattedValue();
         } else if (columnIndex == 2) {
             return row.getGenre();
         } else {

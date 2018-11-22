@@ -1,7 +1,7 @@
 package ui.gui;
 
 import model.BudgetManager;
-import ui.gui.data_models.EntryManagerTableModel;
+import ui.gui.data_models.TransactionTableModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,15 +9,15 @@ import java.awt.*;
 public class EntryManagerDisplay extends JPanel {
     private JTable entryTable; //tODO: should i put every component taht exists in this panel (i.e. scroll pane too) or just have the ones that may be modified
     private JLabel statsLabel;
-    private EntryManagerTableModel tableModel;
+    private TransactionTableModel tableModel;
 
 //    private JList monthList;
     private BudgetManager budgetManager;
 
     public EntryManagerDisplay(SimpleBudgeterUI ui) {
         super(new BorderLayout());
-//
-        tableModel = ui.getTableModel();
+
+        tableModel = ui.getRevenueTableModel();
         budgetManager = ui.getBudgetManager();
 
         createComponents();
