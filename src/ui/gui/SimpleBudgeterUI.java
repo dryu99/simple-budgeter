@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 // TODO: not sure how much I should try to increase cohesion, because a lot of passing begins to occur (show example in github, with how I would have to pass in both MonthListDisplay AND SimpleBudgeterUI to MonthSelectionListener. alternatively i could have made monthUIList a field in SimpleBudgeterUI hmmm as essentially all the fields in this class are those that may be modified/accessed)
 public class SimpleBudgeterUI implements Runnable {
-    private static final int WIDTH = 500;
+    private static final int WIDTH = 700;
     private static final int HEIGHT = 600;
 
     private JFrame frame;
@@ -79,12 +79,12 @@ public class SimpleBudgeterUI implements Runnable {
         initializeEntryManagerDisplay();
 
         JScrollPane monthScrollPane = new JScrollPane(monthListDisplay);
-        JScrollPane entryScrollPane = new JScrollPane(entryManagerDisplay);
+//        JScrollPane entryScrollPane = new JScrollPane(entryManagerDisplay);
 
         monthScrollPane.setMinimumSize(new Dimension(100, HEIGHT));
 //        entryScrollPane.setMinimumSize(new Dimension(WIDTH - (WIDTH / 5), HEIGHT)); // TODO: what min size do i want fo rirhgt side
 
-        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, monthScrollPane, entryScrollPane);
+        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, monthScrollPane, entryManagerDisplay);
     }
 
     // TODO: see i wish i could just make a month list display class for this panel
@@ -111,12 +111,11 @@ public class SimpleBudgeterUI implements Runnable {
         monthListDisplay.add(monthUIList);
     }
 
-    // TODO: this will be a TABLE
     // MODIFIES: this
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
-        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
-        revenueTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
+        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex()); // TODO: this is the method call that's preventing me from smoothly creating a monthDisplay class, because it needs access to monthUIlist
+        revenueTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate)); //TODO: perhaps I can invoke a list selection event to set up the data? instead of setting it up this way
         expenseTableModel = new TransactionTableModel(budgetManager.getAllTransactionsFromDate(selectedDate));
 
         entryManagerDisplay = new EntryManagerDisplay(this);

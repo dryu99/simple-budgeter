@@ -43,6 +43,12 @@ public class BudgetManager implements Iterable<String> {
         return entryManagers.get(date).getAllTransactions();
     }
 
+    // TODO: write a unitttt test for thisss
+    // EFFECTS: returns ALL specified transactions from the entry manager of the given date
+    public List<Transaction> getAllSpecifiedTransactionsFromDate(String date, Boolean isRevenue) {
+        return entryManagers.get(date).getAllSpecifiedTransactions(isRevenue);
+    }
+
 
     // TODO: use regex to check given string? or should i use SimpleDates as key values
     // MODIFIES: this

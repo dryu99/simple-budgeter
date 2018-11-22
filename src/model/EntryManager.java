@@ -19,6 +19,7 @@ public class EntryManager {
     public List<Entry> getEntryList() { return entryList; }
 
     // TODO: test this method
+    // EFFECTS: returns all transactions in entry list
     public List<Transaction> getAllTransactions() {
         List<Transaction> transactions = new ArrayList<>();
 
@@ -28,6 +29,27 @@ public class EntryManager {
             }
         }
 
+        return transactions;
+    }
+
+    // TODO: test this method + rid duplication by making entry getters take in booleans too?
+    // EFFECTS: returns all specified transactions in entry list
+    public List<Transaction> getAllSpecifiedTransactions(Boolean isRevenue) {
+        List<Transaction> transactions = new ArrayList<>();
+
+        if (isRevenue) {
+            for (Entry e : entryList) {
+                for (Transaction t : e.getRevenues()) {
+                    transactions.add(t);
+                }
+            }
+        } else {
+            for (Entry e : entryList) {
+                for (Transaction t : e.getExpenses()) {
+                    transactions.add(t);
+                }
+            }
+        }
         return transactions;
     }
 

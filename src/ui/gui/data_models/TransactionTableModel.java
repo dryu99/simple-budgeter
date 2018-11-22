@@ -10,11 +10,15 @@ import java.util.List;
 public class TransactionTableModel extends AbstractTableModel { //tODO make this a singleton?
     private List<Transaction> data;
 
-    private String[] columnNames = {"Date", "Amount Earned", "Genre"};
+    private String[] columnNames = {"Date", "Amount", "Genre"};
     private Class[] columnClasses = {SimpleDate.class, String.class, Genre.class}; // TODO: after making customized renderer, turn string int double
 
-    public TransactionTableModel(List<Transaction> revenueList) {
-        this.data = revenueList;
+    public TransactionTableModel(List<Transaction> transactionList) {
+        this.data = transactionList;
+    }
+
+    public TransactionTableModel() {
+        data = null;
     }
 
     // EFFECTS: returns number of rows in this table
