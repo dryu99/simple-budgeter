@@ -54,6 +54,7 @@ public class SimpleBudgeterUI implements Runnable {
         createComponents();
 
         frame.pack();
+        centerOnScreen();
         frame.setVisible(true);
     }
 
@@ -62,7 +63,7 @@ public class SimpleBudgeterUI implements Runnable {
     private void createComponents() {
         initializeSplitPane();
         initializeButtonPanel();
-        initalizeListeners();
+        initializeListeners();
 
         frame.add(splitPane);
         frame.add(buttonPanel, BorderLayout.SOUTH);
@@ -126,8 +127,15 @@ public class SimpleBudgeterUI implements Runnable {
 
     // MODIFIES: this
     // EFFECTS: initializes listeners
-    private void initalizeListeners() {
+    private void initializeListeners() {
         monthUIList.addListSelectionListener(new MonthSelectionListener(this));
+    }
+
+    private void centerOnScreen() {
+        int width = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int height = Toolkit.getDefaultToolkit().getScreenSize().width;
+
+        frame.setLocation((width - frame.getWidth()) / 2, 100);
     }
 
     public static void main(String[] args) {

@@ -32,7 +32,7 @@ public class EntryManagerDisplay extends JPanel {
         entryTable.setFillsViewportHeight(true);
         entryTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         entryTable.setGridColor(Color.BLACK);
-        // TODO have to add list selection listeners to the table list selection model
+        // TODO: have to set customized renderer
 
         // Initialize JLabel
         statsLabel = new JLabel("Statistics");
