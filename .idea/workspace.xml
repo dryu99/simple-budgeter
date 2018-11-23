@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
+    <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="Completed refactoring of SimpleBudgeterUI, EntryManagerDisplay, and MonthListDisplay to increase cohesion. Each class initialize its main components and has fields for them (no more million fields in SimpleBudgeterUI). Each ui subclass (i.e. EntryManagerDisplay and MonthListDisplay) has getters for those fields that may need to be accessed or modified.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/enums/Genre.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" afterPath="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" afterPath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" afterPath="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/RevGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,43 +65,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BudgetManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/BudgetManager.java">
+      <file leaf-file-name="Genre.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="80" column="16" lean-forward="false" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
-              <folding>
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#585#586#0" expanded="true" />
-                <element signature="e#1377#1378#0" expanded="true" />
-                <element signature="e#1423#1424#0" expanded="true" />
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#1966#1967#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionTableModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/gui/data_models/TransactionTableModel.java">
+      <file leaf-file-name="ExpGenre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#702#703#0" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#940#941#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1146#1147#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1317#1318#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="267">
+              <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevGenre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,21 +101,6 @@
             <state relative-caret-position="180">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntryManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/EntryManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding>
-                <element signature="e#2552#2553#0" expanded="true" />
-                <element signature="e#2591#2592#0" expanded="true" />
-                <element signature="e#2684#2685#0" expanded="true" />
-                <element signature="e#2726#2727#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -150,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="827">
@@ -189,9 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/parser/JSONReturner.java" />
-        <option value="$PROJECT_DIR$/src/model/RevenueManager.java" />
-        <option value="$PROJECT_DIR$/src/model/ExpenseManager.java" />
         <option value="$PROJECT_DIR$/src/tests/TransactionTest.java" />
         <option value="$PROJECT_DIR$/src/model/date/DateFormatter.java" />
         <option value="$PROJECT_DIR$/src/model/date/SingleDateFormatSymbols.java" />
@@ -240,6 +212,9 @@
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/Genre.java" />
       </list>
     </option>
   </component>
@@ -289,6 +264,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="date" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
@@ -769,7 +751,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542938299986</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Completed refactoring of SimpleBudgeterUI, EntryManagerDisplay, and MonthListDisplay to increase cohesion. Each class initialize its main components and has fields for them (no more million fields in SimpleBudgeterUI). Each ui subclass (i.e. EntryManagerDisplay and MonthListDisplay) has getters for those fields that may need to be accessed or modified.">
+      <created>1542939859098</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1542939859098</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -815,7 +804,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1248" height="807" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -823,12 +811,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1582003" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1582003" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32946298" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21515892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21515892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24806201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -848,7 +836,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit before complete refactor of program. &#10;&#10;Attempting to separate UI functionality from the program model/data/behaviour functionality." />
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
     <MESSAGE value="Implemented EntryPrompter class.&#10;&#10;Added Exception throwing to methods that add a given parameter to a list. &#10;&#10;Created a singleton Prompter class that provides scanner return methods." />
     <MESSAGE value="Made enums a subtype of a higher supertype, allowing for majoring refactoring to occur between Transaction, Revenue, and Expense.&#10;&#10;Added EntrySearchManager and TransactionGenreManager classes as a means to store transactions in a set/map, but will probably delete later as a hashmap may not be necessary for my program. &#10;&#10;Added invalid date exceptions to the date class." />
     <MESSAGE value="Created setters for TransactionManager and Transaction that properly establish and remove bi-directional associations" />
@@ -873,7 +861,8 @@
     <MESSAGE value="Commit before refactoring to try to increase cohesion" />
     <MESSAGE value="Finished refactoring EntryManagerDisplay to increase cohesion. Now need to create a month display class" />
     <MESSAGE value="Commit right before deleting code in initializeMonthListDisplay in SimpleBudgeterUI, and replacing it with an assignment of the new class MonthListDisplay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit right before deleting code in initializeMonthListDisplay in SimpleBudgeterUI, and replacing it with an assignment of the new class MonthListDisplay" />
+    <MESSAGE value="Completed refactoring of SimpleBudgeterUI, EntryManagerDisplay, and MonthListDisplay to increase cohesion. Each class initialize its main components and has fields for them (no more million fields in SimpleBudgeterUI). Each ui subclass (i.e. EntryManagerDisplay and MonthListDisplay) has getters for those fields that may need to be accessed or modified." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed refactoring of SimpleBudgeterUI, EntryManagerDisplay, and MonthListDisplay to increase cohesion. Each class initialize its main components and has fields for them (no more million fields in SimpleBudgeterUI). Each ui subclass (i.e. EntryManagerDisplay and MonthListDisplay) has getters for those fields that may need to be accessed or modified." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -882,20 +871,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ui/printui/BudgeterApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/printui/EntryPrompter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/model/date/MonthYearFormat.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -929,13 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6420">
           <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1153,6 +1121,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,14 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryManagerDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -1266,6 +1227,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="76" column="133" lean-forward="false" selection-start-line="76" selection-start-column="133" selection-end-line="76" selection-end-column="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/ButtonPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/MonthListDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1276,13 +1255,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="76" column="133" lean-forward="false" selection-start-line="76" selection-start-column="133" selection-end-line="76" selection-end-column="133" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="267">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

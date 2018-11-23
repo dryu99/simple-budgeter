@@ -35,6 +35,7 @@ public enum ExpGenre implements Genre {
 
 
     // EFFECTS: returns case in lower case form
+    @Override
     public String toLowerString() {
         return lowerCaseForm;
     }
