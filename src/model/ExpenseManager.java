@@ -7,11 +7,12 @@ public class ExpenseManager extends TransactionManager {
         super(e);
     }
 
-    @Override
-    public String toString() {
-        String expensesString = BudgetStringer.underlinedHeaderString("Expenses:", "-");
-        expensesString += BudgetStringer.bodyString("expenses", transactionList);
-
-        return expensesString;
-    }
+    // TODO: implement this
+//    @Override
+//    public String toString() {
+//        String expensesString = BudgetStringer.underlinedHeaderString("Expenses:", "-");
+//        expensesString += BudgetStringer.bodyString("expenses", transactionList);
+//
+//        return expensesString;
+//    }
 }

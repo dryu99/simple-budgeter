@@ -1,7 +1,5 @@
 package model.enums;
 
-import model.BudgetStringer;
-
 // TODO: how to lower coupling here, make just one enum?
 public enum ExpGenre implements Genre {
     FOOD("Food"),
@@ -17,21 +15,21 @@ public enum ExpGenre implements Genre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
-    // EFFECTS: returns vertical list of Expense genres
-    public static String stringList() {
-        int longestGenreLength = ExpGenre.greatestLengthGenre().lowerCaseForm.length();
-        int i = 1;
-
-        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
-
-        for (ExpGenre eg : ExpGenre.values()) {
-            str += i + ". " + eg.lowerCaseForm + "\n";
-            i++;
-        }
-        str += BudgetStringer.lineString(longestGenreLength,"-");
-
-        return str;
-    }
+//    // EFFECTS: returns vertical list of Expense genres
+//    public static String stringList() {
+//        int longestGenreLength = ExpGenre.greatestLengthGenre().lowerCaseForm.length();
+//        int i = 1;
+//
+//        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
+//
+//        for (ExpGenre eg : ExpGenre.values()) {
+//            str += i + ". " + eg.lowerCaseForm + "\n";
+//            i++;
+//        }
+//        str += BudgetStringer.lineString(longestGenreLength,"-");
+//
+//        return str;
+//    }
 
 
     // EFFECTS: returns case in lower case form

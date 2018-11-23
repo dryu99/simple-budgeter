@@ -22,7 +22,7 @@ public class EntryManagerDisplay extends JPanel {
     private TransactionTableModel expenseTableModel;
     private BudgetManager budgetManager;
 
-    // Components whose data need to be accessed
+    // Components whose data needs to be accessed
     private JList monthUIList;
 
     public EntryManagerDisplay(SimpleBudgeterUI ui) {

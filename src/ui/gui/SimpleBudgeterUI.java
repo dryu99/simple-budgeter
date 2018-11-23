@@ -5,19 +5,19 @@ import model.Transaction;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
+import ui.gui.listeners.AddButtonListener;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
 import java.awt.*;
 
-// TODO: not sure how much I should try to increase cohesion, because a lot of passing begins to occur (show example in github, with how I would have to pass in both MonthListDisplay AND SimpleBudgeterUI to MonthSelectionListener. alternatively i could have made monthUIList a field in SimpleBudgeterUI hmmm as essentially all the fields in this class are those that may be modified/accessed)
 public class SimpleBudgeterUI implements Runnable {
     private static final int WIDTH = 700;
     private static final int HEIGHT = 600;
 
     private JFrame frame;
 
-    private MonthListDisplay monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
+    private MonthListDisplay monthListDisplay;
     private EntryManagerDisplay entryManagerDisplay;
     private JSplitPane splitPane; // TODO ideally i would have this be a separate class and remove the monthlistdisplay and entrymanager fields but whatever
     private ButtonPanel buttonPanel;
@@ -42,9 +42,6 @@ public class SimpleBudgeterUI implements Runnable {
         frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-//        desktopPane = new JDesktopPane();
-//        frame.setContentPane(desktopPane);
-
         createComponents();
 
         frame.pack();
@@ -57,7 +54,7 @@ public class SimpleBudgeterUI implements Runnable {
     private void createComponents() {
         // initialize main components
         initializeSplitPane();
-        buttonPanel = new ButtonPanel(this);
+        buttonPanel = new ButtonPanel();
 
         initializeListeners();
 
@@ -85,6 +82,7 @@ public class SimpleBudgeterUI implements Runnable {
     // EFFECTS: initializes listeners
     private void initializeListeners() {
         monthListDisplay.getMonthUIList().addListSelectionListener(new MonthSelectionListener(this));
+        buttonPanel.getAddButton().addActionListener(new AddButtonListener(this)); // TODO: have to add listeners to buttons
     }
 
     // MODIFIES: this
@@ -97,6 +95,7 @@ public class SimpleBudgeterUI implements Runnable {
     }
 
     public static void main(String[] args) {
+        // TODO: have to implement saving/loading ahhhh
         BudgetManager budgetManager = new BudgetManager();
 
 //        Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));

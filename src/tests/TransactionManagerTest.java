@@ -13,6 +13,7 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
+// TODO need to test rest of methods in this class
 // TODO: seems like im testing redundant methods, as things like addtransaction and size are also tested in EntryTest. What do?
 public class TransactionManagerTest {
     private final double DELTA = 10e-8;
@@ -20,7 +21,7 @@ public class TransactionManagerTest {
 
     @Before
     public void setup() {
-        testManager = new RevenueManager(new Entry(new SimpleDate(1999,2,1999)));
+        testManager = new RevenueManager(new Entry("February 2018"));
     }
 
     @Test
@@ -30,7 +31,7 @@ public class TransactionManagerTest {
 
     @Test
     public void testContains() {
-        Transaction testTransaction = new Transaction(2,"save-ons", RevGenre.PAYCHEQUE);
+        Transaction testTransaction = new Transaction(2,"save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20));
         assertFalse(testManager.contains(testTransaction));
 
         loadTransactions();
@@ -47,13 +48,13 @@ public class TransactionManagerTest {
 
     @Test
     public void testAddTransactionSuccess() {
-        assertTrue(testManager.addTransaction(new Transaction(2, "save-ons", RevGenre.PAYCHEQUE)));
+        assertTrue(testManager.addTransaction(new Transaction(2, "save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
     }
 
     @Test
     public void testAddDuplicateTransaction() {
         loadTransactions();
-        assertFalse(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
+        assertFalse(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -64,13 +65,13 @@ public class TransactionManagerTest {
     @Test
     public void testRemoveTransactionSuccess() {
         loadTransactions();
-        assertTrue(testManager.removeTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
+        assertTrue(testManager.removeTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
     }
 
     @Test
     public void testRemoveUnsuccessNonExistentTransaction() {
         loadTransactions();
-        assertFalse(testManager.removeTransaction(new Transaction(200,"save-ons", RevGenre.PAYCHEQUE)));
+        assertFalse(testManager.removeTransaction(new Transaction(200,"save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -79,9 +80,9 @@ public class TransactionManagerTest {
     }
 
     private void loadTransactions() {
-        assertTrue(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE)));
-        assertTrue(testManager.addTransaction(new Transaction(5,"yon iou", RevGenre.IOU)));
-        assertTrue(testManager.addTransaction(new Transaction(25,"ta", RevGenre.PAYCHEQUE)));
+        assertTrue(testManager.addTransaction(new Transaction(2,"save-ons", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
+        assertTrue(testManager.addTransaction(new Transaction(5,"yon iou", RevGenre.IOU, new SimpleDate(2018,2,20))));
+        assertTrue(testManager.addTransaction(new Transaction(25,"ta", RevGenre.PAYCHEQUE, new SimpleDate(2018,2,20))));
     }
 
 }

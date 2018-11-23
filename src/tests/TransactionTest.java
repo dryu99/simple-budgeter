@@ -1,6 +1,7 @@
 package tests;
 
 import model.*;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 import org.junit.Before;
@@ -13,14 +14,17 @@ import static org.junit.Assert.assertFalse;
 // TODO: test setters?
 public class TransactionTest {
     private final double DELTA = 10e-8;
+    private SimpleDate testDate;
     private Transaction testRevenue;
     private Transaction testExpense;
     private TransactionManager testManager;
 
     @Before
     public void setup() {
-        testRevenue = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE);
-        testExpense = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
+        testDate = new SimpleDate(1999, 2, 20);
+
+        testRevenue = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE, testDate);
+        testExpense = new Transaction(-20, "McDonalds", ExpGenre.FOOD, testDate);
         testManager = new RevenueManager(null);
     }
 
@@ -101,14 +105,14 @@ public class TransactionTest {
     // TODO: do i need to test situations where the compared object has slightly different content values (e.g. everything's the same except the genre)
     @Test
     public void testEquals() {
-        Transaction testExpense2 = new Transaction(-20, "McDonalds", ExpGenre.FOOD);
+        Transaction testExpense2 = new Transaction(-20, "McDonalds", ExpGenre.FOOD, testDate);
 
         assertTrue(testExpense.equals(testExpense2));
     }
 
     @Test
     public void testHashCode() {
-        Transaction testRevenue2 = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE);
+        Transaction testRevenue2 = new Transaction(30, "Save-On-Foods", RevGenre.PAYCHEQUE, testDate);
 
         assertEquals(testRevenue2.hashCode(), testRevenue.hashCode());
     }

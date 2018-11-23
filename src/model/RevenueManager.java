@@ -7,11 +7,12 @@ public class RevenueManager extends TransactionManager {
         super(e);
     }
 
-    @Override
-    public String toString() {
-        String revenuesString = BudgetStringer.underlinedHeaderString("Revenues:", "-");
-        revenuesString += BudgetStringer.bodyString("revenues", transactionList);
-
-        return revenuesString;
-    }
+    // TODO implement this
+//    @Override
+//    public String toString() {
+//        String revenuesString = BudgetStringer.underlinedHeaderString("Revenues:", "-");
+//        revenuesString += BudgetStringer.bodyString("revenues", transactionList);
+//
+//        return revenuesString;
+//    }
 }

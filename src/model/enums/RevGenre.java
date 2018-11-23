@@ -1,7 +1,5 @@
 package model.enums;
 
-import model.BudgetStringer;
-
 public enum RevGenre implements Genre {
     PAYCHEQUE("Paycheque"),
     REIMBURSEMENT("Reimbursement"),
@@ -13,21 +11,21 @@ public enum RevGenre implements Genre {
         this.lowerCaseForm = lowerCaseForm;
     }
 
-    // EFFECTS: returns vertical list of Revenue genres
-    public static String stringList() {
-        int longestGenreLength = RevGenre.greatestLengthGenre().lowerCaseForm.length();
-        int i = 1;
-
-        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
-
-        for (RevGenre rg : RevGenre.values()) {
-            str += i + ". " + rg.lowerCaseForm + "\n";
-            i++;
-        }
-        str += BudgetStringer.lineString(longestGenreLength,"-");
-
-        return str;
-    }
+//    // EFFECTS: returns vertical list of Revenue genres
+//    public static String stringList() {
+//        int longestGenreLength = RevGenre.greatestLengthGenre().lowerCaseForm.length();
+//        int i = 1;
+//
+//        String str = BudgetStringer.lineString(longestGenreLength,"-") + "\n";
+//
+//        for (RevGenre rg : RevGenre.values()) {
+//            str += i + ". " + rg.lowerCaseForm + "\n";
+//            i++;
+//        }
+//        str += BudgetStringer.lineString(longestGenreLength,"-");
+//
+//        return str;
+//    }
 
     // EFFECTS: returns case in lower case form
     @Override

@@ -4,19 +4,25 @@ import model.ExpenseManager;
 import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
+import model.date.SimpleDate;
 import model.enums.RevGenre;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class RevenueManagerTest {
     private TransactionManager testManager;
+    private SimpleDate testDate;
 
     @Before
     public void setup() {
         testManager = new RevenueManager(null);
+        testDate = new SimpleDate(2018,2,20);
+
+        testManager.addTransaction(new Transaction(-2,"save-ons", RevGenre.PAYCHEQUE, testDate));
+        testManager.addTransaction(new Transaction(-5,"yon iou", RevGenre.IOU,testDate));
+        testManager.addTransaction(new Transaction(-25,"ta", RevGenre.PAYCHEQUE,testDate));
     }
 
     @Test
@@ -43,8 +49,6 @@ public class RevenueManagerTest {
     }
 
     private void loadTransactions() {
-        assertTrue(testManager.addTransaction(new Transaction(-2,"save-ons", RevGenre.PAYCHEQUE)));
-        assertTrue(testManager.addTransaction(new Transaction(-5,"yon iou", RevGenre.IOU)));
-        assertTrue(testManager.addTransaction(new Transaction(-25,"ta", RevGenre.PAYCHEQUE)));
+
     }
 }

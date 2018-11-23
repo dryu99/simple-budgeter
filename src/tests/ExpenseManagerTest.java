@@ -3,19 +3,26 @@ package tests;
 import model.ExpenseManager;
 import model.Transaction;
 import model.TransactionManager;
+import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
+// TODO might be able to delete this class
 public class ExpenseManagerTest {
     private TransactionManager testManager;
+    private SimpleDate testDate;
 
     @Before
     public void setup() {
         testManager = new ExpenseManager(null);
+        testDate = new SimpleDate(2018,2,20);
+
+        testManager.addTransaction(new Transaction(-2,"mcds", ExpGenre.FOOD, testDate));
+        testManager.addTransaction(new Transaction(-5,"beer", ExpGenre.DRINK, testDate));
+        testManager.addTransaction(new Transaction(-25,"clothes", ExpGenre.SHOPPING, testDate));
     }
 
     @Test
@@ -29,7 +36,6 @@ public class ExpenseManagerTest {
 
     @Test
     public void testToString() {
-        loadTransactions();
 
         String managerString = "Expenses:\n" +
                 "---------\n" +
@@ -40,9 +46,4 @@ public class ExpenseManagerTest {
         assertEquals(managerString, testManager.toString());
     }
 
-    private void loadTransactions() {
-        assertTrue(testManager.addTransaction(new Transaction(-2,"mcds", ExpGenre.FOOD)));
-        assertTrue(testManager.addTransaction(new Transaction(-5,"beer", ExpGenre.DRINK)));
-        assertTrue(testManager.addTransaction(new Transaction(-25,"clothes", ExpGenre.SHOPPING)));
-    }
 }
