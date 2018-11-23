@@ -37,7 +37,6 @@ public class Transaction {
     public SimpleDate getDate() { return date; }
     public TransactionManager getManager() { return manager; }
 
-
     // EFFECTS: returns formatted value of transaction (no - signs, $, and decimals) //TODO want it to return double not string
     public String getFormattedValue() {
         double value = this.value < 0 ? this.value * -1 : this.value;

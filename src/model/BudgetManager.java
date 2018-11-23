@@ -6,7 +6,7 @@ import java.util.*;
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
 public class BudgetManager implements Iterable<String> {
 
-    // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order
+    // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order?
     private HashMap<String, Entry> entries;
 
     // Constructor:
@@ -20,7 +20,7 @@ public class BudgetManager implements Iterable<String> {
     // EFFECTS: returns list of available months in budget manager in order
     public List<String> getMonths() {
         List<String> monthAsList = new ArrayList<>(entries.keySet());
-        Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getMonthNum));
+        Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getDateCompareNum));
 
         return monthAsList;
     }
@@ -108,40 +108,57 @@ public class BudgetManager implements Iterable<String> {
     }
 
     // TODO: the sorting doesn't consider the year, so higher numbers are placed before lower ones. have to refactor
-    // EFFECTS: returns the respective num representation of the month of the given date
-    private static int getMonthNum(String date) {
+    // EFFECTS: returns the respective num representation of the month/year of the given date (to compare)
+    private static int getDateCompareNum(String date) {
+        int val = 0;
+        String month = "";
+        int year = 0;
+
         if(date.contains(" ")) {
-            date = date.split(" ")[0];
+            String[] dateArray = date.split(" ");
+            month = dateArray[0];
+            year = Integer.parseInt(dateArray[1]);
         }
 
-        switch(date){
+        switch(month){
             case "January":
-                return 1;
+                val += 1;
+                break;
             case "February":
-                return 2;
+                val += 2;
+                break;
             case "March":
-                return 3;
+                val += 3;
+                break;
             case "April":
-                return 4;
+                val += 4;
+                break;
             case "May":
-                return 5;
+                val += 5;
+                break;
             case "June":
-                return 6;
+                val += 6;
+                break;
             case "July":
-                return 7;
+                val += 7;
+                break;
             case "August":
-                return 8;
+                val += 8;
+                break;
             case "September":
-                return 9;
+                val += 9;
+                break;
             case "October":
-                return 10;
+                val += 10;
+                break;
             case "November":
-                return 11;
+                val += 11;
+                break;
             case "December":
-                return 12;
-
+                val += 12;
+                break;
         }
-        return -1;
+        return (val * 2) + (year * 29);
     }
 
 

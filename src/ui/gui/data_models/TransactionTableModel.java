@@ -7,7 +7,7 @@ import model.enums.Genre;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
-public class TransactionTableModel extends AbstractTableModel { //tODO make this a singleton?
+public class TransactionTableModel extends AbstractTableModel {
     private List<Transaction> data;
 
     private String[] columnNames = {"Date", "Amount", "Genre"};

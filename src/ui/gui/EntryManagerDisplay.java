@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EntryManagerDisplay extends JPanel {
-    // Main components
+    // Main components (those that will be added directly to the frame)
     private JPanel displayPanel;
     private JLabel statsLabel;
 

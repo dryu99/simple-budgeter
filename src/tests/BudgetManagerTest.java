@@ -28,14 +28,18 @@ public class BudgetManagerTest {
     public void testGetMonths() {
         assertTrue(testBudgetManager.createEntryFromDate("April 2018"));
         assertTrue(testBudgetManager.createEntryFromDate("February 2018"));
+        assertTrue(testBudgetManager.createEntryFromDate("December 2018"));
         assertTrue(testBudgetManager.createEntryFromDate("February 2019"));
         assertTrue(testBudgetManager.createEntryFromDate("January 2019"));
+        assertTrue(testBudgetManager.createEntryFromDate("May 2019"));
 
         List<String> expectedList = new ArrayList<>();
         expectedList.add("February 2018");
         expectedList.add("April 2018");
+        expectedList.add("December 2018");
         expectedList.add("January 2019");
         expectedList.add("February 2019");
+        expectedList.add("May 2019");
 
         assertEquals(expectedList, testBudgetManager.getMonths());
     }

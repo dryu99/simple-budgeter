@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddButtonListener implements ActionListener {
+    // Components to be accessed
     private JFrame mainFrame;
 
     public AddButtonListener(SimpleBudgeterUI ui) {
@@ -14,6 +15,7 @@ public class AddButtonListener implements ActionListener {
     }
 
     // TODO make a pop up adding frame
+    // EFFECTS: creates a dialog frame that prompts user for new transaction input
     @Override
     public void actionPerformed(ActionEvent ae) {
         JOptionPane.showMessageDialog(mainFrame,"Adding a transaction!!!");

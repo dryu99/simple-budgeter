@@ -6,6 +6,7 @@ import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
 import ui.gui.listeners.AddButtonListener;
+import ui.gui.listeners.DeleteButtonListener;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
@@ -82,7 +83,8 @@ public class SimpleBudgeterUI implements Runnable {
     // EFFECTS: initializes listeners
     private void initializeListeners() {
         monthListDisplay.getMonthUIList().addListSelectionListener(new MonthSelectionListener(this));
-        buttonPanel.getAddButton().addActionListener(new AddButtonListener(this)); // TODO: have to add listeners to buttons
+        buttonPanel.getAddButton().addActionListener(new AddButtonListener(this));
+        buttonPanel.getDeleteButton().addActionListener(new DeleteButtonListener(this));
     }
 
     // MODIFIES: this
@@ -97,11 +99,6 @@ public class SimpleBudgeterUI implements Runnable {
     public static void main(String[] args) {
         // TODO: have to implement saving/loading ahhhh
         BudgetManager budgetManager = new BudgetManager();
-
-//        Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
-//        Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
-//        Entry entry3 = new Entry(new SimpleDate(2018, 4, 20));
-//        Entry entry4 = new Entry(new SimpleDate(2018,2,25));
 
         SimpleDate date1 = new SimpleDate(2018, 2, 20);
         SimpleDate date1a = new SimpleDate(2018, 2, 25);
@@ -127,19 +124,6 @@ public class SimpleBudgeterUI implements Runnable {
 
         Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING,date4);
         Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK, date4a);
-//
-//        entry1.addTransaction(revenue1);
-//        entry1.addExpense(expense1);
-//        entry1.addExpense(expense2);
-//
-//        entry2.addTransaction(revenue2);
-//        entry2.addTransaction(revenue3);
-//
-//        entry3.addExpense(expense3);
-//        entry3.addExpense(expense4);
-//
-//        entry4.addExpense(expense5);
-//        entry4.addExpense(expense6);
 
         budgetManager.addTransaction(revenue1);
         budgetManager.addTransaction(expense1);
