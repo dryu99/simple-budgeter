@@ -21,6 +21,7 @@ public class SimpleBudgeterUI implements Runnable {
     private JPanel monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
     private JList monthUIList;
     private EntryManagerDisplay entryManagerDisplay;
+    private JLabel statsLabel;
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
     private JSplitPane splitPane;
@@ -37,9 +38,9 @@ public class SimpleBudgeterUI implements Runnable {
     public JPanel getMonthListDisplay() { return monthListDisplay; }
     public JList getMonthUIList() { return monthUIList; }
     public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
+    public JLabel getStatsLabel() { return statsLabel; }
     public TransactionTableModel getRevenueTableModel() { return revenueTableModel; }
     public TransactionTableModel getExpenseTableModel() { return expenseTableModel; }
-    public ButtonPanel getButtonPanel() { return buttonPanel; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
     // MODIFIES: this
@@ -114,6 +115,7 @@ public class SimpleBudgeterUI implements Runnable {
     // MODIFIES: this
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
+        statsLabel = new JLabel();
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex()); // TODO: this is the method call that's preventing me from smoothly creating a monthDisplay class, because it needs access to monthUIlist
         revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO: perhaps I can invoke a list selection event to set up the data? instead of setting it up this way
         expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
@@ -139,7 +141,7 @@ public class SimpleBudgeterUI implements Runnable {
         int width = Toolkit.getDefaultToolkit().getScreenSize().width;
         int height = Toolkit.getDefaultToolkit().getScreenSize().width;
 
-        frame.setLocation((width - frame.getWidth()) / 2, 100); //TODO: dont know how to do the y part
+        frame.setLocation((width - frame.getWidth()) / 2, 100); //TODO: don't know how to do the y part
     }
 
     public static void main(String[] args) {

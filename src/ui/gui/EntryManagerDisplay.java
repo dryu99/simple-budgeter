@@ -12,9 +12,10 @@ public class EntryManagerDisplay extends JPanel {
     private JPanel revenueTablePanel;
     private JPanel expenseTablePanel;
     private JPanel displayPanel;
-    private JLabel statsLabel;
+
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
+    private JLabel statsLabel;
 
 //    private JList monthList;
     private BudgetManager budgetManager;
@@ -24,6 +25,7 @@ public class EntryManagerDisplay extends JPanel {
 
         revenueTableModel = ui.getRevenueTableModel();
         expenseTableModel = ui.getExpenseTableModel();
+        statsLabel = ui.getStatsLabel();
 
         budgetManager = ui.getBudgetManager();
 
@@ -44,7 +46,8 @@ public class EntryManagerDisplay extends JPanel {
 
     private void initializeStatsLabel() {
         // Initialize JLabel
-        statsLabel = new JLabel("Statistics"); // TODO have to have this updated at the start of program (HOWEVER HTIS REQUIRES THE NEED FOR MONTHUILIST WHICH IS OUTSIDE IN SIMPLEBUDGETERUI AND I AVOIDED PASSING IT IN ORIGINALLY BUTNOW HWOHEIWOFAHEIOA)
+//        statsLabel = new JLabel("Statistics"); // TODO have to have this updated at the start of program (HOWEVER HTIS REQUIRES THE NEED FOR MONTHUILIST WHICH IS OUTSIDE IN SIMPLEBUDGETERUI AND I AVOIDED PASSING IT IN ORIGINALLY BUTNOW HWOHEIWOFAHEIOA)
+        statsLabel.setText("Statistics");
         statsLabel.setHorizontalAlignment(JLabel.CENTER);
         statsLabel.setPreferredSize(new Dimension(0,75));
     }

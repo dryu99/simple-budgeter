@@ -11,11 +11,14 @@ import javax.swing.event.ListSelectionListener;
 public class MonthSelectionListener implements ListSelectionListener {
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
+    private JLabel statsLabel;
+
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
         revenueTableModel = ui.getRevenueTableModel();
         expenseTableModel = ui.getExpenseTableModel();
+        statsLabel = ui.getStatsLabel();
 //        revenueTableModel = emd.getRevenueTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
         budgetManager = ui.getBudgetManager();
     }
@@ -39,7 +42,7 @@ public class MonthSelectionListener implements ListSelectionListener {
 
     // EFFECTS: updates statistics label to show proper net value corresponding to given date
     private void updateStatisticsLabel(String selectedDate) { //tODO okay its getting really really annoying to pass around certain variables around now (Stats JLabel should be inside entry manager display only sigh)
-
+        statsLabel.setText("" + budgetManager.getTotalNetValueFromDate(selectedDate));
     }
 
 }
