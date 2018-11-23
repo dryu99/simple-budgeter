@@ -1,7 +1,6 @@
 package ui.gui;
 
 import model.BudgetManager;
-import model.Entry;
 import model.Transaction;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
@@ -100,41 +99,58 @@ public class SimpleBudgeterUI implements Runnable {
     public static void main(String[] args) {
         BudgetManager budgetManager = new BudgetManager();
 
-        Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
-        Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
-        Entry entry3 = new Entry(new SimpleDate(2018, 4, 20));
-        Entry entry4 = new Entry(new SimpleDate(2018,2,25));
+//        Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
+//        Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
+//        Entry entry3 = new Entry(new SimpleDate(2018, 4, 20));
+//        Entry entry4 = new Entry(new SimpleDate(2018,2,25));
 
-        Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE);
-        Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD);
-        Transaction expense2 = new Transaction(-50d, "Boots", ExpGenre.SHOPPING);
+        SimpleDate date1 = new SimpleDate(2018, 2, 20);
+        SimpleDate date1a = new SimpleDate(2018, 2, 25);
 
-        Transaction revenue2 = new Transaction(20.56, "Yon-Jun IOU", RevGenre.IOU);
-        Transaction revenue3 = new Transaction(60d, "Music Gig", RevGenre.PAYCHEQUE);
+        SimpleDate date2 = new SimpleDate(2018, 3, 20);
+        SimpleDate date2a = new SimpleDate(2018, 3, 15);
 
-        Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING);
-        Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD);
+        SimpleDate date3 = new SimpleDate(2018, 4, 20);
+        SimpleDate date3a = new SimpleDate(2018, 4, 16);
 
-        Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING);
-        Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK);
+        SimpleDate date4 = new SimpleDate(2018, 12, 20);
+        SimpleDate date4a = new SimpleDate(2018, 12, 17);
 
-        entry1.addTransaction(revenue1);
-        entry1.addExpense(expense1);
-        entry1.addExpense(expense2);
+        Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE, date1);
+        Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD, date1a);
+        Transaction expense2 = new Transaction(-50d, "Boots", ExpGenre.SHOPPING, date1a);
 
-        entry2.addTransaction(revenue2);
-        entry2.addTransaction(revenue3);
+        Transaction revenue2 = new Transaction(20.56, "Yon-Jun IOU", RevGenre.IOU, date2);
+        Transaction revenue3 = new Transaction(60d, "Music Gig", RevGenre.PAYCHEQUE, date2a);
 
-        entry3.addExpense(expense3);
-        entry3.addExpense(expense4);
+        Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING,date3);
+        Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD,date3a);
 
-        entry4.addExpense(expense5);
-        entry4.addExpense(expense6);
+        Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING,date4);
+        Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK, date4a);
+//
+//        entry1.addTransaction(revenue1);
+//        entry1.addExpense(expense1);
+//        entry1.addExpense(expense2);
+//
+//        entry2.addTransaction(revenue2);
+//        entry2.addTransaction(revenue3);
+//
+//        entry3.addExpense(expense3);
+//        entry3.addExpense(expense4);
+//
+//        entry4.addExpense(expense5);
+//        entry4.addExpense(expense6);
 
-        budgetManager.addTransaction(entry1);
-        budgetManager.addTransaction(entry2);
-        budgetManager.addTransaction(entry3);
-        budgetManager.addTransaction(entry4);
+        budgetManager.addTransaction(revenue1);
+        budgetManager.addTransaction(expense1);
+        budgetManager.addTransaction(expense2);
+        budgetManager.addTransaction(revenue2);
+        budgetManager.addTransaction(revenue3);
+        budgetManager.addTransaction(expense3);
+        budgetManager.addTransaction(expense4);
+        budgetManager.addTransaction(expense5);
+        budgetManager.addTransaction(expense6);
 
         SwingUtilities.invokeLater(new SimpleBudgeterUI(budgetManager));
     }
