@@ -17,17 +17,17 @@ public class Transaction {
     // Constructor:
 
     // EFFECTS: creates a transaction with a value, description, and genre
-    public Transaction(double value, String desc, Genre genre) {
+    public Transaction(double value, String desc, Genre genre, SimpleDate date) {
         this.value = value;
         this.description = desc;
         this.genre = genre;
-        date = null;
+        this.date = date;
         manager = null;
     }
 
-    // EFFECTS: creatse a transaction with a value and description (no genre)
+    // EFFECTS: creates a transaction with a value and description (no genre)
     public Transaction(double value, String desc) {
-        this(value, desc, null);
+        this(value, desc, null, null);
     }
 
     // Getters:
@@ -62,12 +62,9 @@ public class Transaction {
         }
 
         manager = newManager;
-        if (manager != null) {
-            date = manager.getEntry().getDate(); // TODO test that the transaction is actually being assigned a date
-        }
 
         if (newManager != null && !newManager.contains(this)) {
-            manager.addTransaction(this);
+            newManager.addTransaction(this);
         }
     }
 
@@ -93,11 +90,12 @@ public class Transaction {
         if (description != null ? !description.equals(compared.description) : compared.description != null) {
             return false;
         }
-
         if (genre != null ? !genre.equals(compared.genre) : compared.genre != null) {
             return false;
         }
-
+        if (date != null ? !date.equals(compared.date) : compared.date != null) {
+            return false;
+        }
         return true;
     }
 
@@ -107,6 +105,7 @@ public class Transaction {
         int result = (int) value * 100; // e.g. 20.25 -> 2025 (to avoid rounding when typecasting)
         result += description != null ? description.hashCode() : 0;
         result += genre != null ? genre.hashCode() : 0;
+        result += date != null ? date.hashCode() : 0;
 
         return result;
     }

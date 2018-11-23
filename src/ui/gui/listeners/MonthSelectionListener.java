@@ -43,7 +43,7 @@ public class MonthSelectionListener implements ListSelectionListener {
 
     // EFFECTS: updates statistics label to show proper net value corresponding to given date
     private void updateStatisticsLabel(String selectedDate) { // TODO: implement observer pattern here? would get rid of components to be modified fields
-        statsLabel.setText("" + budgetManager.getTotalNetValueFromDate(selectedDate));
+        statsLabel.setText("" + budgetManager.getNetValueFromDate(selectedDate));
     }
 
 }

@@ -1,27 +1,22 @@
 package model;
 
-import model.date.SimpleDate;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Entry implements Comparable<Entry> {
-    private static int nextEntryId = 1;
-    private int id;
-    private SimpleDate date;
+public class Entry {
+//    private SimpleDate date;
+    private String myDate;
     private TransactionManager revenueManager;
     private TransactionManager expenseManager;
 
-    public Entry(SimpleDate date) {
-        id = nextEntryId++;
-        this.date = date;
+    public Entry(String date) {
+        myDate = date;
         revenueManager = new RevenueManager(this);
         expenseManager = new ExpenseManager(this);
     }
 
     // Getters:
-    public int getId() { return id; }
-    public SimpleDate getDate() { return date; }
+    public String getDate() { return myDate; }
     public List<Transaction> getRevenues() { return revenueManager.getTransactionList(); }
     public List<Transaction> getExpenses() { return expenseManager.getTransactionList(); }
     public List<Transaction> getTransactions() { //TODO: have to test this method
@@ -33,7 +28,7 @@ public class Entry implements Comparable<Entry> {
     }
 
     // Setters:
-    public void setDate(SimpleDate date) { this.date = date; }
+    public void setDate(String date) { myDate = date; }
 
     // EFFECTS: returns size of revenue list
     public int revenueListSize() {
@@ -46,39 +41,34 @@ public class Entry implements Comparable<Entry> {
     // EFFECTS: returns size of revenue + expense list
     public int transactionListSize() { return revenueListSize() + expenseListSize(); }
 
-    // TODO: do i want to make one method addTransaction? (can check the value - +)
+    // TODO throw exception if neg?
     // MODIFIES: this
-    // EFFECTS: add revenue to revenue list
-    public void addRevenue(Transaction r) {
-        revenueManager.addTransaction(r);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add expense to expense list
-    public void addExpense(Transaction e) {
-        expenseManager.addTransaction(e);
+    // EFFECTS: add transaction to appropriate manager
+    public void addTransaction(Transaction t) {
+        if (t.getValue() > 0) {
+            revenueManager.addTransaction(t);
+        } else {
+            expenseManager.addTransaction(t);
+        }
     }
 
     // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null (even tho that clause is in the manager method)
     // MODIFIES: this
-    // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
-    public boolean removeRevenue(Transaction r) {
-        return revenueManager.removeTransaction(r);
+    // EFFECTS: if given transaction is in its appropriate list, remove it and return true, ow return false;
+    public boolean removeTransaction(Transaction t) {
+        if (t.getValue() > 0) {
+            return revenueManager.removeTransaction(t);
+        } else {
+            return expenseManager.removeTransaction(t);
+        }
     }
 
-    // REQUIRES: e != null
-    // MODIFIES: this
-    // EFFECTS: if given expense is in expense list, remove it and return true, ow return false;
-    public boolean removeExpense(Transaction e) {
-        return expenseManager.removeTransaction(e);
-    }
-
-    // EFFECTS: returns total revenues of this manager
+    // EFFECTS: returns total revenue value of this entry
     public double totalRevenue() {
         return revenueManager.totalValue();
     }
 
-    // EFFECTS: returns total expenses of this manager
+    // EFFECTS: returns total expense value of this entry
     public double totalExpenses() {
         return expenseManager.totalValue();
     }
@@ -88,21 +78,23 @@ public class Entry implements Comparable<Entry> {
         return totalRevenue() + totalExpenses();
     }
 
+    // TODO implement this
     @Override
-    // EFFECTS: returns manager in simple string form
+    // EFFECTS: returns entry in simple string form
     public String toString() {
-        return id + ". ENTRY " + "(" + date + ")";
+        return "yes";
     }
 
-    // EFFECTS: returns manager in complete string form listing all revenues and expenses
-    public String toCompleteString() {
-        String completeString = BudgetStringer.underlinedHeaderString(this.toString(), "=");
-
-        completeString += revenueManager.toString() + "\n";
-        completeString += expenseManager.toString() + "\n";
-
-        return completeString.trim();
-    }
+    // TODO do i even need this lol
+//    // EFFECTS: returns manager in complete string form listing all revenues and expenses
+//    public String toCompleteString() {
+//        String completeString = BudgetStringer.underlinedHeaderString(this.toString(), "=");
+//
+//        completeString += revenueManager.toString() + "\n";
+//        completeString += expenseManager.toString() + "\n";
+//
+//        return completeString.trim();
+//    }
 
     // EFFECTS: returns true if manager has same id and date as compared
     @Override
@@ -113,9 +105,7 @@ public class Entry implements Comparable<Entry> {
 
         Entry compared = (Entry) o;
 
-//        if (id != compared.id) { return false; }
-
-        if (date != null ? !date.equals(compared.date) : compared.date != null) {
+        if (myDate != null ? !myDate.equals(compared.myDate) : compared.myDate != null) {
             return false;
         }
 
@@ -125,14 +115,14 @@ public class Entry implements Comparable<Entry> {
     // EFFECTS: returns unique id based on the manager's date
     @Override
     public int hashCode() {
-        int result = date != null ? date.hashCode() : 0;
+        int result = myDate != null ? myDate.hashCode() : 0;
 
         return result * 31;
     }
 
-    // EFFECTS: returns a positive number if this Entry's date is older than compared
-    @Override
-    public int compareTo(Entry compared) {
-        return date.compareTo(compared.date);
-    }
+//    // EFFECTS: returns a positive number if this Entry's date is older than compared
+//    @Override
+//    public int compareTo(Entry compared) {
+//        return date.compareTo(compared.date);
+//    }
 }

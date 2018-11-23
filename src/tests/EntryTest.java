@@ -27,7 +27,7 @@ public class EntryTest {
     public void testAddRevenue() {
         assertEquals(0, testEntry.revenueListSize());
 
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
 
         assertEquals(1, testEntry.revenueListSize());
     }
@@ -43,11 +43,11 @@ public class EntryTest {
 
     @Test
     public void testRemoveRevenue() {
-        assertFalse(testEntry.removeRevenue(testRevenue));
+        assertFalse(testEntry.removeTransaction(testRevenue));
 
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
 
-        assertTrue(testEntry.removeRevenue(testRevenue));
+        assertTrue(testEntry.removeTransaction(testRevenue));
     }
 
     @Test
@@ -63,14 +63,14 @@ public class EntryTest {
     public void testRemoveFail() {
         assertFalse(testEntry.removeExpense(testExpense));
 
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
 
         assertFalse(testEntry.removeExpense(testExpense));
     }
 
     @Test
     public void testTransactionListSize() {
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
         testEntry.addExpense(testExpense);
 
         assertEquals(2, testEntry.transactionListSize());
@@ -81,7 +81,7 @@ public class EntryTest {
         // Checks that current manager revenue is 0
         assertEquals(0 , testEntry.totalRevenue(), DELTA);
 
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
 
         assertEquals(30, testEntry.totalRevenue(), DELTA);
     }
@@ -101,7 +101,7 @@ public class EntryTest {
     public void testNetValue() {
         assertEquals(0, testEntry.netValue(), DELTA);
 
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
         testEntry.addExpense(testExpense);
 
         assertEquals(30-20, testEntry.netValue(), DELTA);
@@ -109,7 +109,7 @@ public class EntryTest {
 
     @Test
     public void testToCompleteString() {
-        testEntry.addRevenue(testRevenue);
+        testEntry.addTransaction(testRevenue);
         testEntry.addExpense(testExpense);
 
         String completeString = testEntry.getId() + ". ENTRY (" + testEntry.getDate() + ")\n";

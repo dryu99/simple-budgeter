@@ -5,27 +5,21 @@ import java.util.*;
 // TODO: how to keep entry managers sorted when printing out (lowest date to highest date)
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
 public class BudgetManager implements Iterable<String> {
-    private static BudgetManager instance = new BudgetManager();
 
     // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order
-    private HashMap<String, EntryManager> entryManagers;
+    private HashMap<String, Entry> entries;
 
     // Constructor:
-    private BudgetManager() {
-        entryManagers = new HashMap<>();
-    }
-
-    // EFFECTS: returns only BudgeterManager instance
-    public static BudgetManager getInstance() {
-        return instance;
+    public BudgetManager() {
+        entries = new HashMap<>();
     }
 
     // Getters:
-    public Collection<EntryManager> getAllEntryManagers() { return entryManagers.values(); }
+    public Collection<Entry> getAllEntries() { return entries.values(); }
 
     // EFFECTS: returns list of available months in budget manager in order
     public List<String> getMonths() {
-        List<String> monthAsList = new ArrayList<>(entryManagers.keySet());
+        List<String> monthAsList = new ArrayList<>(entries.keySet());
         Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getMonthNum));
 
         return monthAsList;
@@ -33,42 +27,48 @@ public class BudgetManager implements Iterable<String> {
 
     // TODO: maybe I can overload this method to take in strings and simpledates?
     // EFFECTS: if date exists, returns entry manager of given date, ow return null
-    public EntryManager getEntryManagerFromDate(String date) {
-        return entryManagers.get(date);
+    public Entry getEntryFromDate(String date) {
+        return entries.get(date);
     }
 
     // TODO write a unit test for this
     // EFFECTS: returns total specified transaction amount from entry manager of given date
     public double getSpecifiedTransactionTotalFromDate(String date, Boolean isRevenue) {
-        return entryManagers.get(date).getSpecifiedTransactionTotal(isRevenue);
+        if (isRevenue) {
+            return entries.get(date).totalRevenue();
+        }
+        return entries.get(date).totalExpenses();
     }
 
     // TODO write a unit test for this
     // EFFECTS: returns total net value from entry manager of given date
-    public double getTotalNetValueFromDate(String date) {
-        return entryManagers.get(date).getTotalNetValue();
+    public double getNetValueFromDate(String date) {
+        return entries.get(date).netValue();
     }
 
     // TODO write a unit test for this
     // EFFECTS: returns ALL transactions from the entry manager of the given date
     public List<Transaction> getAllTransactionsFromDate(String date) {
-        return entryManagers.get(date).getAllTransactions();
+        return entries.get(date).getTransactions();
     }
 
     // TODO: write a unitttt test for thisss
     // EFFECTS: returns ALL specified transactions from the entry manager of the given date
     public List<Transaction> getAllSpecifiedTransactionsFromDate(String date, Boolean isRevenue) {
-        return entryManagers.get(date).getAllSpecifiedTransactions(isRevenue);
+        if (isRevenue) {
+            return entries.get(date).getRevenues();
+        } else {
+            return entries.get(date).getExpenses();
+        }
     }
-
 
     // TODO: use regex to check given string? or should i use SimpleDates as key values
     // MODIFIES: this
-    // EFFECTS: if hashmap doesn't contain given date key, add a new date-empty manager map and return true,
+    // EFFECTS: if hashmap doesn't contain given date key, add a new date-entry key-value pair and return true,
     //          ow do nothing and return false
-    public boolean createEntryManFromDate(String date) {
-        if (!entryManagers.containsKey(date)) {
-            entryManagers.put(date, new EntryManager(date));
+    public boolean createEntryFromDate(String date) {
+        if (!entries.containsKey(date)) {
+            entries.put(date, new Entry(date));
             return true;
         }
         return false;
@@ -76,30 +76,28 @@ public class BudgetManager implements Iterable<String> {
 
     // TODO: when should the sorting occur? in this method after an entry is added? or should i create a method that sorts from entry and call it here. or should sorting occur only when i need to see the entry on the ui (so when retrieving)
     // MODIFIES: this
-    // EFFECTS: adds an entry to the bud-manager in its respective e-manager (according to month),
-    //          if no such e-manager exists, create one first and then add entry
-    public void addEntry(Entry e) {
-        String simpleFormattedDate = e.getDate().simpleFormat();
+    // EFFECTS: adds a transaction to the bud-manager in its respective entry (according to month),
+    //          if no such entry exists, create one first and then add transaction
+    public void addTransaction(Transaction t) {
+        String transactionDate = t.getDate().simpleFormat();
 
-        if (!entryManagers.keySet().contains(simpleFormattedDate)) {
-            createEntryManFromDate(simpleFormattedDate);
+        if (!entries.keySet().contains(transactionDate)) {
+            createEntryFromDate(transactionDate);
         }
 
-        entryManagers.get(simpleFormattedDate).addEntry(e);
+        entries.get(transactionDate).addTransaction(t);
     }
 
-    // TODO: Should I be able to add transactions from a budgeter manager? the method should take in an ENTRY and TRANSACTION, and adds the TRANSACTION to the ENTRY
-
-    // TODO: implement toString to return every entry manager under their respective month
-    @Override
-    public String toString() {
-        String budgetManString = BudgetStringer.underlinedHeaderString("ALL ENTRIES BY MONTH", "=") + "\n";
-        for (EntryManager em : entryManagers.values()) {
-            budgetManString += em + "\n";
-        }
-
-        return budgetManString;
-    }
+    // TODO: implement toString
+//    @Override
+//    public String toString() {
+//        String budgetManString = BudgetStringer.underlinedHeaderString("ALL ENTRIES BY MONTH", "=") + "\n";
+//        for (EntryManager em : entries.values()) {
+//            budgetManString += em + "\n";
+//        }
+//
+//        return budgetManString;
+//    }
 
     // EFFECTS: returns iterator for budget manager's month list
     @Override

@@ -98,7 +98,7 @@ public class SimpleBudgeterUI implements Runnable {
     }
 
     public static void main(String[] args) {
-        BudgetManager budgetManager = BudgetManager.getInstance();
+        BudgetManager budgetManager = new BudgetManager();
 
         Entry entry1 = new Entry(new SimpleDate(2018, 2, 20));
         Entry entry2 = new Entry(new SimpleDate(2018, 3, 20));
@@ -118,12 +118,12 @@ public class SimpleBudgeterUI implements Runnable {
         Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING);
         Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK);
 
-        entry1.addRevenue(revenue1);
+        entry1.addTransaction(revenue1);
         entry1.addExpense(expense1);
         entry1.addExpense(expense2);
 
-        entry2.addRevenue(revenue2);
-        entry2.addRevenue(revenue3);
+        entry2.addTransaction(revenue2);
+        entry2.addTransaction(revenue3);
 
         entry3.addExpense(expense3);
         entry3.addExpense(expense4);
@@ -131,10 +131,10 @@ public class SimpleBudgeterUI implements Runnable {
         entry4.addExpense(expense5);
         entry4.addExpense(expense6);
 
-        budgetManager.addEntry(entry1);
-        budgetManager.addEntry(entry2);
-        budgetManager.addEntry(entry3);
-        budgetManager.addEntry(entry4);
+        budgetManager.addTransaction(entry1);
+        budgetManager.addTransaction(entry2);
+        budgetManager.addTransaction(entry3);
+        budgetManager.addTransaction(entry4);
 
         SwingUtilities.invokeLater(new SimpleBudgeterUI(budgetManager));
     }
