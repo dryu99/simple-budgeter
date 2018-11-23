@@ -42,7 +42,7 @@ public class MonthSelectionListener implements ListSelectionListener {
     }
 
     // EFFECTS: updates statistics label to show proper net value corresponding to given date
-    private void updateStatisticsLabel(String selectedDate) { //tODO okay its getting really really annoying to pass around certain variables around now (Stats JLabel should be inside entry manager display only sigh)
+    private void updateStatisticsLabel(String selectedDate) { // TODO: implement observer pattern here? would get rid of components to be modified fields
         statsLabel.setText("" + budgetManager.getTotalNetValueFromDate(selectedDate));
     }
 

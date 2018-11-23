@@ -28,7 +28,8 @@ public class EntryManagerDisplay extends JPanel {
     public EntryManagerDisplay(SimpleBudgeterUI ui) {
         super(new BorderLayout());
 
-        monthUIList = ui.getMonthUIList();
+        monthUIList = ui.getMonthListDisplay().getMonthUIList(); //TODO this is sketchy because if the monthlistdisplay isnt created before creating this, im gonn get a null pointer error.
+                                                                // TODO the ONLY reason why i need monthui for this class is because i need to get the selection index to get the selected date. IF i could figure out a way to manually create action events, i think it should be solved
         budgetManager = ui.getBudgetManager();
 
         createComponents();

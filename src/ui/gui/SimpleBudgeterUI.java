@@ -18,10 +18,9 @@ public class SimpleBudgeterUI implements Runnable {
 
     private JFrame frame;
 
-    private JPanel monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
-    private JList monthUIList;
+    private MonthListDisplay monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
     private EntryManagerDisplay entryManagerDisplay;
-    private JSplitPane splitPane;
+    private JSplitPane splitPane; // TODO ideally i would have this be a separate class and remove the monthlistdisplay and entrymanager fields but whatever
     private ButtonPanel buttonPanel;
 
     private BudgetManager budgetManager;
@@ -32,8 +31,7 @@ public class SimpleBudgeterUI implements Runnable {
 
     // Getters:
     public JFrame getFrame() { return frame; }
-    public JPanel getMonthListDisplay() { return monthListDisplay; }
-    public JList getMonthUIList() { return monthUIList; }
+    public MonthListDisplay getMonthListDisplay() { return monthListDisplay; }
     public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
@@ -58,10 +56,13 @@ public class SimpleBudgeterUI implements Runnable {
     // MODIFIES: this
     // EFFECTS: creates and adds components for the UI
     private void createComponents() {
+        // initialize main components
         initializeSplitPane();
-        initializeButtonPanel();
+        buttonPanel = new ButtonPanel(this);
+
         initializeListeners();
 
+        // add main components
         frame.add(splitPane); // TODO: better to add here or in the init methods?
         frame.add(buttonPanel, BorderLayout.SOUTH);
     }
@@ -69,58 +70,22 @@ public class SimpleBudgeterUI implements Runnable {
     // MODIFIES: this
     // EFFECTS: initializes UI split pane component
     private void initializeSplitPane() {
-        initializeMonthListDisplay();
-        initializeEntryManagerDisplay();
+        // initialize month list and entry manager displays
+        monthListDisplay = new MonthListDisplay(this);
+        entryManagerDisplay = new EntryManagerDisplay(this);
 
+        // wrap month list display in scroll pane //TODO maybe dont have to do this if I make a scroll pane inside month list display
         JScrollPane monthScrollPane = new JScrollPane(monthListDisplay);
-//        JScrollPane entryScrollPane = new JScrollPane(entryManagerDisplay);
-
         monthScrollPane.setMinimumSize(new Dimension(100, HEIGHT));
 //        entryScrollPane.setMinimumSize(new Dimension(WIDTH - (WIDTH / 5), HEIGHT)); // TODO: what min size do i want fo rirhgt side
 
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, monthScrollPane, entryManagerDisplay);
     }
 
-    // TODO: see i wish i could just make a month list display class for this panel
-    // MODIFIES: this
-    // EFFECTS: initializes month list display
-    private void initializeMonthListDisplay() {
-        monthListDisplay = new JPanel(new BorderLayout());
-
-        JLabel monthLabel = new JLabel("Months"); // TODO: make a nice border for this
-        monthLabel.setHorizontalAlignment(JLabel.CENTER);
-
-        DefaultListModel monthsModel = new DefaultListModel();
-        for (String s : budgetManager) {
-            monthsModel.addElement(s);
-        }
-
-        monthUIList = new JList(monthsModel);
-        monthUIList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        monthUIList.setSelectedIndex(0);
-        monthUIList.setLayoutOrientation(JList.VERTICAL);
-        monthUIList.setVisibleRowCount(-1);
-
-        monthListDisplay.add(monthLabel, BorderLayout.PAGE_START);
-        monthListDisplay.add(monthUIList);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: initializes entry manager display
-    private void initializeEntryManagerDisplay() {
-        entryManagerDisplay = new EntryManagerDisplay(this);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: initializes button pannel
-    private void initializeButtonPanel() {
-        buttonPanel = new ButtonPanel(this);
-    }
-
-    // MODIFIES: this
+    // MODIFIES: this //TODO have to initialize them outside classes and after creating ALL components because listeners may need components from multiple places and all need to not be null in order to work?
     // EFFECTS: initializes listeners
     private void initializeListeners() {
-        monthUIList.addListSelectionListener(new MonthSelectionListener(this));
+        monthListDisplay.getMonthUIList().addListSelectionListener(new MonthSelectionListener(this));
     }
 
     // MODIFIES: this
