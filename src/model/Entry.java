@@ -30,6 +30,15 @@ public class Entry {
     // Setters:
     public void setDate(String date) { myDate = date; }
 
+    // EFFECTS: returns true if given transaction is contained in the appropriate manager //tODO test this method
+    public boolean contains(Transaction t) {
+        if (t.getValue() > 0) {
+            return revenueManager.contains(t);
+        } else {
+            return expenseManager.contains(t);
+        }
+    }
+
     // EFFECTS: returns size of revenue list
     public int revenueListSize() {
         return revenueManager.size();

@@ -2,8 +2,9 @@ package tests;
 
 import model.BudgetManager;
 import model.Entry;
-import model.EntryManager;
+import model.Transaction;
 import model.date.SimpleDate;
+import model.enums.RevGenre;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-// TODO: how to test singleton classes
+// TODO test other methods in the class
 public class BudgetManagerTest {
     private BudgetManager testBudgetManager;
 
@@ -41,44 +42,44 @@ public class BudgetManagerTest {
 
     @Test
     public void testCreateEntryManFromDateSuccess() {
-        createFebruaryEntryMan();
+        createFebruaryEntry();
     }
 
     @Test
     public void testCreateEntryManFromDateUnsuccessAlreadyExists() {
-        createFebruaryEntryMan();
+        createFebruaryEntry();
 
         assertFalse(testBudgetManager.createEntryFromDate("February 2018"));
     }
 
     @Test
     public void addEntryMonthBucketAlreadyExists() {
-        createFebruaryEntryMan();
+        createFebruaryEntry();
 
         SimpleDate testDate = new SimpleDate(2018, 2, 20);
-        Entry testEntry = new Entry(testDate);
+        Transaction testTransaction = new Transaction(20,"work", RevGenre.PAYCHEQUE, testDate);
 
-        testBudgetManager.addTransaction(testEntry);
+        testBudgetManager.addTransaction(testTransaction);
 
-        // retrieves entry manager that should exist in the given date key
-        EntryManager testEntryMan = testBudgetManager.getEntryFromDate(testDate.simpleFormat());
+        // retrieves entry that should exist in the given date key
+        Entry testEntry = testBudgetManager.getEntryFromDate(testDate.simpleFormat());
 
-        assertTrue(testEntryMan.contains(testEntry));
+        assertTrue(testEntry.contains(testTransaction));
     }
 
     @Test
-    public void addEntryMonthBucketDoesntExists() {
+    public void addEntryMonthBucketDoesntExist() {
         SimpleDate testDate = new SimpleDate(2018, 2, 20);
-        Entry testEntry = new Entry(testDate);
+        Transaction testTransaction = new Transaction(20,"work", RevGenre.PAYCHEQUE, testDate);
 
-        testBudgetManager.addTransaction(testEntry);
+        testBudgetManager.addTransaction(testTransaction);
 
-        EntryManager testEntryMan = testBudgetManager.getEntryFromDate(testDate.simpleFormat());
+        Entry testEntry = testBudgetManager.getEntryFromDate(testDate.simpleFormat());
 
-        assertTrue(testEntryMan.contains(testEntry));
+        assertTrue(testEntry.contains(testTransaction));
     }
 
-    private void createFebruaryEntryMan() {
+    private void createFebruaryEntry() {
         assertTrue(testBudgetManager.createEntryFromDate("February 2018"));
         assertTrue(testBudgetManager.getEntryFromDate("February 2018") != null);
     }
