@@ -6,7 +6,6 @@ import model.Transaction;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
-import ui.gui.data_models.TransactionTableModel;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
@@ -22,9 +21,6 @@ public class SimpleBudgeterUI implements Runnable {
     private JPanel monthListDisplay; // TODO feel like i have too many fields... what should normally be up here? (just the highest level components?)
     private JList monthUIList;
     private EntryManagerDisplay entryManagerDisplay;
-    private JLabel statsLabel;
-    private TransactionTableModel revenueTableModel;
-    private TransactionTableModel expenseTableModel;
     private JSplitPane splitPane;
     private ButtonPanel buttonPanel;
 
@@ -39,9 +35,6 @@ public class SimpleBudgeterUI implements Runnable {
     public JPanel getMonthListDisplay() { return monthListDisplay; }
     public JList getMonthUIList() { return monthUIList; }
     public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
-    public JLabel getStatsLabel() { return statsLabel; }
-    public TransactionTableModel getRevenueTableModel() { return revenueTableModel; }
-    public TransactionTableModel getExpenseTableModel() { return expenseTableModel; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
     // MODIFIES: this
@@ -115,9 +108,6 @@ public class SimpleBudgeterUI implements Runnable {
     // MODIFIES: this
     // EFFECTS: initializes entry manager display
     private void initializeEntryManagerDisplay() {
-        statsLabel = new JLabel();
-        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex()); // TODO: this is the method call that's preventing me from smoothly creating a monthDisplay class, because it needs access to monthUIlist
-
         entryManagerDisplay = new EntryManagerDisplay(this);
     }
 

@@ -7,15 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EntryManagerDisplay extends JPanel {
+    // Main components
+    private JPanel displayPanel;
+    private JLabel statsLabel;
+
     // Sub components
     private JTable revenueTable;
     private JTable expenseTable;
     private JPanel revenueTablePanel;
     private JPanel expenseTablePanel;
-
-    // Main components
-    private JPanel displayPanel;
-    private JLabel statsLabel;
 
     // Data models
     private TransactionTableModel revenueTableModel;
@@ -34,12 +34,12 @@ public class EntryManagerDisplay extends JPanel {
         createComponents();
     }
 
-    // Getters:
+    // Getters (only for those components that may be modified/accessed):
     public JLabel getStatsLabel() { return statsLabel; }
     public TransactionTableModel getRevenueTableModel() { return revenueTableModel; }
     public TransactionTableModel getExpenseTableModel() { return expenseTableModel; }
 
-    // MODIFIES:
+    // MODIFIES: // todo put this here?
     // EFFECTS: creates and adds components for the panel
     private void createComponents() { //TODO should i split up methods like i did in SimpleBudgeterUI
         // initialize main components
@@ -51,6 +51,7 @@ public class EntryManagerDisplay extends JPanel {
         add(statsLabel, BorderLayout.SOUTH);
     }
 
+    // MODIFIES: this
     // EFFECTS: Initialize panel for transaction table panels
     private void initializeDisplayPanel() {
         initializeTablePanels();
@@ -60,6 +61,7 @@ public class EntryManagerDisplay extends JPanel {
         displayPanel.add(expenseTablePanel);
     }
 
+    // MODIFIES: this
     // EFFECTS: initializes panels for the given transaction tables
     private void initializeTablePanels() {
         initializeTables();

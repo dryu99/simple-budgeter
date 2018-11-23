@@ -9,17 +9,18 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class MonthSelectionListener implements ListSelectionListener {
+    // Components to be modified
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
     private JLabel statsLabel;
 
+    // Data models
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
         revenueTableModel = ui.getEntryManagerDisplay().getRevenueTableModel();
         expenseTableModel = ui.getEntryManagerDisplay().getExpenseTableModel();
-        statsLabel = ui.getStatsLabel();
-//        revenueTableModel = emd.getRevenueTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
+        statsLabel = ui.getEntryManagerDisplay().getStatsLabel();
         budgetManager = ui.getBudgetManager();
     }
 
