@@ -16,8 +16,8 @@ public class MonthSelectionListener implements ListSelectionListener {
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
-        revenueTableModel = ui.getRevenueTableModel();
-        expenseTableModel = ui.getExpenseTableModel();
+        revenueTableModel = ui.getEntryManagerDisplay().getRevenueTableModel();
+        expenseTableModel = ui.getEntryManagerDisplay().getExpenseTableModel();
         statsLabel = ui.getStatsLabel();
 //        revenueTableModel = emd.getRevenueTableModel(); // TODO: this is turrible, i just want to pass ui around not any other components
         budgetManager = ui.getBudgetManager();

@@ -11,6 +11,7 @@ import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
 import java.awt.*;
+
 // TODO: not sure how much I should try to increase cohesion, because a lot of passing begins to occur (show example in github, with how I would have to pass in both MonthListDisplay AND SimpleBudgeterUI to MonthSelectionListener. alternatively i could have made monthUIList a field in SimpleBudgeterUI hmmm as essentially all the fields in this class are those that may be modified/accessed)
 public class SimpleBudgeterUI implements Runnable {
     private static final int WIDTH = 700;
@@ -70,7 +71,6 @@ public class SimpleBudgeterUI implements Runnable {
 
         frame.add(splitPane); // TODO: better to add here or in the init methods?
         frame.add(buttonPanel, BorderLayout.SOUTH);
-
     }
 
     // MODIFIES: this
@@ -117,8 +117,6 @@ public class SimpleBudgeterUI implements Runnable {
     private void initializeEntryManagerDisplay() {
         statsLabel = new JLabel();
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex()); // TODO: this is the method call that's preventing me from smoothly creating a monthDisplay class, because it needs access to monthUIlist
-        revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO: perhaps I can invoke a list selection event to set up the data? instead of setting it up this way
-        expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
 
         entryManagerDisplay = new EntryManagerDisplay(this);
     }

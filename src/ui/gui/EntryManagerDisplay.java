@@ -7,72 +7,63 @@ import javax.swing.*;
 import java.awt.*;
 
 public class EntryManagerDisplay extends JPanel {
+    // Sub components
     private JTable revenueTable;
     private JTable expenseTable;
     private JPanel revenueTablePanel;
     private JPanel expenseTablePanel;
-    private JPanel displayPanel;
 
-    private TransactionTableModel revenueTableModel;
-    private TransactionTableModel expenseTableModel;
+    // Main components
+    private JPanel displayPanel;
     private JLabel statsLabel;
 
-//    private JList monthList;
+    // Data models
+    private TransactionTableModel revenueTableModel;
+    private TransactionTableModel expenseTableModel;
     private BudgetManager budgetManager;
+
+    // Components whose data need to be accessed
+    private JList monthUIList;
 
     public EntryManagerDisplay(SimpleBudgeterUI ui) {
         super(new BorderLayout());
 
-        revenueTableModel = ui.getRevenueTableModel();
-        expenseTableModel = ui.getExpenseTableModel();
-        statsLabel = ui.getStatsLabel();
-
+        monthUIList = ui.getMonthUIList();
         budgetManager = ui.getBudgetManager();
 
         createComponents();
     }
 
+    // Getters:
+    public JLabel getStatsLabel() { return statsLabel; }
+    public TransactionTableModel getRevenueTableModel() { return revenueTableModel; }
+    public TransactionTableModel getExpenseTableModel() { return expenseTableModel; }
+
     // MODIFIES:
     // EFFECTS: creates and adds components for the panel
     private void createComponents() { //TODO should i split up methods like i did in SimpleBudgeterUI
-        initializeTables();
-        initializeTablePanels();
+        // initialize main components
         initializeDisplayPanel();
         initializeStatsLabel();
 
+        // add main components
         add(displayPanel);
         add(statsLabel, BorderLayout.SOUTH);
     }
 
-    private void initializeStatsLabel() {
-        // Initialize JLabel
-//        statsLabel = new JLabel("Statistics"); // TODO have to have this updated at the start of program (HOWEVER HTIS REQUIRES THE NEED FOR MONTHUILIST WHICH IS OUTSIDE IN SIMPLEBUDGETERUI AND I AVOIDED PASSING IT IN ORIGINALLY BUTNOW HWOHEIWOFAHEIOA)
-        statsLabel.setText("Statistics");
-        statsLabel.setHorizontalAlignment(JLabel.CENTER);
-        statsLabel.setPreferredSize(new Dimension(0,75));
-    }
+    // EFFECTS: Initialize panel for transaction table panels
+    private void initializeDisplayPanel() {
+        initializeTablePanels();
 
-    // EFFECTS: initializes transaction tables
-    private void initializeTables() {
-        // Initialize JTable for revenues
-        revenueTable = new JTable(revenueTableModel);
-        revenueTable.setFillsViewportHeight(true);
-        revenueTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // TODO: make these blocks into intialize methods?
-        revenueTable.setGridColor(Color.BLACK);
-        // TODO: have to set customized renderer
-
-        // Initialize JTable for expenses
-        expenseTable = new JTable(expenseTableModel);
-        expenseTable.setFillsViewportHeight(true);
-        expenseTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        expenseTable.setGridColor(Color.BLACK);
-        // TODO: have to set customized renderer
-
-        // TODO: idk what the optimal way to do this would be (init tables first or table panels) or just have the tables be global fields
+        displayPanel = new JPanel(new GridLayout(1,2,25,0));
+        displayPanel.add(revenueTablePanel);
+        displayPanel.add(expenseTablePanel);
     }
 
     // EFFECTS: initializes panels for the given transaction tables
     private void initializeTablePanels() {
+        initializeTables();
+
         // Init JPanel for transaction tables
         revenueTablePanel = new JPanel(new BorderLayout());
         expenseTablePanel = new JPanel(new BorderLayout());
@@ -93,12 +84,39 @@ public class EntryManagerDisplay extends JPanel {
         expenseTablePanel.add(new JScrollPane(expenseTable));
     }
 
-    // EFFECTS: Initialize panel for transaction table panels
-    private void initializeDisplayPanel() {
-        displayPanel = new JPanel(new GridLayout(1,2,25,0));
-        displayPanel.add(revenueTablePanel);
-        displayPanel.add(expenseTablePanel);
+    // EFFECTS: initializes transaction tables
+    private void initializeTables() {
+        initializeTableModels();
+
+        // Initialize JTable for revenues
+        revenueTable = new JTable(revenueTableModel);
+        revenueTable.setFillsViewportHeight(true);
+        revenueTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        revenueTable.setGridColor(Color.BLACK);
+        // TODO: have to set customized renderer
+
+        // Initialize JTable for expenses
+        expenseTable = new JTable(expenseTableModel);
+        expenseTable.setFillsViewportHeight(true);
+        expenseTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        expenseTable.setGridColor(Color.BLACK);
+        // TODO: have to set customized renderer
     }
+
+    // EFFECTS: initialize table models
+    private void initializeTableModels() {
+        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+        revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO how to invoke actionlistener events at the start of program manually
+        expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
+    }
+
+    // EFFECTS: initializes stats label
+    private void initializeStatsLabel() {
+        statsLabel = new JLabel("Statistics"); // TODO have to have this updated at the start of program (HOWEVER HTIS REQUIRES THE NEED FOR MONTHUILIST WHICH IS OUTSIDE IN SIMPLEBUDGETERUI AND I AVOIDED PASSING IT IN ORIGINALLY BUTNOW HWOHEIWOFAHEIOA)
+        statsLabel.setHorizontalAlignment(JLabel.CENTER);
+        statsLabel.setPreferredSize(new Dimension(0,75));
+    }
+
 
 
 
