@@ -1,12 +1,12 @@
 package ui.gui.listeners;
 
-import ui.gui.AddButtonDialogUI;
 import ui.gui.SimpleBudgeterUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// TODO: maybe dont need to make sep class for this
 public class AddButtonListener implements ActionListener {
     // Components to be accessed
     private JFrame mainFrame;
@@ -20,8 +20,7 @@ public class AddButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
 //        JOptionPane.showMessageDialog(mainFrame,"Adding a transaction!!!");
-        AddButtonDialogUI addButtonDialog = new AddButtonDialogUI(mainFrame);
-
+//        AddButtonDialogUI addButtonDialog = new AddButtonDialogUI(mainFrame);
     }
 
 }

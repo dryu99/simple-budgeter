@@ -5,8 +5,12 @@ import ui.gui.data_models.TransactionTableModel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
-public class EntryManagerDisplay extends JPanel {
+// TODO need to make thie class an observer with the update method updating the tablle models
+// TODO observables will be monthListDisplay listener and budgetmanager (when transaction is added, notfiy observers)
+public class EntryManagerDisplay extends JPanel implements Observer {
     // Main components (those that will be added directly to the frame)
     private JPanel displayPanel;
     private JLabel statsLabel;
@@ -121,7 +125,15 @@ public class EntryManagerDisplay extends JPanel {
     }
 
 
+    @Override
+    public void update(Observable o, Object arg) {
+        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
 
+        // Update table data
+        revenueTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true));
+        expenseTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
 
-
+        // Update stats label
+        statsLabel.setText("" + budgetManager.getNetValueFromDate(selectedDate));
+    }
 }

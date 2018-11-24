@@ -5,12 +5,13 @@ import model.Transaction;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.RevGenre;
-import ui.gui.listeners.AddButtonListener;
 import ui.gui.listeners.DeleteButtonListener;
 import ui.gui.listeners.MonthSelectionListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SimpleBudgeterUI implements Runnable {
     private static final int WIDTH = 700;
@@ -82,10 +83,25 @@ public class SimpleBudgeterUI implements Runnable {
     }
 
     // MODIFIES: this //TODO have to initialize them outside classes and after creating ALL components because listeners may need components from multiple places and all need to not be null in order to work?
+    //TODO maybe make a separate method for each listener, this looks so messy CLEAN THIS PART UP
     // EFFECTS: initializes listeners
     private void initializeListeners() {
-        monthListDisplay.getMonthUIList().addListSelectionListener(new MonthSelectionListener(this));
-        buttonPanel.getAddButton().addActionListener(new AddButtonListener(this));
+        // Create month selection listener, addit to monthuiList, and add observer to it
+        MonthSelectionListener monthSelectionListener = new MonthSelectionListener(this);
+        monthSelectionListener.addObserver(entryManagerDisplay);
+        monthListDisplay.getMonthUIList().addListSelectionListener(monthSelectionListener);
+
+        // Add observer to budget manager
+        budgetManager.addObserver(entryManagerDisplay);
+
+        // Add action listener to add button
+        buttonPanel.getAddButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddButtonDialogUI addButtonDialog = new AddButtonDialogUI(frame, budgetManager);
+            }
+        });
+
         buttonPanel.getDeleteButton().addActionListener(new DeleteButtonListener(this));
     }
 

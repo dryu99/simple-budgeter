@@ -7,8 +7,10 @@ import ui.gui.data_models.TransactionTableModel;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.util.Observable;
 
-public class MonthSelectionListener implements ListSelectionListener {
+// TODO maybe dont make a sep class, put in monthListDisplay class
+public class MonthSelectionListener extends Observable implements ListSelectionListener {
     // Components to be modified
     private TransactionTableModel revenueTableModel;
     private TransactionTableModel expenseTableModel;
@@ -28,11 +30,14 @@ public class MonthSelectionListener implements ListSelectionListener {
     // EFFECTS: updates necessary components that use data based on the current date selected
     @Override
     public void valueChanged(ListSelectionEvent e) {
-        JList monthUIList = (JList) e.getSource();
-        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+//        JList monthUIList = (JList) e.getSource();
+//        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+//
+//        updateTableData(selectedDate);
+//        updateStatisticsLabel(selectedDate);
 
-        updateTableData(selectedDate);
-        updateStatisticsLabel(selectedDate);
+        setChanged();
+        notifyObservers();
     }
 
     // EFFECTS: updates expense and revenue table data corresponding to the given date

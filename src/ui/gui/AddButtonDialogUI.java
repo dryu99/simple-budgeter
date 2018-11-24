@@ -1,124 +1,132 @@
 package ui.gui;
 
+import model.BudgetManager;
+import model.Transaction;
+import model.date.SimpleDate;
+import model.enums.ExpGenre;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AddButtonDialogUI { // TODO to extend or to not extend
-     private final int DIALOG_WIDTH = 400;
-     private final int DIALOG_HEIGHT = 250;
+public class AddButtonDialogUI {
 
-     private final int RIGID_DISTANCE = 25;
-
-     private JDialog dialog;
+    private JDialog dialog;
 
      // Main components (those that will be added directly to the dialog)
-    JPanel typePanel;
-    JPanel amountPanel;
-    JPanel descriptionPanel;
-    JPanel genrePanel;
-    JButton addButton;
+    private JLabel dateLabel; // TODO implement date functionality
+    private JLabel amountLabel;
+    private JLabel descriptionLabel;
+    private JLabel genreLabel;
+    private JTextField amountTextField;
+    private JTextField descriptionTextField;
+    private JComboBox genreComboBox;
+    private JPanel dialogButtonPanel;
 
-    public AddButtonDialogUI(JFrame parent) {
+    // Data models
+    private BudgetManager budgetManager;
+
+    public AddButtonDialogUI(JFrame parent, BudgetManager bm) {
+        budgetManager = bm;
+
         dialog = new JDialog(parent, "Add a Transaction", true);
-        dialog.setPreferredSize(new Dimension(DIALOG_WIDTH, DIALOG_HEIGHT));
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.setResizable(false);
-        dialog.setLocationRelativeTo(parent);
 
         createComponents(dialog.getContentPane());
 
         dialog.pack();
+        dialog.setLocationRelativeTo(parent);
         dialog.setVisible(true);
     }
 
     // EFFECTS: creates and adds components to the dialog's container
     private void createComponents(Container container) {
-        container.setLayout(new BoxLayout(container, BoxLayout.PAGE_AXIS));
+        container.setLayout(new GridBagLayout());
 
-        // initialize main components
-        initializeTypePanel();
-        initializeAmountPanel();
-        initializeDescriptionPanel();
-        initializeGenrePanel();
-        initializeAddButton();
+        initializeLabels();
+        initializeTextFields();
+        initializeComboBox();
+        initializeButtonPanel();
 
-        // add main components + invisible fillers
-        container.add(Box.createRigidArea(new Dimension(0,RIGID_DISTANCE)));
-        container.add(typePanel);
-        container.add(Box.createVerticalGlue());
-        container.add(amountPanel);
-        container.add(Box.createVerticalGlue());
-        container.add(descriptionPanel);
-        container.add(Box.createVerticalGlue());
-        container.add(genrePanel);
-        container.add(Box.createVerticalGlue());
-        container.add(addButton);
-        container.add(Box.createRigidArea(new Dimension(0,RIGID_DISTANCE)));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        gbc.insets = new Insets(8,8,8,8);
+
+        container.add(amountLabel, gbc);
+        gbc.gridy++;
+        container.add(descriptionLabel, gbc);
+        gbc.gridy++;
+        container.add(genreLabel, gbc);
+
+        gbc.gridx++;
+        gbc.gridy = 0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+//        gbc.weightx = 1; //TODO might need this later
+
+        container.add(amountTextField, gbc);
+        gbc.gridy++;
+        container.add(descriptionTextField, gbc);
+        gbc.gridy++;
+        container.add(genreComboBox, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy++;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        container.add(dialogButtonPanel, gbc);
     }
 
-    private void initializeTypePanel() {
-        typePanel = new JPanel();
-        BoxLayout layout = new BoxLayout(typePanel, BoxLayout.X_AXIS);
-        typePanel.setLayout(layout);
-        typePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel label = new JLabel("Transaction Type:");
-        JTextField textField = new JTextField("This should be a combo box");
-
-        addPanelComponents(typePanel, label, textField);
-
+    private void initializeLabels() {
+        amountLabel = new JLabel("Amount: ");
+        descriptionLabel = new JLabel("Description: ");
+        genreLabel = new JLabel("Genre: ");
     }
 
-    private void initializeAmountPanel() {
-        amountPanel = new JPanel();
-        BoxLayout layout = new BoxLayout(amountPanel, BoxLayout.X_AXIS);
-        amountPanel.setLayout(layout);
-        amountPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel label = new JLabel("Amount:");
-//        label.setSize(new Dimension(75,35)); // TODO don't know how to set sizes dynamically so i dont need to put values but rather constants
-        JTextField textField = new JTextField("Enter transaction value here");
-//        textField.setSize(new Dimension(75,35));
-
-        addPanelComponents(amountPanel, label, textField);
+    private void initializeTextFields() {
+        amountTextField = new JTextField(10);
+        descriptionTextField = new JTextField(10);
     }
 
-    private void initializeDescriptionPanel() {
-        descriptionPanel = new JPanel();
-        BoxLayout layout = new BoxLayout(descriptionPanel, BoxLayout.X_AXIS);
-        descriptionPanel.setLayout(layout);
-        descriptionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JLabel label = new JLabel("Description:");
-        JTextField textField = new JTextField("Enter description here");
-
-        addPanelComponents(descriptionPanel, label, textField);
+    private void initializeComboBox() {
+        Object[] options = ExpGenre.values();
+        genreComboBox = new JComboBox(options);
     }
 
-    private void initializeGenrePanel() {
-        genrePanel = new JPanel();
-        BoxLayout layout = new BoxLayout(genrePanel, BoxLayout.X_AXIS);
-        genrePanel.setLayout(layout);
-        genrePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+    // EFFECTS: initializes dialog button panel as well as action listeners
+    private void initializeButtonPanel() {
+        dialogButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT,4,4));
 
-        JLabel label = new JLabel("Transaction Genre:");
-        JTextField textField = new JTextField("There should be a combo box here");
+        JButton addButton = new JButton("Add");
+        addButton.setSelected(true);
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { //TODO how to set up listeners cleanly? just create one action listener that listens to all action events from this one button panel, opposed to one lisetner for each?
+                double amount = Double.parseDouble(amountTextField.getText());
+                String description = descriptionTextField.getText();
+                ExpGenre genre = (ExpGenre) genreComboBox.getSelectedItem();
 
-        addPanelComponents(genrePanel, label, textField);
+                budgetManager.addTransaction(new Transaction(amount, description, //TODO have to notify the table to add this transaction
+                        genre, new SimpleDate(1999, 2, 20)));
+
+                dialog.setVisible(false);
+                dialog.dispose();
+            }
+        });
+
+        JButton cancelButton = new JButton("Cancel");
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dialog.setVisible(false);
+                dialog.dispose();
+            }
+        });
+
+        dialogButtonPanel.add(cancelButton);
+        dialogButtonPanel.add(addButton);
     }
 
-    private void initializeAddButton() {
-        addButton = new JButton("Add");
-        addButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: adds given label and component to the given panel, with appropriate invis filler space
-    private void addPanelComponents(JPanel panel, JLabel label, JComponent inputComponent) {
-        panel.add(Box.createRigidArea(new Dimension(RIGID_DISTANCE,0)));
-        panel.add(label);
-        panel.add(Box.createRigidArea(new Dimension(10,0)));
-        panel.add(inputComponent);
-        panel.add(Box.createRigidArea(new Dimension(RIGID_DISTANCE,0)));
-    }
 }

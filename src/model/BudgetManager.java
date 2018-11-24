@@ -4,7 +4,7 @@ import java.util.*;
 
 // TODO: how to keep entry managers sorted when printing out (lowest date to highest date)
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
-public class BudgetManager implements Iterable<String> {
+public class BudgetManager extends Observable implements Iterable<String> {
 
     // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order?
     private HashMap<String, Entry> entries;
@@ -86,6 +86,9 @@ public class BudgetManager implements Iterable<String> {
         }
 
         entries.get(transactionDate).addTransaction(t);
+
+        setChanged();
+        notifyObservers();
     }
 
     // TODO: implement toString
