@@ -18,11 +18,13 @@ public class SimpleBudgeterUI implements Runnable {
 
     private JFrame frame;
 
+    // Main components
     private MonthListDisplay monthListDisplay;
     private EntryManagerDisplay entryManagerDisplay;
     private JSplitPane splitPane; // TODO ideally i would have this be a separate class and remove the monthlistdisplay and entrymanager fields but whatever
     private ButtonPanel buttonPanel;
 
+    // Data models
     private BudgetManager budgetManager;
 
     public SimpleBudgeterUI(BudgetManager budgetManager) {
@@ -36,14 +38,14 @@ public class SimpleBudgeterUI implements Runnable {
     public BudgetManager getBudgetManager() { return budgetManager; }
 
     // MODIFIES: this
-    // EFFECTS: initializes graphics/components
+    // EFFECTS: initializes ui frame
     @Override
     public void run() {
         frame = new JFrame("Simple Budgeter");
         frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        createComponents();
+        createComponents(frame.getContentPane());
 
         frame.pack();
         centerOnScreen();
@@ -52,7 +54,7 @@ public class SimpleBudgeterUI implements Runnable {
 
     // MODIFIES: this
     // EFFECTS: creates and adds components for the UI
-    private void createComponents() {
+    private void createComponents(Container container) {
         // initialize main components
         initializeSplitPane();
         buttonPanel = new ButtonPanel();
@@ -60,8 +62,8 @@ public class SimpleBudgeterUI implements Runnable {
         initializeListeners();
 
         // add main components
-        frame.add(splitPane); // TODO: better to add here or in the init methods?
-        frame.add(buttonPanel, BorderLayout.SOUTH);
+        container.add(splitPane); // TODO: better to add here or in the init methods?
+        container.add(buttonPanel, BorderLayout.SOUTH);
     }
 
     // MODIFIES: this

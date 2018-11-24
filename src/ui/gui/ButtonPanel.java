@@ -24,7 +24,7 @@ public class ButtonPanel extends JPanel {
     private void createComponents() {
         deleteButton = new JButton("Delete");
         editButton = new JButton("Edit");
-        addButton = new JButton("Add");
+        addButton = new JButton("Add a Transaction");
 
         add(deleteButton);
         add(editButton);

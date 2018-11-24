@@ -1,5 +1,6 @@
 package ui.gui.listeners;
 
+import ui.gui.AddButtonDialogUI;
 import ui.gui.SimpleBudgeterUI;
 
 import javax.swing.*;
@@ -18,7 +19,9 @@ public class AddButtonListener implements ActionListener {
     // EFFECTS: creates a dialog frame that prompts user for new transaction input
     @Override
     public void actionPerformed(ActionEvent ae) {
-        JOptionPane.showMessageDialog(mainFrame,"Adding a transaction!!!");
+//        JOptionPane.showMessageDialog(mainFrame,"Adding a transaction!!!");
+        AddButtonDialogUI addButtonDialog = new AddButtonDialogUI(mainFrame);
+
     }
 
 }

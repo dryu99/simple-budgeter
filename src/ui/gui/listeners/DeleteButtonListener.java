@@ -21,6 +21,7 @@ public class DeleteButtonListener implements ActionListener {
     // EFFECTS: creates a dialog mainFrame that confirms with user if they want to delete the selected transaction //TODO and entry?
     @Override
     public void actionPerformed(ActionEvent e) {
+
         JOptionPane.showOptionDialog(mainFrame,"Are you sure you want to delete this transaction?",
                 "Deleting Transaction",
                 JOptionPane.YES_NO_OPTION,
@@ -28,5 +29,6 @@ public class DeleteButtonListener implements ActionListener {
                 null,
                 options,
                 options[1]);
+
     }
 }

@@ -39,6 +39,7 @@ public class MonthListDisplay extends JPanel {
     // EFFECTS: initializes list header
     private void initializeHeader() {
         header = new JLabel("Months");
+        header.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         header.setHorizontalAlignment(JLabel.CENTER);
     }
 
