@@ -10,7 +10,7 @@ import java.util.Observer;
 
 // TODO need to make thie class an observer with the update method updating the tablle models
 // TODO observables will be monthListDisplay listener and budgetmanager (when transaction is added, notfiy observers)
-public class EntryManagerDisplay extends JPanel implements Observer {
+public class EntryDisplay extends JPanel implements Observer {
     // Main components (those that will be added directly to the frame)
     private JPanel displayPanel;
     private JLabel statsLabel;
@@ -29,7 +29,7 @@ public class EntryManagerDisplay extends JPanel implements Observer {
     // Components whose data needs to be accessed
     private JList monthUIList;
 
-    public EntryManagerDisplay(SimpleBudgeterUI ui) {
+    public EntryDisplay(SimpleBudgeterUI ui) {
         super(new BorderLayout());
 
         monthUIList = ui.getMonthListDisplay().getMonthUIList(); //TODO this is sketchy because if the monthlistdisplay isnt created before creating this, im gonn get a null pointer error.
@@ -125,6 +125,7 @@ public class EntryManagerDisplay extends JPanel implements Observer {
     }
 
 
+    // Updates table data and stats label
     @Override
     public void update(Observable o, Object arg) {
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());

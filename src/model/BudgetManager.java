@@ -17,6 +17,20 @@ public class BudgetManager extends Observable implements Iterable<String> {
     // Getters:
     public Collection<Entry> getAllEntries() { return entries.values(); }
 
+    // ASSUME: given date IS in the key set //TODO make this more robust?
+    // EFFECTS: returns index of given date in the key set
+    public int getIndexOfDate(String date) {
+        List<String> monthAsList = getMonths();
+
+        for (int i = 0, n = monthAsList.size(); i < n; i++) {
+            if (date.equals(monthAsList.get(i))) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     // EFFECTS: returns list of available months in budget manager in order
     public List<String> getMonths() {
         List<String> monthAsList = new ArrayList<>(entries.keySet());
@@ -88,7 +102,7 @@ public class BudgetManager extends Observable implements Iterable<String> {
         entries.get(transactionDate).addTransaction(t);
 
         setChanged();
-        notifyObservers();
+        notifyObservers(transactionDate);
     }
 
     // TODO: implement toString
@@ -102,7 +116,7 @@ public class BudgetManager extends Observable implements Iterable<String> {
 //        return budgetManString;
 //    }
 
-    // EFFECTS: returns iterator for budget manager's month list
+    // EFFECTS: returns iterator for budget manager's month list, sorted
     @Override
     public Iterator<String> iterator() {
         List<String> months = getMonths();

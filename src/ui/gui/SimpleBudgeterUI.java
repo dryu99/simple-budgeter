@@ -21,7 +21,7 @@ public class SimpleBudgeterUI implements Runnable {
 
     // Main components
     private MonthListDisplay monthListDisplay;
-    private EntryManagerDisplay entryManagerDisplay;
+    private EntryDisplay entryManagerDisplay;
     private JSplitPane splitPane; // TODO ideally i would have this be a separate class and remove the monthlistdisplay and entrymanager fields but whatever
     private ButtonPanel buttonPanel;
 
@@ -35,7 +35,7 @@ public class SimpleBudgeterUI implements Runnable {
     // Getters:
     public JFrame getFrame() { return frame; }
     public MonthListDisplay getMonthListDisplay() { return monthListDisplay; }
-    public EntryManagerDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
+    public EntryDisplay getEntryManagerDisplay() { return entryManagerDisplay; }
     public BudgetManager getBudgetManager() { return budgetManager; }
 
     // MODIFIES: this
@@ -72,7 +72,7 @@ public class SimpleBudgeterUI implements Runnable {
     private void initializeSplitPane() {
         // initialize month list and entry manager displays
         monthListDisplay = new MonthListDisplay(this);
-        entryManagerDisplay = new EntryManagerDisplay(this);
+        entryManagerDisplay = new EntryDisplay(this);
 
         // wrap month list display in scroll pane //TODO maybe dont have to do this if I make a scroll pane inside month list display
         JScrollPane monthScrollPane = new JScrollPane(monthListDisplay);
@@ -92,6 +92,7 @@ public class SimpleBudgeterUI implements Runnable {
         monthListDisplay.getMonthUIList().addListSelectionListener(monthSelectionListener);
 
         // Add observer to budget manager
+        budgetManager.addObserver(monthListDisplay);
         budgetManager.addObserver(entryManagerDisplay);
 
         // Add action listener to add button

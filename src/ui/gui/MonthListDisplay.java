@@ -4,8 +4,10 @@ import model.BudgetManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
-public class MonthListDisplay extends JPanel {
+public class MonthListDisplay extends JPanel implements Observer {
     // Main components
     private JLabel header;
     private JList monthUIList;
@@ -46,8 +48,8 @@ public class MonthListDisplay extends JPanel {
     // EFFECTS: initializes month ui list
     private void initializeMonthList() {
         monthModel = new DefaultListModel();
-        for (String s : budgetManager) {
-            monthModel.addElement(s);
+        for (String monthYearDate : budgetManager) {
+            monthModel.addElement(monthYearDate);
         }
 
         monthUIList = new JList(monthModel);
@@ -57,4 +59,16 @@ public class MonthListDisplay extends JPanel {
         monthUIList.setVisibleRowCount(-1);
     }
 
+    // Updates the monthUIList to include the new date, and sets the selected index to be at the new date
+    @Override
+    public void update(Observable o, Object arg) {
+        monthUIList.clearSelection();
+
+        for (String monthYearDate : budgetManager) {
+            monthModel.addElement(monthYearDate);
+        }
+
+        String newMonthYearDate = (String) arg;
+        monthUIList.setSelectedIndex(budgetManager.getIndexOfDate(newMonthYearDate));
+    }
 }

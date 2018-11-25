@@ -40,15 +40,15 @@ public class MonthSelectionListener extends Observable implements ListSelectionL
         notifyObservers();
     }
 
-    // EFFECTS: updates expense and revenue table data corresponding to the given date
-    private void updateTableData(String selectedDate) {
-        revenueTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true));
-        expenseTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
-    }
+//    // EFFECTS: updates expense and revenue table data corresponding to the given date
+//    private void updateTableData(String selectedDate) {
+//        revenueTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true));
+//        expenseTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
+//    }
 
-    // EFFECTS: updates statistics label to show proper net value corresponding to given date
-    private void updateStatisticsLabel(String selectedDate) { // TODO: implement observer pattern here? would get rid of components to be modified fields
-        statsLabel.setText("" + budgetManager.getNetValueFromDate(selectedDate));
-    }
+//    // EFFECTS: updates statistics label to show proper net value corresponding to given date
+//    private void updateStatisticsLabel(String selectedDate) { // TODO: implement observer pattern here? would get rid of components to be modified fields
+//        statsLabel.setText("" + budgetManager.getNetValueFromDate(selectedDate));
+//    }
 
 }
