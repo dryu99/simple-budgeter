@@ -89,6 +89,7 @@ public class BudgetManager extends Observable implements Iterable<String> {
     }
 
     // TODO: when should the sorting occur? in this method after an entry is added? or should i create a method that sorts from entry and call it here. or should sorting occur only when i need to see the entry on the ui (so when retrieving)
+    // TODO: sort transactions when added/retrieved?
     // MODIFIES: this
     // EFFECTS: adds a transaction to the bud-manager in its respective entry (according to month),
     //          if no such entry exists, create one first and then add transaction
@@ -124,7 +125,6 @@ public class BudgetManager extends Observable implements Iterable<String> {
         return months.iterator();
     }
 
-    // TODO: the sorting doesn't consider the year, so higher numbers are placed before lower ones. have to refactor
     // EFFECTS: returns the respective num representation of the month/year of the given date (to compare)
     private static int getDateCompareNum(String date) {
         int val = 0;

@@ -2,6 +2,7 @@ package ui.gui.dialogs;
 
 import model.BudgetManager;
 import model.Transaction;
+import model.date.DateArray;
 import model.date.SimpleDate;
 import model.enums.ExpGenre;
 import model.enums.Genre;
@@ -21,12 +22,16 @@ public abstract class AddButtonDialog {
     private JLabel amountLabel;
     private JLabel descriptionLabel;
     private JLabel genreLabel;
-    private JTextField dateTextField; // TODO this should be a panel of combo boxes
-    private JPanel dateComboBoxPanel;
+    private JPanel datePanel;
     private JTextField amountTextField;
     private JTextField descriptionTextField;
     protected JComboBox genreComboBox;
     private JPanel dialogButtonPanel;
+
+    // Sub components
+    private JComboBox dayComboBox;
+    private JComboBox monthComboBox;
+    private JComboBox yearComboBox;
 
     // Data models
     private BudgetManager budgetManager;
@@ -52,6 +57,7 @@ public abstract class AddButtonDialog {
 
         initializeLabels();
         initializeTextFields();
+        initializeDatePanel();
         initializeGenreComboBox();
         initializeButtonPanel();
 
@@ -74,7 +80,7 @@ public abstract class AddButtonDialog {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 //        gbc.weightx = 1; //TODO might need this later
 
-        container.add(dateTextField, gbc);
+        container.add(datePanel, gbc);
         gbc.gridy++;
         container.add(amountTextField, gbc);
         gbc.gridy++;
@@ -96,17 +102,21 @@ public abstract class AddButtonDialog {
     }
 
     private void initializeTextFields() {
-//        dateTextField = new JTextField(10);
         amountTextField = new JTextField(10);
         descriptionTextField = new JTextField(10);
     }
 
-//    private void initializeDateComboBoxPanel() {
-//        dateComboBoxPanel = new JPanel(new GridLayout(0,3));
-//
-//        String[] dayArray =
-//
-//    }
+    private void initializeDatePanel() {
+        datePanel = new JPanel(new GridLayout(0,3));
+
+        dayComboBox = new JComboBox(DateArray.getDays());
+        monthComboBox = new JComboBox(DateArray.getMonths());
+        yearComboBox = new JComboBox(DateArray.getYears());
+
+        datePanel.add(dayComboBox);
+        datePanel.add(monthComboBox);
+        datePanel.add(yearComboBox);
+    }
 
     // MODIFIES: this
     // EFFECTS: initializes combo box according to actual type
@@ -125,6 +135,7 @@ public abstract class AddButtonDialog {
             @Override
             public void actionPerformed(ActionEvent e) { //TODO how to set up listeners cleanly? just create one action listener that listens to all action events from this one button panel, opposed to one lisetner for each?
                 try {
+                    SimpleDate date = getUserDate();
                     double amount = Double.parseDouble(amountTextField.getText());
                     String description = descriptionTextField.getText();
                     Genre genre = (Genre) genreComboBox.getSelectedItem();
@@ -136,7 +147,7 @@ public abstract class AddButtonDialog {
                     if (genre instanceof ExpGenre) { amount *= -1; }
 
                     budgetManager.addTransaction(new Transaction(amount, description, //TODO have to notify the table to add this transaction
-                            genre, new SimpleDate(2018, 6, 20)));
+                            genre, date));
 
                     dialog.setVisible(false);
                     dialog.dispose();
@@ -169,5 +180,13 @@ public abstract class AddButtonDialog {
 
         dialogButtonPanel.add(cancelButton);
         dialogButtonPanel.add(addButton);
+    }
+
+    private SimpleDate getUserDate() {
+        int day = Integer.parseInt("" + dayComboBox.getSelectedItem());
+        int month = Integer.parseInt("" + monthComboBox.getSelectedItem());
+        int year = Integer.parseInt("" + yearComboBox.getSelectedItem());
+
+        return new SimpleDate(year, month, day);
     }
 }
