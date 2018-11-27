@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/exceptions/EmptyDescriptionException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/date/DateArray.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java" afterPath="$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" afterPath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/date/SimpleDate.java" afterPath="$PROJECT_DIR$/src/model/date/SimpleDate.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/Genre.java" afterPath="$PROJECT_DIR$/src/model/enums/Genre.java" />
+      <change beforePath="$PROJECT_DIR$/src/model/enums/RevGenre.java" afterPath="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,28 +35,62 @@
     <splitter split-orientation="horizontal" split-proportion="0.4945788">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="EntryDisplay.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryDisplay.java">
+          <file leaf-file-name="AddButtonDialog.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="150" column="7" lean-forward="false" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+                <state relative-caret-position="141">
+                  <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="2" selection-end-line="108" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AddRevenueDialog.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java">
+          <file leaf-file-name="DateArray.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/model/date/DateArray.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#223#224#0" expanded="true" />
-                    <element signature="e#272#273#0" expanded="true" />
-                    <element signature="e#329#330#0" expanded="true" />
-                    <element signature="e#393#394#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="585">
+                  <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Genre.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RevGenre.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ExpGenre.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DeleteButtonListener.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/DeleteButtonListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -64,24 +98,30 @@
           <file leaf-file-name="AddExpenseDialog.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                <state relative-caret-position="180">
+                  <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
                   <folding>
                     <element signature="e#224#225#0" expanded="true" />
                     <element signature="e#275#276#0" expanded="true" />
-                    <element signature="e#332#333#0" expanded="true" />
-                    <element signature="e#396#397#0" expanded="true" />
+                    <element signature="e#337#338#0" expanded="true" />
+                    <element signature="e#401#402#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AddButtonDialog.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java">
+          <file leaf-file-name="AddRevenueDialog.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="511">
-                  <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="255">
+                  <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#223#224#0" expanded="true" />
+                    <element signature="e#272#273#0" expanded="true" />
+                    <element signature="e#334#335#0" expanded="true" />
+                    <element signature="e#398#399#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -112,49 +152,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="InvalidYearException.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/model/exceptions/InvalidYearException.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InvalidDayException.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/model/exceptions/InvalidDayException.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#132#133#0" expanded="true" />
-                    <element signature="e#182#183#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InvalidMonthException.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/model/exceptions/InvalidMonthException.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MonthSelectionListener.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -169,10 +166,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
+                <state relative-caret-position="186">
                   <caret line="108" column="55" lean-forward="false" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -194,8 +191,18 @@
           <file leaf-file-name="SimpleDate.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/model/date/SimpleDate.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1487">
-                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                <state relative-caret-position="404">
+                  <caret line="95" column="56" lean-forward="true" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DateFormatter.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/model/date/DateFormatter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -244,26 +251,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ui/gui/Main.java" />
-        <option value="$PROJECT_DIR$/src/ui/gui/listeners/MonthsListListener.java" />
         <option value="$PROJECT_DIR$/src/model/BudgetStringer.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/listeners/MonthListListener.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/AddFrame.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryPanel.java" />
-        <option value="$PROJECT_DIR$/src/model/date/SimpleDate.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/EntryManagerTable.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/data_models/EntryManagerTableModel.java" />
         <option value="$PROJECT_DIR$/src/model/TransactionManager.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/data_models/ExpenseTableModel.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/data_models/RevenueTableModel.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/Genre.java" />
         <option value="$PROJECT_DIR$/src/ui/printui/BudgetPrompter.java" />
         <option value="$PROJECT_DIR$/src/tests/EntryManagerTest.java" />
         <option value="$PROJECT_DIR$/src/model/EntryManager.java" />
         <option value="$PROJECT_DIR$/src/model/Entry.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
-        <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
         <option value="$PROJECT_DIR$/src/tests/EntryTest.java" />
         <option value="$PROJECT_DIR$/src/model/RevenueManager.java" />
         <option value="$PROJECT_DIR$/src/model/ExpenseManager.java" />
@@ -294,15 +295,21 @@
         <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/EmptyDescriptionException.java" />
         <option value="$PROJECT_DIR$/src/model/exceptions/InvalidDateException.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/RevGenre.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/ExpGenre.java" />
+        <option value="$PROJECT_DIR$/src/model/enums/Genre.java" />
+        <option value="$PROJECT_DIR$/src/model/date/SimpleDate.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java" />
+        <option value="$PROJECT_DIR$/src/model/date/DateArray.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="y" value="23" />
-    <option name="width" value="1034" />
-    <option name="height" value="812" />
+    <option name="x" value="459" />
+    <option name="y" value="31" />
+    <option name="width" value="981" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -345,6 +352,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="date" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleBudgeter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleBudgeter" type="b2602c69:ProjectViewProjectNode" />
@@ -424,13 +438,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SimpleBudgeterUI">
+  <component name="RunManager" selected="Application.DateArray">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="DateArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="model.date.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="model.date.DateArray" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Budgeter" />
+      <envs />
     </configuration>
     <configuration name="SimpleBudgeterUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -515,31 +548,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TransactionManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Budgeter" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TransactionManagerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -606,15 +614,15 @@
       <item index="1" class="java.lang.String" itemvalue="JUnit.tests in Budgeter" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest.testGetMonths" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TransactionManagerTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.DateArray" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.SimpleBudgeterUI" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest.testGetMonths" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.tests in Budgeter" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TransactionManagerTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.DateArray" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SimpleBudgeterUI" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest.testGetMonths" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.tests in Budgeter" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BudgetManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -937,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543309709017</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Created EmptyDescriptionException exception class.&#10;&#10;Extracted implementation of addActionListener from AddExpenseDialog/AddRevenueDialog back into AddButtonDialog to reduce coupling.&#10;&#10;Added an unfunctional date label/textfield to the dialog frame.">
+      <created>1543312135175</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1543312135175</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -986,12 +1001,12 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708934" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24351585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24351585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946298" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1017,7 +1032,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="Semi-fixed sorting of date strings in BudgetManager method getMonths(), still need to account for years.&#10;&#10;Currently in process of refactoring gui classes, so that instead of having implementation of creating certain components be inside SimpleBudgeterUI, its inside unique classes that extend java component classes." />
     <MESSAGE value="Refactored SimpleBudgeterUI to have implementation of components inside of it, instead of in unique component classes. Essentially reverted back from the previous commit." />
     <MESSAGE value="Implemented EntryManagerDisplay to be a JPanel that displays a table of transactions mapped to the currently selected date. &#10;&#10;Created EntryManagerTableModel to store the data and exist as the table model for the application's JTable" />
     <MESSAGE value="Commit right before deleting MonthListDisplay class" />
@@ -1042,7 +1056,8 @@
     <MESSAGE value="Refactored update in EntryDisplay to account for where the update method is being called from (whether MonthSelectionListener is notifying it or BudgetManager)&#10;&#10;Created AddExpenseButtonDialog class and made it usable in the main program." />
     <MESSAGE value="Created abstract class AddButtonDialog. Intend to have AddExpenseButton and AddRevenueButton inherit it to reduce coupling.&#10;&#10;Refactored AddExpenseButton to extend AddButtonDialog.&#10;&#10;Commit before refactoring AddRevenueButton to also extend it." />
     <MESSAGE value="Refactored AddRevenueButton to extend AddButtonDialog." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored AddRevenueButton to extend AddButtonDialog." />
+    <MESSAGE value="Created EmptyDescriptionException exception class.&#10;&#10;Extracted implementation of addActionListener from AddExpenseDialog/AddRevenueDialog back into AddButtonDialog to reduce coupling.&#10;&#10;Added an unfunctional date label/textfield to the dialog frame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created EmptyDescriptionException exception class.&#10;&#10;Extracted implementation of addActionListener from AddExpenseDialog/AddRevenueDialog back into AddButtonDialog to reduce coupling.&#10;&#10;Added an unfunctional date label/textfield to the dialog frame." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1051,14 +1066,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/data_models/ExpenseTableModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/test.java" />
     <entry file="file://$PROJECT_DIR$/src/ui/printui/BudgetPrompter.java" />
     <entry file="file://$PROJECT_DIR$/src/model/BudgetStringer.java" />
@@ -1069,21 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="2" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="27" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,14 +1149,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/date/MonthYearFormat.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/date/DateFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/SimpleDateTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1213,14 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/date/SimpleDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1487">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1324,14 +1300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/DeleteButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1345,43 +1313,6 @@
         <state relative-caret-position="284">
           <caret line="150" column="7" lean-forward="false" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#393#394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="108" column="55" lean-forward="false" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1434,10 +1365,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/DeleteButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/RevGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/ExpGenre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/enums/Genre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <folding>
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="108" column="55" lean-forward="false" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/date/SimpleDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="95" column="56" lean-forward="true" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/date/DateFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="141">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="2" selection-end-line="108" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/date/DateArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding />
         </state>
       </provider>

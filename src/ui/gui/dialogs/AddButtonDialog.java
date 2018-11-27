@@ -22,13 +22,14 @@ public abstract class AddButtonDialog {
     private JLabel descriptionLabel;
     private JLabel genreLabel;
     private JTextField dateTextField; // TODO this should be a panel of combo boxes
-    protected JTextField amountTextField;
-    protected JTextField descriptionTextField;
+    private JPanel dateComboBoxPanel;
+    private JTextField amountTextField;
+    private JTextField descriptionTextField;
     protected JComboBox genreComboBox;
     private JPanel dialogButtonPanel;
 
     // Data models
-    protected BudgetManager budgetManager;
+    private BudgetManager budgetManager;
 
     public AddButtonDialog(JFrame parent, String title, BudgetManager bm) {
         budgetManager = bm;
@@ -51,7 +52,7 @@ public abstract class AddButtonDialog {
 
         initializeLabels();
         initializeTextFields();
-        initializeComboBox();
+        initializeGenreComboBox();
         initializeButtonPanel();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -95,14 +96,21 @@ public abstract class AddButtonDialog {
     }
 
     private void initializeTextFields() {
-        dateTextField = new JTextField(10);
+//        dateTextField = new JTextField(10);
         amountTextField = new JTextField(10);
         descriptionTextField = new JTextField(10);
     }
 
+//    private void initializeDateComboBoxPanel() {
+//        dateComboBoxPanel = new JPanel(new GridLayout(0,3));
+//
+//        String[] dayArray =
+//
+//    }
+
     // MODIFIES: this
     // EFFECTS: initializes combo box according to actual type
-    protected abstract void initializeComboBox();
+    protected abstract void initializeGenreComboBox();
 
     // TODO this methods so fat maybe separate into methods
     // EFFECTS: initializes dialog button panel as well as action listeners

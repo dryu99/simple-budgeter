@@ -52,12 +52,6 @@ public class SimpleDate implements Comparable<SimpleDate> {
         }
     }
 
-    // EFFECTS: returns date string in form <month>/<day>/<year>
-    @Override
-    public String toString() {
-        return DateFormatter.format(calendar.getTime());
-    }
-
     // MODIFIES: this
     // EFFECTS: if given month is not [1, 12], throw InvalidMonthException
     //          ow, set month to given month
@@ -96,7 +90,11 @@ public class SimpleDate implements Comparable<SimpleDate> {
         simpleFormat = monthStr + " " + calendar.get((Calendar.YEAR));
     }
 
-
+    // EFFECTS: returns date string in form <month>/<day>/<year>
+    @Override
+    public String toString() {
+        return DateFormatter.format(calendar.getTime());
+    }
 
     // EFFECTS: returns true if date has same y/m/d and simple format as compared date
     @Override

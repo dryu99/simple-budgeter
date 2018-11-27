@@ -12,7 +12,7 @@ public class AddRevenueDialog extends AddButtonDialog {
     }
 
     @Override
-    protected void initializeComboBox() {
+    protected void initializeGenreComboBox() {
         genreComboBox = new JComboBox(RevGenre.values());
     }
 }

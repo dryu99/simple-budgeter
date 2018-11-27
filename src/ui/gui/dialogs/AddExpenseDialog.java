@@ -12,7 +12,7 @@ public class AddExpenseDialog extends AddButtonDialog {
     }
 
     @Override
-    protected void initializeComboBox() {
+    protected void initializeGenreComboBox() {
         genreComboBox = new JComboBox(ExpGenre.values());
     }
 
