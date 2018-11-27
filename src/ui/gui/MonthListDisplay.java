@@ -59,16 +59,17 @@ public class MonthListDisplay extends JPanel implements Observer {
         monthUIList.setVisibleRowCount(-1);
     }
 
-    // Updates the monthUIList to include the new date, and sets the selected index to be at the new date
+    // EFFECTS: If new date was added, update monthUIList to include the new date, and sets the selected index to be at the date
+    //          If new date wasn't added, just set the new selected index to be at the date of the added transaction
     @Override
     public void update(Observable o, Object arg) {
-        monthUIList.clearSelection();
+        String newTransactionDate = (String) arg;
 
-        for (String monthYearDate : budgetManager) {
-            monthModel.addElement(monthYearDate);
+        if (!monthModel.contains(newTransactionDate)) {
+            int newIndex = budgetManager.getIndexOfDate(newTransactionDate);
+            monthModel.add(newIndex, newTransactionDate);
         }
 
-        String newMonthYearDate = (String) arg;
-        monthUIList.setSelectedIndex(budgetManager.getIndexOfDate(newMonthYearDate));
+        monthUIList.setSelectedIndex(budgetManager.getIndexOfDate(newTransactionDate));
     }
 }

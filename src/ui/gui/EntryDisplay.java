@@ -5,6 +5,7 @@ import ui.gui.data_models.TransactionTableModel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -112,9 +113,17 @@ public class EntryDisplay extends JPanel implements Observer {
 
     // EFFECTS: initialize table models
     private void initializeTableModels() {
-        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
-        revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO how to invoke actionlistener events at the start of program manually
-        expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
+        int selectedIndex = monthUIList.getSelectedIndex();
+
+        if (selectedIndex >= 0) {
+            String selectedDate = budgetManager.getMonths().get(selectedIndex);
+
+            revenueTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true)); //TODO how to invoke actionlistener events at the start of program manually
+            expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
+        }
+        // TODO need to change this so when i initialize im just initializing a talbe update event, and i just initialize these two objects below
+        revenueTableModel = new TransactionTableModel(new ArrayList<>());
+        expenseTableModel = new TransactionTableModel(new ArrayList<>());
     }
 
     // EFFECTS: initializes stats label
@@ -128,6 +137,8 @@ public class EntryDisplay extends JPanel implements Observer {
     // Updates table data and stats label
     @Override
     public void update(Observable o, Object arg) {
+        
+
         String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
 
         // Update table data

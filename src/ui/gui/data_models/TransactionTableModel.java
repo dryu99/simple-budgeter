@@ -17,9 +17,9 @@ public class TransactionTableModel extends AbstractTableModel {
         this.data = transactionList;
     }
 
-    public TransactionTableModel() {
-        data = null;
-    }
+//    public TransactionTableModel() {
+//        data = null;
+//    }
 
     // EFFECTS: returns number of rows in this table
     @Override

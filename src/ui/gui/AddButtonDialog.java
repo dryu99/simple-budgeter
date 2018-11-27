@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddButtonDialogUI {
+public class AddButtonDialog {
 
     private JDialog dialog;
 
@@ -27,7 +27,7 @@ public class AddButtonDialogUI {
     // Data models
     private BudgetManager budgetManager;
 
-    public AddButtonDialogUI(JFrame parent, BudgetManager bm) {
+    public AddButtonDialog(JFrame parent, BudgetManager bm) {
         budgetManager = bm;
 
         dialog = new JDialog(parent, "Add a Transaction", true);
@@ -109,7 +109,7 @@ public class AddButtonDialogUI {
                 ExpGenre genre = (ExpGenre) genreComboBox.getSelectedItem();
 
                 budgetManager.addTransaction(new Transaction(amount, description, //TODO have to notify the table to add this transaction
-                        genre, new SimpleDate(1999, 2, 20)));
+                        genre, new SimpleDate(2018, 5, 20)));
 
                 dialog.setVisible(false);
                 dialog.dispose();

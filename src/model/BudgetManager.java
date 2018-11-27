@@ -97,10 +97,10 @@ public class BudgetManager extends Observable implements Iterable<String> {
 
         if (!entries.keySet().contains(transactionDate)) {
             createEntryFromDate(transactionDate);
+            // TODO this is frustrating because the update method for the monthlistdisplay observer updates differently depending on if I create a new month or not, what should i change?? should the month list display update method ONLY be able to set the new selected index? or should i make a conditional idk
         }
 
         entries.get(transactionDate).addTransaction(t);
-
         setChanged();
         notifyObservers(transactionDate);
     }

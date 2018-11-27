@@ -20,9 +20,9 @@ public class MonthSelectionListener extends Observable implements ListSelectionL
     private BudgetManager budgetManager;
 
     public MonthSelectionListener(SimpleBudgeterUI ui) {
-        revenueTableModel = ui.getEntryManagerDisplay().getRevenueTableModel();
-        expenseTableModel = ui.getEntryManagerDisplay().getExpenseTableModel();
-        statsLabel = ui.getEntryManagerDisplay().getStatsLabel();
+        revenueTableModel = ui.getEntryDisplay().getRevenueTableModel();
+        expenseTableModel = ui.getEntryDisplay().getExpenseTableModel();
+        statsLabel = ui.getEntryDisplay().getStatsLabel();
         budgetManager = ui.getBudgetManager();
     }
 
