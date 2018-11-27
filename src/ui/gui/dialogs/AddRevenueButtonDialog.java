@@ -1,16 +1,16 @@
-package ui.gui;
+package ui.gui.dialogs;
 
 import model.BudgetManager;
 import model.Transaction;
 import model.date.SimpleDate;
-import model.enums.ExpGenre;
+import model.enums.RevGenre;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddButtonDialog {
+public class AddRevenueButtonDialog {
 
     private JDialog dialog;
 
@@ -27,10 +27,10 @@ public class AddButtonDialog {
     // Data models
     private BudgetManager budgetManager;
 
-    public AddButtonDialog(JFrame parent, BudgetManager bm) {
+    public AddRevenueButtonDialog(JFrame parent, BudgetManager bm) {
         budgetManager = bm;
 
-        dialog = new JDialog(parent, "Add a Transaction", true);
+        dialog = new JDialog(parent, "Add a Revenue", true);
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.setResizable(false);
 
@@ -91,8 +91,7 @@ public class AddButtonDialog {
     }
 
     private void initializeComboBox() {
-        Object[] options = ExpGenre.values();
-        genreComboBox = new JComboBox(options);
+        genreComboBox = new JComboBox(RevGenre.values());
     }
 
     // EFFECTS: initializes dialog button panel as well as action listeners
@@ -106,7 +105,7 @@ public class AddButtonDialog {
             public void actionPerformed(ActionEvent e) { //TODO how to set up listeners cleanly? just create one action listener that listens to all action events from this one button panel, opposed to one lisetner for each?
                 double amount = Double.parseDouble(amountTextField.getText());
                 String description = descriptionTextField.getText();
-                ExpGenre genre = (ExpGenre) genreComboBox.getSelectedItem();
+                RevGenre genre = (RevGenre) genreComboBox.getSelectedItem();
 
                 budgetManager.addTransaction(new Transaction(amount, description, //TODO have to notify the table to add this transaction
                         genre, new SimpleDate(2018, 5, 20)));

@@ -7,27 +7,31 @@ public class ButtonPanel extends JPanel {
     // Main components
     private JButton deleteButton;
     private JButton editButton;
-    private JButton addButton;
+    private JButton addRevenueButton;
+    private JButton addExpenseButton;
 
     public ButtonPanel() {
-        super(new GridLayout(1,3));
+        super(new GridLayout(1,4));
         createComponents();
     }
 
     // Getters (only for those components that may be modified/accessed):
     public JButton getDeleteButton() { return deleteButton; }
     public JButton getEditButton() { return editButton; }
-    public JButton getAddButton() { return addButton; }
+    public JButton getAddRevenueButton() { return addRevenueButton; }
+    public JButton getAddExpenseButton() { return addExpenseButton; }
 
     // MODIFIES: //TODO: what put for mod
     // EFFECTS: creates and adds components for this panel
     private void createComponents() {
         deleteButton = new JButton("Delete");
         editButton = new JButton("Edit");
-        addButton = new JButton("Add a Transaction");
+        addRevenueButton = new JButton("Add a Revenue");
+        addExpenseButton = new JButton("Add an Expense");
 
         add(deleteButton);
         add(editButton);
-        add(addButton);
+        add(addRevenueButton);
+        add(addExpenseButton);
     }
 }

@@ -5,7 +5,6 @@ import ui.gui.data_models.TransactionTableModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -122,8 +121,8 @@ public class EntryDisplay extends JPanel implements Observer {
             expenseTableModel = new TransactionTableModel(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
         }
         // TODO need to change this so when i initialize im just initializing a talbe update event, and i just initialize these two objects below
-        revenueTableModel = new TransactionTableModel(new ArrayList<>());
-        expenseTableModel = new TransactionTableModel(new ArrayList<>());
+        revenueTableModel = new TransactionTableModel();
+        expenseTableModel = new TransactionTableModel();
     }
 
     // EFFECTS: initializes stats label
@@ -134,18 +133,24 @@ public class EntryDisplay extends JPanel implements Observer {
     }
 
 
-    // Updates table data and stats label
+    // if called from MonthSelectionListener, updates table data and stats label according to currently selected list index
+    // if called from BudgetManager, updates table data and stats label according to new transaction date
+    // TODO is what im doing bad lol, having the update functionality change depending on which subject is notifying it
+    // TODO i could also just separate the functionalities, but there would be duplicate code
     @Override
     public void update(Observable o, Object arg) {
-        
+        String selectedDate;
 
-        String selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+        if (arg == null) {
+             selectedDate = budgetManager.getMonths().get(monthUIList.getSelectedIndex());
+        } else {
+            selectedDate = (String) arg;
+        }
+            // Update table data
+            revenueTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true));
+            expenseTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
 
-        // Update table data
-        revenueTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, true));
-        expenseTableModel.setTableData(budgetManager.getAllSpecifiedTransactionsFromDate(selectedDate, false));
-
-        // Update stats label
-        statsLabel.setText("" + budgetManager.getNetValueFromDate(selectedDate));
+            // Update stats label
+            statsLabel.setText("Net Value: $" + budgetManager.getNetValueFromDate(selectedDate));
     }
 }

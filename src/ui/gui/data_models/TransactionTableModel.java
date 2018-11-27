@@ -5,6 +5,7 @@ import model.date.SimpleDate;
 import model.enums.Genre;
 
 import javax.swing.table.AbstractTableModel;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionTableModel extends AbstractTableModel {
@@ -17,9 +18,7 @@ public class TransactionTableModel extends AbstractTableModel {
         this.data = transactionList;
     }
 
-//    public TransactionTableModel() {
-//        data = null;
-//    }
+    public TransactionTableModel() { this(new ArrayList<>()); }
 
     // EFFECTS: returns number of rows in this table
     @Override
