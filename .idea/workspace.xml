@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bfe8b0-538c-442a-8a90-f747952d0373" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/AddButtonDialog.java" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/ButtonPanel.java" afterPath="$PROJECT_DIR$/src/ui/gui/ButtonPanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/EntryDisplay.java" afterPath="$PROJECT_DIR$/src/ui/gui/EntryDisplay.java" />
       <change beforePath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" afterPath="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/data_models/TransactionTableModel.java" afterPath="$PROJECT_DIR$/src/ui/gui/data_models/TransactionTableModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java" afterPath="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +30,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="EntryDisplay.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="EntryDisplay.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryDisplay.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="329">
-                  <caret line="153" column="12" lean-forward="false" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
+                <state relative-caret-position="284">
+                  <caret line="150" column="7" lean-forward="false" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -66,8 +62,8 @@
           <file leaf-file-name="AddRevenueButtonDialog.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#2748#2749#0" expanded="true" />
@@ -80,12 +76,24 @@
           <file leaf-file-name="AddExpenseButtonDialog.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1485">
-                  <caret line="107" column="42" lean-forward="false" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+                <state relative-caret-position="276">
+                  <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
                   <folding>
-                    <element signature="e#2749#2750#0" expanded="true" />
-                    <element signature="e#2813#2814#0" expanded="true" />
+                    <element signature="e#365#366#0" expanded="true" />
+                    <element signature="e#416#417#0" expanded="true" />
+                    <element signature="e#473#474#0" expanded="true" />
+                    <element signature="e#537#538#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AddButtonDialog.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1545">
+                  <caret line="108" column="13" lean-forward="true" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -147,8 +155,8 @@
           <file leaf-file-name="SimpleBudgeterUI.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="868">
-                  <caret line="106" column="53" lean-forward="false" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+                <state relative-caret-position="135">
+                  <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -219,7 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ui/soutUI/BudgeterApp.java" />
         <option value="$PROJECT_DIR$/src/ui/soutUI/SingleScanner.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeter.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/Main.java" />
@@ -267,9 +274,10 @@
         <option value="$PROJECT_DIR$/src/ui/gui/AddRevenueButtonDialog.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/AddExpenseButtonDialog.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/EntryDisplay.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java" />
         <option value="$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java" />
-        <option value="$PROJECT_DIR$/src/ui/gui/EntryDisplay.java" />
+        <option value="$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java" />
       </list>
     </option>
   </component>
@@ -367,6 +375,7 @@
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ui.gui.dialogs" />
       <recent name="model" />
       <recent name="model.enums" />
     </key>
@@ -883,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543305794178</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Refactored update in EntryDisplay to account for where the update method is being called from (whether MonthSelectionListener is notifying it or BudgetManager)&#10;&#10;Created AddExpenseButtonDialog class and made it usable in the main program.">
+      <created>1543307592411</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1543307592411</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -929,7 +945,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1437" height="812" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280116" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -942,8 +957,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1532486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1532486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24806201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35302594" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -955,7 +971,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -963,7 +978,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="Implemented toString methods for BudgetManager and EntryManager" />
     <MESSAGE value="Created a SimpleBudgeterUI class and started basic implementation of UI. Currently it implements Runnable." />
     <MESSAGE value="Created MonthSelectionListener class and slightly refactored SimpleBudgeterUI" />
     <MESSAGE value="Semi-fixed sorting of date strings in BudgetManager method getMonths(), still need to account for years.&#10;&#10;Currently in process of refactoring gui classes, so that instead of having implementation of creating certain components be inside SimpleBudgeterUI, its inside unique classes that extend java component classes." />
@@ -988,7 +1002,8 @@
     <MESSAGE value="Made BudgetManager and MonthSelectionListener extend Observable, with EntryManagerDisplay being the Observer. &#10;So when a transaction is added, or when the month list selection changes, the table and stats label (in EntryMangerDisplay) is updated" />
     <MESSAGE value="Tried to fully implement the adding transaction functionality with the use of observers, but doesn't seem to be working. Revert back to previous commit to redo it" />
     <MESSAGE value="Refactored update in MonthListDisplay to act more efficiently (doesn't have to clear and readd everything), as well as accounting whether or not the month date already exists in the list.&#10;&#10;Refactored initializeTableModels in EntryDisplay to account for a situation where the budgetmanager starts empty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored update in MonthListDisplay to act more efficiently (doesn't have to clear and readd everything), as well as accounting whether or not the month date already exists in the list.&#10;&#10;Refactored initializeTableModels in EntryDisplay to account for a situation where the budgetmanager starts empty" />
+    <MESSAGE value="Refactored update in EntryDisplay to account for where the update method is being called from (whether MonthSelectionListener is notifying it or BudgetManager)&#10;&#10;Created AddExpenseButtonDialog class and made it usable in the main program." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored update in EntryDisplay to account for where the update method is being called from (whether MonthSelectionListener is notifying it or BudgetManager)&#10;&#10;Created AddExpenseButtonDialog class and made it usable in the main program." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,14 +1012,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/javax/swing/JList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1801" column="0" lean-forward="false" selection-start-line="1801" selection-start-column="0" selection-end-line="1801" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1312,18 +1319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2748#2749#0" expanded="true" />
-            <element signature="e#2812#2813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/AddButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1340,16 +1335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="106" column="53" lean-forward="false" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/gui/listeners/MonthSelectionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1358,21 +1343,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="107" column="42" lean-forward="false" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        <state relative-caret-position="284">
+          <caret line="150" column="7" lean-forward="false" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/SimpleBudgeterUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="108" column="31" lean-forward="false" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
           <folding>
-            <element signature="e#2749#2750#0" expanded="true" />
-            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/gui/EntryDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddExpenseButtonDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="153" column="12" lean-forward="false" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
+        <state relative-caret-position="276">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+          <folding>
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddRevenueButtonDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2748#2749#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/gui/dialogs/AddButtonDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="108" column="13" lean-forward="true" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
           <folding />
         </state>
       </provider>
