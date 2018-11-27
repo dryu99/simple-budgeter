@@ -8,5 +8,9 @@ public class InvalidDateException extends Exception {
         this.dateValue = dateValue;
     }
 
+    public InvalidDateException() {
+        super("Invalid date was given");
+    }
+
 
 }

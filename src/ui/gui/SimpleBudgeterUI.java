@@ -2,8 +2,8 @@ package ui.gui;
 
 import model.BudgetManager;
 import ui.gui.dialogs.AddButtonDialog;
-import ui.gui.dialogs.AddExpenseButtonDialog;
-import ui.gui.dialogs.AddRevenueButtonDialog;
+import ui.gui.dialogs.AddExpenseDialog;
+import ui.gui.dialogs.AddRevenueDialog;
 import ui.gui.listeners.DeleteButtonListener;
 import ui.gui.listeners.MonthSelectionListener;
 
@@ -98,7 +98,7 @@ public class SimpleBudgeterUI implements Runnable {
         buttonPanel.getAddRevenueButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddRevenueButtonDialog revButtonDialog = new AddRevenueButtonDialog(frame, budgetManager);
+                AddButtonDialog revButtonDialog = new AddRevenueDialog(frame, budgetManager);
             }
         });
 
@@ -106,7 +106,7 @@ public class SimpleBudgeterUI implements Runnable {
         buttonPanel.getAddExpenseButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddButtonDialog expButtonDialog = new AddExpenseButtonDialog(frame, budgetManager);
+                AddButtonDialog expButtonDialog = new AddExpenseDialog(frame, budgetManager);
             }
         });
 

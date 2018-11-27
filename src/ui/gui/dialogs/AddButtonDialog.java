@@ -1,6 +1,11 @@
 package ui.gui.dialogs;
 
 import model.BudgetManager;
+import model.Transaction;
+import model.date.SimpleDate;
+import model.enums.ExpGenre;
+import model.enums.Genre;
+import model.exceptions.EmptyDescriptionException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +21,7 @@ public abstract class AddButtonDialog {
     private JLabel amountLabel;
     private JLabel descriptionLabel;
     private JLabel genreLabel;
+    private JTextField dateTextField; // TODO this should be a panel of combo boxes
     protected JTextField amountTextField;
     protected JTextField descriptionTextField;
     protected JComboBox genreComboBox;
@@ -54,6 +60,8 @@ public abstract class AddButtonDialog {
         gbc.anchor = GridBagConstraints.LINE_START;
         gbc.insets = new Insets(8,8,8,8);
 
+        container.add(dateLabel, gbc);
+        gbc.gridy++;
         container.add(amountLabel, gbc);
         gbc.gridy++;
         container.add(descriptionLabel, gbc);
@@ -65,6 +73,8 @@ public abstract class AddButtonDialog {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 //        gbc.weightx = 1; //TODO might need this later
 
+        container.add(dateTextField, gbc);
+        gbc.gridy++;
         container.add(amountTextField, gbc);
         gbc.gridy++;
         container.add(descriptionTextField, gbc);
@@ -78,12 +88,14 @@ public abstract class AddButtonDialog {
     }
 
     private void initializeLabels() {
+        dateLabel = new JLabel("Date: ");
         amountLabel = new JLabel("Amount: ");
         descriptionLabel = new JLabel("Description: ");
         genreLabel = new JLabel("Genre: ");
     }
 
     private void initializeTextFields() {
+        dateTextField = new JTextField(10);
         amountTextField = new JTextField(10);
         descriptionTextField = new JTextField(10);
     }
@@ -92,13 +104,51 @@ public abstract class AddButtonDialog {
     // EFFECTS: initializes combo box according to actual type
     protected abstract void initializeComboBox();
 
+    // TODO this methods so fat maybe separate into methods
     // EFFECTS: initializes dialog button panel as well as action listeners
     private void initializeButtonPanel() {
         dialogButtonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT,4,4));
 
         JButton addButton = new JButton("Add");
         addButton.setSelected(true);
-        initializeAddlistener(addButton);
+        addButton.addActionListener(new ActionListener() {
+            // EFFECTS: if given user amount is invalid, show error message dialog
+            //          ow, add transaction to budget manager based on given user inputs and close dialog
+            @Override
+            public void actionPerformed(ActionEvent e) { //TODO how to set up listeners cleanly? just create one action listener that listens to all action events from this one button panel, opposed to one lisetner for each?
+                try {
+                    double amount = Double.parseDouble(amountTextField.getText());
+                    String description = descriptionTextField.getText();
+                    Genre genre = (Genre) genreComboBox.getSelectedItem();
+
+                    // Check for empty description
+                    if (description.trim().isEmpty()) { throw new EmptyDescriptionException(); }
+
+                    // Adjust amount according to transaction type
+                    if (genre instanceof ExpGenre) { amount *= -1; }
+
+                    budgetManager.addTransaction(new Transaction(amount, description, //TODO have to notify the table to add this transaction
+                            genre, new SimpleDate(2018, 6, 20)));
+
+                    dialog.setVisible(false);
+                    dialog.dispose();
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(dialog,
+                            "Please type in a valid number in the 'amount' box.",
+                            "Invalid Transaction Amount Error",
+                            JOptionPane.ERROR_MESSAGE);
+                    amountTextField.grabFocus();
+                } catch (EmptyDescriptionException ede) {
+                    JOptionPane.showMessageDialog(dialog,
+                            "Please type in a description",
+                            "Empty Description Error",
+                            JOptionPane.ERROR_MESSAGE);
+                    descriptionTextField.grabFocus();
+                }
+
+            }
+        });
+
 
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new ActionListener() {
@@ -112,8 +162,4 @@ public abstract class AddButtonDialog {
         dialogButtonPanel.add(cancelButton);
         dialogButtonPanel.add(addButton);
     }
-
-    // MODIFIES: this
-    // EFFECTS: initializes given button with a listener according to actual type
-    protected abstract void initializeAddlistener(JButton addButton);
 }
