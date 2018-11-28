@@ -18,7 +18,7 @@ public class TransactionManager {
     public Entry getEntry() { return entry; }
     public List<Transaction> getTransactionList() { return transactionList; }
 
-    public String getDescription
+//    public String getDescription
 
 
     // EFFECTS: returns size of revenue list

@@ -67,6 +67,7 @@ public class Transaction {
         }
     }
 
+    // TODO can delete this
     // EFFECTS: returns transaction object in string form "$<value> - <desc> (<genre>)"
     @Override
     public String toString() {

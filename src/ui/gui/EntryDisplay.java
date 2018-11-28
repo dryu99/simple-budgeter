@@ -2,8 +2,10 @@ package ui.gui;
 
 import model.BudgetManager;
 import ui.gui.data_models.TransactionTableModel;
+import ui.gui.renderers.AmountCellRenderer;
 
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
@@ -108,6 +110,8 @@ public class EntryDisplay extends JPanel implements Observer {
         expenseTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         expenseTable.setGridColor(Color.BLACK);
         // TODO: have to set customized renderer
+
+        initializeCellRenderers();
     }
 
     // EFFECTS: initialize table models
@@ -123,6 +127,18 @@ public class EntryDisplay extends JPanel implements Observer {
         // TODO need to change this so when i initialize im just initializing a talbe update event, and i just initialize these two objects below
         revenueTableModel = new TransactionTableModel();
         expenseTableModel = new TransactionTableModel();
+    }
+
+    private void initializeCellRenderers() {
+        // initialize amount renderers first
+        AmountCellRenderer acr = new AmountCellRenderer();
+
+        TableColumn revAmountColumn = revenueTable.getColumnModel().getColumn(1);
+        revAmountColumn.setCellRenderer(acr);
+
+        TableColumn expAmountColumn = expenseTable.getColumnModel().getColumn(1);
+        expAmountColumn.setCellRenderer(acr);
+
     }
 
     // EFFECTS: initializes stats label

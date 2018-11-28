@@ -12,7 +12,7 @@ public class TransactionTableModel extends AbstractTableModel {
     private List<Transaction> data;
 
     private String[] columnNames = {"Date", "Amount", "Genre"};
-    private Class[] columnClasses = {SimpleDate.class, String.class, Genre.class}; // TODO: after making customized renderer, turn string int double
+    private Class[] columnClasses = {SimpleDate.class, Double.class, Genre.class}; // TODO: after making customized renderer, turn string int double
 
     public TransactionTableModel(List<Transaction> transactionList) {
         this.data = transactionList;
@@ -52,7 +52,7 @@ public class TransactionTableModel extends AbstractTableModel {
         if (columnIndex == 0) {
             return row.getDate();
         } else if (columnIndex == 1) {
-            return row.getFormattedValue();
+            return row.getValue();
         } else if (columnIndex == 2) {
             return row.getGenre();
         } else {
