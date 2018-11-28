@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // CLASS: manages transactions in a list
-public abstract class TransactionManager {
+public class TransactionManager {
     private Entry entry;
     protected List<Transaction> transactionList;
 
@@ -17,6 +17,9 @@ public abstract class TransactionManager {
     // Getters:
     public Entry getEntry() { return entry; }
     public List<Transaction> getTransactionList() { return transactionList; }
+
+    public String getDescription
+
 
     // EFFECTS: returns size of revenue list
     public int size() {

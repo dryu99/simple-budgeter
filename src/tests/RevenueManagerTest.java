@@ -1,7 +1,5 @@
 package tests;
 
-import model.ExpenseManager;
-import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
 import model.date.SimpleDate;
@@ -17,7 +15,7 @@ public class RevenueManagerTest {
 
     @Before
     public void setup() {
-        testManager = new RevenueManager(null);
+        testManager = new TransactionManager(null);
         testDate = new SimpleDate(2018,2,20);
 
         testManager.addTransaction(new Transaction(-2,"save-ons", RevGenre.PAYCHEQUE, testDate));
@@ -27,7 +25,7 @@ public class RevenueManagerTest {
 
     @Test
     public void testToStringEmpty() {
-        TransactionManager testExpenseManager = new ExpenseManager(null);
+        TransactionManager testExpenseManager = new TransactionManager(null);
         String managerString = "Expenses:\n" +
                 "---------\n" +
                 "(no expenses for this manager)\n";

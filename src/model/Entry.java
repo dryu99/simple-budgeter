@@ -11,8 +11,8 @@ public class Entry {
 
     public Entry(String date) {
         myDate = date;
-        revenueManager = new RevenueManager(this);
-        expenseManager = new ExpenseManager(this);
+        revenueManager = new TransactionManager(this);
+        expenseManager = new TransactionManager(this);
     }
 
     // Getters:

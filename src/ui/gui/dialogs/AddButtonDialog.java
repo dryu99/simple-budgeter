@@ -54,6 +54,7 @@ public abstract class AddButtonDialog {
     // EFFECTS: creates and adds components to the dialog's container
     protected void createComponents(Container container) {
         container.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
         initializeLabels();
         initializeTextFields();
@@ -61,7 +62,6 @@ public abstract class AddButtonDialog {
         initializeGenreComboBox();
         initializeButtonPanel();
 
-        GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_START;
@@ -78,7 +78,6 @@ public abstract class AddButtonDialog {
         gbc.gridx++;
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-//        gbc.weightx = 1; //TODO might need this later
 
         container.add(datePanel, gbc);
         gbc.gridy++;
@@ -106,16 +105,31 @@ public abstract class AddButtonDialog {
         descriptionTextField = new JTextField(10);
     }
 
+    // TODO make the selected number be the current date
     private void initializeDatePanel() {
-        datePanel = new JPanel(new GridLayout(0,3));
+        datePanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
         dayComboBox = new JComboBox(DateArray.getDays());
         monthComboBox = new JComboBox(DateArray.getMonths());
         yearComboBox = new JComboBox(DateArray.getYears());
 
-        datePanel.add(dayComboBox);
-        datePanel.add(monthComboBox);
-        datePanel.add(yearComboBox);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.LINE_START;
+//        gbc.insets = new Insets(2,2,2,2);
+
+        datePanel.add(new JLabel("D"), gbc);
+        gbc.gridx++;
+        datePanel.add(dayComboBox, gbc);
+        gbc.gridx++;
+        datePanel.add(new JLabel("M"), gbc);
+        gbc.gridx++;
+        datePanel.add(monthComboBox, gbc);
+        gbc.gridx++;
+        datePanel.add(new JLabel("Y"), gbc);
+        gbc.gridx++;
+        datePanel.add(yearComboBox, gbc);
     }
 
     // MODIFIES: this

@@ -1,6 +1,5 @@
 package tests;
 
-import model.RevenueManager;
 import model.TransactionManager;
 import model.statistics.TransactionManagerStats;
 import org.junit.Before;
@@ -15,7 +14,7 @@ public class TransactionManagerStatsTest {
 
     @Before
     public void setup() {
-        testManager = new RevenueManager(null);
+        testManager = new TransactionManager(null);
         testStats = new TransactionManagerStats(testManager);
     }
 

@@ -1,6 +1,5 @@
 package model.statistics;
 
-import model.RevenueManager;
 import model.TransactionManager;
 import model.enums.ExpGenre;
 import model.enums.Genre;

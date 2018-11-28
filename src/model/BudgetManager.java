@@ -17,6 +17,14 @@ public class BudgetManager extends Observable implements Iterable<String> {
     // Getters:
     public Collection<Entry> getAllEntries() { return entries.values(); }
 
+    // EFFECTS: returns list of available months in budget manager in order
+    public List<String> getMonths() {
+        List<String> monthAsList = new ArrayList<>(entries.keySet());
+        Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getDateCompareNum));
+
+        return monthAsList;
+    }
+
     // ASSUME: given date IS in the key set //TODO make this more robust?
     // EFFECTS: returns index of given date in the key set
     public int getIndexOfDate(String date) {
@@ -27,16 +35,7 @@ public class BudgetManager extends Observable implements Iterable<String> {
                 return i;
             }
         }
-
         return -1;
-    }
-
-    // EFFECTS: returns list of available months in budget manager in order
-    public List<String> getMonths() {
-        List<String> monthAsList = new ArrayList<>(entries.keySet());
-        Collections.sort(monthAsList, Comparator.comparingInt(BudgetManager::getDateCompareNum));
-
-        return monthAsList;
     }
 
     // TODO: maybe I can overload this method to take in strings and simpledates?
@@ -53,6 +52,8 @@ public class BudgetManager extends Observable implements Iterable<String> {
         }
         return entries.get(date).totalExpenses();
     }
+
+
 
     // TODO write a unit test for this
     // EFFECTS: returns total net value from entry manager of given date

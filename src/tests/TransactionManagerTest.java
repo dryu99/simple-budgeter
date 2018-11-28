@@ -1,7 +1,6 @@
 package tests;
 
 import model.Entry;
-import model.RevenueManager;
 import model.Transaction;
 import model.TransactionManager;
 import model.date.SimpleDate;
@@ -21,7 +20,7 @@ public class TransactionManagerTest {
 
     @Before
     public void setup() {
-        testManager = new RevenueManager(new Entry("February 2018"));
+        testManager = new TransactionManager(new Entry("February 2018"));
     }
 
     @Test

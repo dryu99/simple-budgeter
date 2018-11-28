@@ -1,6 +1,5 @@
 package tests;
 
-import model.ExpenseManager;
 import model.Transaction;
 import model.TransactionManager;
 import model.date.SimpleDate;
@@ -17,7 +16,7 @@ public class ExpenseManagerTest {
 
     @Before
     public void setup() {
-        testManager = new ExpenseManager(null);
+        testManager = new TransactionManager(null);
         testDate = new SimpleDate(2018,2,20);
 
         testManager.addTransaction(new Transaction(-2,"mcds", ExpGenre.FOOD, testDate));
