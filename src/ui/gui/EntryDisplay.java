@@ -3,6 +3,7 @@ package ui.gui;
 import model.BudgetManager;
 import ui.gui.data_models.TransactionTableModel;
 import ui.gui.renderers.AmountCellRenderer;
+import ui.gui.renderers.DateCellRenderer;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
@@ -130,7 +131,16 @@ public class EntryDisplay extends JPanel implements Observer {
     }
 
     private void initializeCellRenderers() {
-        // initialize amount renderers first
+        // initialize date (really description) renderers
+        DateCellRenderer dcr = new DateCellRenderer(budgetManager);
+
+        TableColumn revDateColumn = revenueTable.getColumnModel().getColumn(0);
+        revDateColumn.setCellRenderer(dcr);
+
+        TableColumn expDateColumn = expenseTable.getColumnModel().getColumn(0);
+        expDateColumn.setCellRenderer(dcr);
+
+        // initialize amount renderers
         AmountCellRenderer acr = new AmountCellRenderer();
 
         TableColumn revAmountColumn = revenueTable.getColumnModel().getColumn(1);
@@ -138,7 +148,6 @@ public class EntryDisplay extends JPanel implements Observer {
 
         TableColumn expAmountColumn = expenseTable.getColumnModel().getColumn(1);
         expAmountColumn.setCellRenderer(acr);
-
     }
 
     // EFFECTS: initializes stats label

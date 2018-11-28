@@ -38,6 +38,11 @@ public class BudgetManager extends Observable implements Iterable<String> {
         return -1;
     }
 
+    // EFFECTS: returns complete transaction using incomplete transaction data from the specified date
+    public Transaction getCompleteTransactionFromDate(String date, Transaction incompleteTransaction) {
+        return entries.get(date).getCompleteTransactionFromManager(incompleteTransaction); //todo test
+    }
+
     // TODO: maybe I can overload this method to take in strings and simpledates?
     // EFFECTS: if date exists, returns entry manager of given date, ow return null
     public Entry getEntryFromDate(String date) {

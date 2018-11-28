@@ -18,7 +18,15 @@ public class TransactionManager {
     public Entry getEntry() { return entry; }
     public List<Transaction> getTransactionList() { return transactionList; }
 
-//    public String getDescription
+    // EFFECTS: if this entry contains the given transaction, return the contained transaction's description //todo test
+    public Transaction getCompleteTransaction(Transaction incompleteTransaction) {
+        for (Transaction t : transactionList) {
+            if (t.equals(incompleteTransaction)) {
+                return t;
+            }
+        }
+        return null;
+    }
 
 
     // EFFECTS: returns size of revenue list

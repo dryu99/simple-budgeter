@@ -25,9 +25,14 @@ public class Transaction {
         manager = null;
     }
 
-    // EFFECTS: creates a transaction with a value and description (no genre)
+    // EFFECTS: creates a transaction with a value and description (no genre/date)
     public Transaction(double value, String desc) {
         this(value, desc, null, null);
+    }
+
+    // EFFECTS: creates a transaction with no description (used for ui tooltip setting)
+    public Transaction(double value, Genre genre, SimpleDate date) {
+        this(value, null, genre, date);
     }
 
     // Getters:
@@ -36,13 +41,6 @@ public class Transaction {
     public Genre getGenre() { return genre; }
     public SimpleDate getDate() { return date; }
     public TransactionManager getManager() { return manager; }
-
-    // EFFECTS: returns formatted value of transaction (no - signs, $, and decimals) //TODO want it to return double not string
-    public String getFormattedValue() {
-        double value = this.value < 0 ? this.value * -1 : this.value;
-
-        return "$" + df.format(value);
-    }
 
     // Setters:
     public void setValue(double amount) { this.value = amount; }
@@ -76,7 +74,7 @@ public class Transaction {
         return "$" + df.format(value) + " - " + description + " (" + genre + ")";
     }
 
-    // EFFECTS: returns true if given object is a transaction and contains the same contents
+    // EFFECTS: returns true if given object is a transaction and contains the same contents (excluding desc)
     @Override
     public boolean equals(Object o) {
         if (o == null) { return false; }
@@ -87,9 +85,6 @@ public class Transaction {
 
         if (value != compared.value) { return false; }
 
-        if (description != null ? !description.equals(compared.description) : compared.description != null) {
-            return false;
-        }
         if (genre != null ? !genre.equals(compared.genre) : compared.genre != null) {
             return false;
         }
@@ -103,7 +98,6 @@ public class Transaction {
     @Override
     public int hashCode() {
         int result = (int) value * 100; // e.g. 20.25 -> 2025 (to avoid rounding when typecasting)
-        result += description != null ? description.hashCode() : 0;
         result += genre != null ? genre.hashCode() : 0;
         result += date != null ? date.hashCode() : 0;
 

@@ -27,6 +27,15 @@ public class Entry {
         return combinedList;
     }
 
+    // EFFECTS: returns complete transaction using incomplete transaction data from the appropriate manager //todo test
+    public Transaction getCompleteTransactionFromManager(Transaction incompleteTransaction) {
+        if (incompleteTransaction.getValue() > 0) {
+            return revenueManager.getCompleteTransaction(incompleteTransaction);
+        } else {
+            return expenseManager.getCompleteTransaction(incompleteTransaction);
+        }
+    }
+
     // Setters:
     public void setDate(String date) { myDate = date; }
 
