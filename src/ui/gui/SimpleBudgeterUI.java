@@ -1,10 +1,6 @@
 package ui.gui;
 
 import model.BudgetManager;
-import model.Transaction;
-import model.date.SimpleDate;
-import model.enums.ExpGenre;
-import model.enums.RevGenre;
 import ui.gui.dialogs.AddButtonDialog;
 import ui.gui.dialogs.AddExpenseDialog;
 import ui.gui.dialogs.AddRevenueDialog;
@@ -147,40 +143,40 @@ public class SimpleBudgeterUI implements Runnable {
         // TODO: have to implement saving/loading ahhhh
         BudgetManager budgetManager = new BudgetManager();
 
-        SimpleDate date1 = new SimpleDate(2018, 2, 20);
-        SimpleDate date1a = new SimpleDate(2018, 2, 25);
-
-        SimpleDate date2 = new SimpleDate(2018, 3, 20);
-        SimpleDate date2a = new SimpleDate(2018, 3, 15);
-
-        SimpleDate date3 = new SimpleDate(2018, 4, 20);
-        SimpleDate date3a = new SimpleDate(2018, 4, 16);
-
-        SimpleDate date4 = new SimpleDate(2018, 12, 20);
-        SimpleDate date4a = new SimpleDate(2018, 12, 17);
-
-        Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE, date1);
-        Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD, date1a);
-        Transaction expense2 = new Transaction(-50d, "Boots", ExpGenre.SHOPPING, date1a);
-
-        Transaction revenue2 = new Transaction(20.56, "Yon-Jun IOU", RevGenre.IOU, date2);
-        Transaction revenue3 = new Transaction(60d, "Music Gig", RevGenre.PAYCHEQUE, date2a);
-
-        Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING,date3);
-        Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD,date3a);
-
-        Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING,date4);
-        Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK, date4a);
-
-        budgetManager.addTransaction(revenue1);
-        budgetManager.addTransaction(expense1);
-        budgetManager.addTransaction(expense2);
-        budgetManager.addTransaction(revenue2);
-        budgetManager.addTransaction(revenue3);
-        budgetManager.addTransaction(expense3);
-        budgetManager.addTransaction(expense4);
-        budgetManager.addTransaction(expense5);
-        budgetManager.addTransaction(expense6);
+//        SimpleDate date1 = new SimpleDate(2018, 2, 20);
+//        SimpleDate date1a = new SimpleDate(2018, 2, 25);
+//
+//        SimpleDate date2 = new SimpleDate(2018, 3, 20);
+//        SimpleDate date2a = new SimpleDate(2018, 3, 15);
+//
+//        SimpleDate date3 = new SimpleDate(2018, 4, 20);
+//        SimpleDate date3a = new SimpleDate(2018, 4, 16);
+//
+//        SimpleDate date4 = new SimpleDate(2018, 12, 20);
+//        SimpleDate date4a = new SimpleDate(2018, 12, 17);
+//
+//        Transaction revenue1 = new Transaction(10d, "TA Payroll", RevGenre.PAYCHEQUE, date1);
+//        Transaction expense1 = new Transaction(-20.67, "McDonalds", ExpGenre.FOOD, date1a);
+//        Transaction expense2 = new Transaction(-50d, "Boots", ExpGenre.SHOPPING, date1a);
+//
+//        Transaction revenue2 = new Transaction(20.56, "Yon-Jun IOU", RevGenre.IOU, date2);
+//        Transaction revenue3 = new Transaction(60d, "Music Gig", RevGenre.PAYCHEQUE, date2a);
+//
+//        Transaction expense3 = new Transaction(-30d, "Computer", ExpGenre.SHOPPING,date3);
+//        Transaction expense4 = new Transaction(-46.75, "Dinner Date w/ Mom", ExpGenre.FOOD,date3a);
+//
+//        Transaction expense5 = new Transaction(-25d, "Band equipment", ExpGenre.SHOPPING,date4);
+//        Transaction expense6 = new Transaction(-46, "Booze", ExpGenre.DRINK, date4a);
+//
+//        budgetManager.addTransaction(revenue1);
+//        budgetManager.addTransaction(expense1);
+//        budgetManager.addTransaction(expense2);
+//        budgetManager.addTransaction(revenue2);
+//        budgetManager.addTransaction(revenue3);
+//        budgetManager.addTransaction(expense3);
+//        budgetManager.addTransaction(expense4);
+//        budgetManager.addTransaction(expense5);
+//        budgetManager.addTransaction(expense6);
 
         SwingUtilities.invokeLater(new SimpleBudgeterUI(budgetManager));
     }

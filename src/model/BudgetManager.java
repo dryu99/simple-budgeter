@@ -6,7 +6,6 @@ import java.util.*;
 // SINGLETON CLASS: stores entries in buckets corresponding to their month and year
 public class BudgetManager extends Observable implements Iterable<String> {
 
-    // TODO: have to change map to <SimpleDateFormat, EntryManager> in order to be able to order?
     private HashMap<String, Entry> entries;
 
     // Constructor:
@@ -43,7 +42,6 @@ public class BudgetManager extends Observable implements Iterable<String> {
         return entries.get(date).getCompleteTransactionFromManager(incompleteTransaction); //todo test
     }
 
-    // TODO: maybe I can overload this method to take in strings and simpledates?
     // EFFECTS: if date exists, returns entry manager of given date, ow return null
     public Entry getEntryFromDate(String date) {
         return entries.get(date);
@@ -82,7 +80,6 @@ public class BudgetManager extends Observable implements Iterable<String> {
         }
     }
 
-    // TODO: use regex to check given string? or should i use SimpleDates as key values
     // MODIFIES: this
     // EFFECTS: if hashmap doesn't contain given date key, add a new date-entry key-value pair and return true,
     //          ow do nothing and return false
@@ -111,17 +108,6 @@ public class BudgetManager extends Observable implements Iterable<String> {
         setChanged();
         notifyObservers(transactionDate);
     }
-
-    // TODO: implement toString
-//    @Override
-//    public String toString() {
-//        String budgetManString = BudgetStringer.underlinedHeaderString("ALL ENTRIES BY MONTH", "=") + "\n";
-//        for (EntryManager em : entries.values()) {
-//            budgetManString += em + "\n";
-//        }
-//
-//        return budgetManString;
-//    }
 
     // EFFECTS: returns iterator for budget manager's month list, sorted
     @Override

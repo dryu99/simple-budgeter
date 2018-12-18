@@ -92,16 +92,6 @@ public class TransactionTest {
         assertFalse(testManager.contains(testRevenue));
     }
 
-    @Test
-    public void testToStringExpense() {
-        assertEquals("$20.00 - McDonalds (FOOD)", testExpense.toString());
-    }
-
-    @Test
-    public void testToStringRevenue() {
-        assertEquals("$30.00 - Save-On-Foods (PAYCHEQUE)", testRevenue.toString());
-    }
-
     // TODO: do i need to test situations where the compared object has slightly different content values (e.g. everything's the same except the genre)
     @Test
     public void testEquals() {

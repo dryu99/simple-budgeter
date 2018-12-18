@@ -7,12 +7,10 @@ import model.exceptions.InvalidYearException;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
-// TODO: create a SimpleFormat class and have that as  afield here?
 public class SimpleDate implements Comparable<SimpleDate> {
     private Calendar calendar = Calendar.getInstance();
     private String simpleFormat;
 
-    // TODO: have exceptions here? or maybe have a DROP MENU FOR SELECTING DATES
     // Constructors:
 
     // EFFECTS: creates a date object with today's date info
@@ -109,8 +107,6 @@ public class SimpleDate implements Comparable<SimpleDate> {
 
         SimpleDate compared = (SimpleDate) o;
 
-        // TODO: i call these get methods so much, should i just make a field for them in this class?  but i dont think i can because they arent references and wont update whenever i set new values for the calendar
-
         if (calendar != null ? get(Calendar.YEAR) != compared.get(Calendar.YEAR) ||
                 get(Calendar.MONTH) != compared.get(Calendar.MONTH) ||
                 get(Calendar.DATE) != compared.get(Calendar.DATE) : compared.calendar != null) {
@@ -124,12 +120,10 @@ public class SimpleDate implements Comparable<SimpleDate> {
         return true;
     }
 
-    // TODO: possible to have same hashCode for certain days? how to prevent (i.e. 2/20/1999 = 2/19/2000)
-    // TODO: should I just have the hashcode be calendar.hashcode()
     // EFFECTS: returns unique id based on the date's y/m/d and simple format
     @Override
     public int hashCode() {
-        int result = (calendar.get(Calendar.YEAR) * 7) + (calendar.get(Calendar.MONTH) * 17) + (calendar.get(Calendar.DATE) * 31);
+        int result = calendar.hashCode() * 17;
         result += simpleFormat.hashCode();
 
         return result;

@@ -7,8 +7,8 @@ import java.text.DecimalFormat;
 
 // CLASS: financial transaction
 public class Transaction {
-    private final DecimalFormat df = new DecimalFormat("#.00"); // TODO: how to format doubles and have them stay as doubles, not strings?
-    private double value; // +value = revenue, -value = expense //TODO: how to prevent human error of accidentally putting/forgetting the - sign, as well preventing accidentally assigning a transaction to an incorrect maanger
+    private final DecimalFormat df = new DecimalFormat("#.00");
+    private double value;
     private String description;
     private Genre genre;
     private SimpleDate date;
@@ -63,15 +63,6 @@ public class Transaction {
         if (newManager != null && !newManager.contains(this)) {
             newManager.addTransaction(this);
         }
-    }
-
-    // TODO can delete this
-    // EFFECTS: returns transaction object in string form "$<value> - <desc> (<genre>)"
-    @Override
-    public String toString() {
-        double value = this.value < 0 ? this.value * -1 : this.value;
-
-        return "$" + df.format(value) + " - " + description + " (" + genre + ")";
     }
 
     // EFFECTS: returns true if given object is a transaction and contains the same contents (excluding desc)

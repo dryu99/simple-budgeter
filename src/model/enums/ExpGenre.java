@@ -1,6 +1,5 @@
 package model.enums;
 
-// TODO: how to lower coupling here, make just one enum?
 public enum ExpGenre implements Genre {
     FOOD("Food"),
     DRINK("Drink"),

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Entry {
-//    private SimpleDate date;
     private String myDate;
     private TransactionManager revenueManager;
     private TransactionManager expenseManager;
@@ -59,7 +58,6 @@ public class Entry {
     // EFFECTS: returns size of revenue + expense list
     public int transactionListSize() { return revenueListSize() + expenseListSize(); }
 
-    // TODO throw exception if neg?
     // MODIFIES: this
     // EFFECTS: add transaction to appropriate manager
     public void addTransaction(Transaction t) {
@@ -70,7 +68,7 @@ public class Entry {
         }
     }
 
-    // TODO: even if I know that this modfies r, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for r != null (even tho that clause is in the manager method)
+    // TODO: even if I know that this modfies t, do I need to put in MODIFIES clause? Also do i need to put the REQUIRES for t != null (even tho that clause is in the manager method)
     // MODIFIES: this
     // EFFECTS: if given transaction is in its appropriate list, remove it and return true, ow return false;
     public boolean removeTransaction(Transaction t) {
@@ -96,24 +94,6 @@ public class Entry {
         return totalRevenue() + totalExpenses();
     }
 
-    // TODO implement this
-    @Override
-    // EFFECTS: returns entry in simple string form
-    public String toString() {
-        return "yes";
-    }
-
-    // TODO do i even need this lol
-//    // EFFECTS: returns manager in complete string form listing all revenues and expenses
-//    public String toCompleteString() {
-//        String completeString = BudgetStringer.underlinedHeaderString(this.toString(), "=");
-//
-//        completeString += revenueManager.toString() + "\n";
-//        completeString += expenseManager.toString() + "\n";
-//
-//        return completeString.trim();
-//    }
-
     // EFFECTS: returns true if manager has same id and date as compared
     @Override
     public boolean equals(Object o) {
@@ -138,9 +118,4 @@ public class Entry {
         return result * 31;
     }
 
-//    // EFFECTS: returns a positive number if this Entry's date is older than compared
-//    @Override
-//    public int compareTo(Entry compared) {
-//        return date.compareTo(compared.date);
-//    }
 }

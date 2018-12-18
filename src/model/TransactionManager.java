@@ -37,7 +37,6 @@ public class TransactionManager {
     // EFFECTS: returns true if transaction list contains given transaction, false ow
     public boolean contains(Transaction t) { return transactionList.contains(t); }
 
-    // TODO: create a separate class for calculating stats?
     // EFFECTS: returns total revenues of this manager
     public double totalValue() {
         double totalVal = 0;
